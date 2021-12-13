@@ -1,0 +1,10 @@
+:host,
+:host([theme='main']) {
+  --border-radius-sm: 0.1rem;
+  --border-radius-md: 0.25rem;
+  --border-radius-lg: 0.5rem;
+
+  --padding-sm: 0.25rem;
+  --padding-md: 0.5rem;
+  --padding-lg: 1rem;
+}

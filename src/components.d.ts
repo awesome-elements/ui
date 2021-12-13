@@ -5,21 +5,41 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { Color, Theme } from "./utils/types";
+import { ButtonVariant } from "./components/awesome-button/awesome-button";
 export namespace Components {
-
+    interface AwesomeButton {
+        "color": Color;
+        "theme": Theme;
+        "variant": ButtonVariant;
+    }
 }
 declare global {
+    interface HTMLAwesomeButtonElement extends Components.AwesomeButton, HTMLStencilElement {
+    }
+    var HTMLAwesomeButtonElement: {
+        prototype: HTMLAwesomeButtonElement;
+        new (): HTMLAwesomeButtonElement;
+    };
     interface HTMLElementTagNameMap {
+        "awesome-button": HTMLAwesomeButtonElement;
     }
 }
 declare namespace LocalJSX {
+    interface AwesomeButton {
+        "color"?: Color;
+        "theme"?: Theme;
+        "variant"?: ButtonVariant;
+    }
     interface IntrinsicElements {
+        "awesome-button": AwesomeButton;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "awesome-button": LocalJSX.AwesomeButton & JSXBase.HTMLAttributes<HTMLAwesomeButtonElement>;
         }
     }
 }

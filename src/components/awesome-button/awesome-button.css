@@ -1,0 +1,28 @@
+@import "../../utils/theme.css";
+@import "../../utils/color.css";
+
+:host {
+  display: inline-block;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#native-element {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  color: var(--contrast-color);
+  background: var(--primary-color);
+  border-radius: var(--border-radius-sm);
+  padding: var(--padding-md);
+  user-select: none;
+  border: none;
+}
+
+#native-element:hover {
+  background: var(--secondary-color);
+}
+
+#native-element:active {
+  background: var(--tertiary-color);
+}
