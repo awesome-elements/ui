@@ -5,12 +5,9 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { Color, Theme } from "./utils/types";
 import { ButtonVariant } from "./components/awesome-button/awesome-button";
 export namespace Components {
     interface AwesomeButton {
-        "color": Color;
-        "theme": Theme;
         "variant": ButtonVariant;
     }
 }
@@ -27,8 +24,6 @@ declare global {
 }
 declare namespace LocalJSX {
     interface AwesomeButton {
-        "color"?: Color;
-        "theme"?: Theme;
         "variant"?: ButtonVariant;
     }
     interface IntrinsicElements {

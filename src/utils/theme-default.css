@@ -1,5 +1,9 @@
-:host,
-:host([theme='main']) {
+:host {
+  --primary-color: #3880ff;
+  --secondary-color: #4c8dff;
+  --tertiary-color: #3171e0;
+  --contrast-color: #fff;
+
   --border-radius-sm: 0.1rem;
   --border-radius-md: 0.25rem;
   --border-radius-lg: 0.5rem;

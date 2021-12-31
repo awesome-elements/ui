@@ -1,5 +1,4 @@
-@import "../../utils/theme.css";
-@import "../../utils/color.css";
+@import "../../utils/theme-default.css";
 
 :host {
   display: inline-block;
