@@ -43,6 +43,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@awesome-elements/layout": "^0.3.9",
     "@awesome-elements/utils": "^0.1.2"
   }
 }
