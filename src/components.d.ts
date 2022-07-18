@@ -8,6 +8,17 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { ButtonVariant } from "./components/awesome-button/awesome-button";
 export namespace Components {
     interface AwesomeButton {
+        /**
+          * The flag of disabling the button. Default to `false`.
+         */
+        "disabled": boolean;
+        /**
+          * If presents, the button would act like an `a` tag using the given `href`.
+         */
+        "href"?: string;
+        /**
+          * Variant of the button. Default to `solid`.
+         */
         "variant": ButtonVariant;
     }
 }
@@ -24,6 +35,17 @@ declare global {
 }
 declare namespace LocalJSX {
     interface AwesomeButton {
+        /**
+          * The flag of disabling the button. Default to `false`.
+         */
+        "disabled"?: boolean;
+        /**
+          * If presents, the button would act like an `a` tag using the given `href`.
+         */
+        "href"?: string;
+        /**
+          * Variant of the button. Default to `solid`.
+         */
         "variant"?: ButtonVariant;
     }
     interface IntrinsicElements {

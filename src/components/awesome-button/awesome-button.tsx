@@ -1,6 +1,6 @@
 import { Component, Host, h, ComponentInterface, Element, Prop } from '@stencil/core';
 
-export type ButtonVariant = 'solid' | 'outline' | 'clear';
+export type ButtonVariant = 'solid' | 'hollow' | 'clear';
 
 @Component({
   tag: 'awesome-button',
@@ -11,15 +11,27 @@ export type ButtonVariant = 'solid' | 'outline' | 'clear';
 })
 export class AwesomeButton implements ComponentInterface {
   @Element() hostElement: HTMLAwesomeButtonElement;
-  
+
+  /**
+   * Variant of the button. Default to `solid`.
+   */
   @Prop({ reflect: true }) variant: ButtonVariant = 'solid';
+
+  /**
+   * If presents, the button would act like an `a` tag using the given `href`.
+   */
+  @Prop({ reflect: true }) href?: string;
+
+  /**
+   * The flag of disabling the button. Default to `false`.
+   */
+  @Prop({ reflect: true }) disabled: boolean = false;
 
   render() {
     return (
       <Host>
-        <button id="native-element">
-          <slot></slot>
-        </button>
+        {this.href && <a href={this.href}></a>}
+        <slot></slot>
       </Host>
     );
   }
