@@ -24,6 +24,12 @@ export namespace Components {
          */
         "variant": ButtonVariant;
     }
+    interface AwesomeCard {
+        /**
+          * If `true`, the card would also act as a button. Default to `false`.
+         */
+        "button": boolean;
+    }
     interface AwesomeDivider {
     }
     interface AwesomeInput {
@@ -58,6 +64,12 @@ declare global {
         prototype: HTMLAwesomeButtonElement;
         new (): HTMLAwesomeButtonElement;
     };
+    interface HTMLAwesomeCardElement extends Components.AwesomeCard, HTMLStencilElement {
+    }
+    var HTMLAwesomeCardElement: {
+        prototype: HTMLAwesomeCardElement;
+        new (): HTMLAwesomeCardElement;
+    };
     interface HTMLAwesomeDividerElement extends Components.AwesomeDivider, HTMLStencilElement {
     }
     var HTMLAwesomeDividerElement: {
@@ -73,6 +85,7 @@ declare global {
     interface HTMLElementTagNameMap {
         "awesome-badge": HTMLAwesomeBadgeElement;
         "awesome-button": HTMLAwesomeButtonElement;
+        "awesome-card": HTMLAwesomeCardElement;
         "awesome-divider": HTMLAwesomeDividerElement;
         "awesome-input": HTMLAwesomeInputElement;
     }
@@ -93,6 +106,12 @@ declare namespace LocalJSX {
           * Variant of the button. Default to `solid`.
          */
         "variant"?: ButtonVariant;
+    }
+    interface AwesomeCard {
+        /**
+          * If `true`, the card would also act as a button. Default to `false`.
+         */
+        "button"?: boolean;
     }
     interface AwesomeDivider {
     }
@@ -121,6 +140,7 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "awesome-badge": AwesomeBadge;
         "awesome-button": AwesomeButton;
+        "awesome-card": AwesomeCard;
         "awesome-divider": AwesomeDivider;
         "awesome-input": AwesomeInput;
     }
@@ -131,6 +151,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "awesome-badge": LocalJSX.AwesomeBadge & JSXBase.HTMLAttributes<HTMLAwesomeBadgeElement>;
             "awesome-button": LocalJSX.AwesomeButton & JSXBase.HTMLAttributes<HTMLAwesomeButtonElement>;
+            "awesome-card": LocalJSX.AwesomeCard & JSXBase.HTMLAttributes<HTMLAwesomeCardElement>;
             "awesome-divider": LocalJSX.AwesomeDivider & JSXBase.HTMLAttributes<HTMLAwesomeDividerElement>;
             "awesome-input": LocalJSX.AwesomeInput & JSXBase.HTMLAttributes<HTMLAwesomeInputElement>;
         }
