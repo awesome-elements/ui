@@ -6,6 +6,7 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { ButtonVariant } from "./components/awesome-button/awesome-button";
+import { InputType } from "./components/awesome-input/awesome-input";
 export namespace Components {
     interface AwesomeBadge {
     }
@@ -25,6 +26,24 @@ export namespace Components {
     }
     interface AwesomeDivider {
     }
+    interface AwesomeInput {
+        /**
+          * The flag of disabling the input. Default to `false`.
+         */
+        "disabled": boolean;
+        /**
+          * Placeholder of the input.
+         */
+        "placeholder"?: string;
+        /**
+          * Type of the input. Default to `text`.
+         */
+        "type": InputType;
+    }
+}
+export interface AwesomeInputCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLAwesomeInputElement;
 }
 declare global {
     interface HTMLAwesomeBadgeElement extends Components.AwesomeBadge, HTMLStencilElement {
@@ -45,10 +64,17 @@ declare global {
         prototype: HTMLAwesomeDividerElement;
         new (): HTMLAwesomeDividerElement;
     };
+    interface HTMLAwesomeInputElement extends Components.AwesomeInput, HTMLStencilElement {
+    }
+    var HTMLAwesomeInputElement: {
+        prototype: HTMLAwesomeInputElement;
+        new (): HTMLAwesomeInputElement;
+    };
     interface HTMLElementTagNameMap {
         "awesome-badge": HTMLAwesomeBadgeElement;
         "awesome-button": HTMLAwesomeButtonElement;
         "awesome-divider": HTMLAwesomeDividerElement;
+        "awesome-input": HTMLAwesomeInputElement;
     }
 }
 declare namespace LocalJSX {
@@ -70,10 +96,33 @@ declare namespace LocalJSX {
     }
     interface AwesomeDivider {
     }
+    interface AwesomeInput {
+        /**
+          * The flag of disabling the input. Default to `false`.
+         */
+        "disabled"?: boolean;
+        /**
+          * Event of content being changed.
+         */
+        "onAwesomeChange"?: (event: AwesomeInputCustomEvent<[{ value: string }, globalThis.Event]>) => void;
+        /**
+          * Event of something is input.
+         */
+        "onAwesomeInput"?: (event: AwesomeInputCustomEvent<globalThis.Event>) => void;
+        /**
+          * Placeholder of the input.
+         */
+        "placeholder"?: string;
+        /**
+          * Type of the input. Default to `text`.
+         */
+        "type"?: InputType;
+    }
     interface IntrinsicElements {
         "awesome-badge": AwesomeBadge;
         "awesome-button": AwesomeButton;
         "awesome-divider": AwesomeDivider;
+        "awesome-input": AwesomeInput;
     }
 }
 export { LocalJSX as JSX };
@@ -83,6 +132,7 @@ declare module "@stencil/core" {
             "awesome-badge": LocalJSX.AwesomeBadge & JSXBase.HTMLAttributes<HTMLAwesomeBadgeElement>;
             "awesome-button": LocalJSX.AwesomeButton & JSXBase.HTMLAttributes<HTMLAwesomeButtonElement>;
             "awesome-divider": LocalJSX.AwesomeDivider & JSXBase.HTMLAttributes<HTMLAwesomeDividerElement>;
+            "awesome-input": LocalJSX.AwesomeInput & JSXBase.HTMLAttributes<HTMLAwesomeInputElement>;
         }
     }
 }
