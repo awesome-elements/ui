@@ -1,0 +1,18 @@
+:host {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 2px;
+  margin: 0.5rem 0;
+}
+
+div {
+  --disposition: calc(-1 * (var(--awesome-ui-shadow-offset-md) - 1px));
+
+  display: block;
+  height: 10px;
+  background: transparent;
+  margin: 0 var(--disposition);
+  box-shadow: 0 var(--awesome-ui-shadow-offset-md) var(--awesome-ui-shadow-blur-sm) var(--disposition) var(--awesome-ui-color-dim);
+  transform: translateY(-10px);
+}

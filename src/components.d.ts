@@ -21,6 +21,8 @@ export namespace Components {
          */
         "variant": ButtonVariant;
     }
+    interface AwesomeDivider {
+    }
 }
 declare global {
     interface HTMLAwesomeButtonElement extends Components.AwesomeButton, HTMLStencilElement {
@@ -29,8 +31,15 @@ declare global {
         prototype: HTMLAwesomeButtonElement;
         new (): HTMLAwesomeButtonElement;
     };
+    interface HTMLAwesomeDividerElement extends Components.AwesomeDivider, HTMLStencilElement {
+    }
+    var HTMLAwesomeDividerElement: {
+        prototype: HTMLAwesomeDividerElement;
+        new (): HTMLAwesomeDividerElement;
+    };
     interface HTMLElementTagNameMap {
         "awesome-button": HTMLAwesomeButtonElement;
+        "awesome-divider": HTMLAwesomeDividerElement;
     }
 }
 declare namespace LocalJSX {
@@ -48,8 +57,11 @@ declare namespace LocalJSX {
          */
         "variant"?: ButtonVariant;
     }
+    interface AwesomeDivider {
+    }
     interface IntrinsicElements {
         "awesome-button": AwesomeButton;
+        "awesome-divider": AwesomeDivider;
     }
 }
 export { LocalJSX as JSX };
@@ -57,6 +69,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "awesome-button": LocalJSX.AwesomeButton & JSXBase.HTMLAttributes<HTMLAwesomeButtonElement>;
+            "awesome-divider": LocalJSX.AwesomeDivider & JSXBase.HTMLAttributes<HTMLAwesomeDividerElement>;
         }
     }
 }
