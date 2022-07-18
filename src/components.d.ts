@@ -7,6 +7,8 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { ButtonVariant } from "./components/awesome-button/awesome-button";
 export namespace Components {
+    interface AwesomeBadge {
+    }
     interface AwesomeButton {
         /**
           * The flag of disabling the button. Default to `false`.
@@ -25,6 +27,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLAwesomeBadgeElement extends Components.AwesomeBadge, HTMLStencilElement {
+    }
+    var HTMLAwesomeBadgeElement: {
+        prototype: HTMLAwesomeBadgeElement;
+        new (): HTMLAwesomeBadgeElement;
+    };
     interface HTMLAwesomeButtonElement extends Components.AwesomeButton, HTMLStencilElement {
     }
     var HTMLAwesomeButtonElement: {
@@ -38,11 +46,14 @@ declare global {
         new (): HTMLAwesomeDividerElement;
     };
     interface HTMLElementTagNameMap {
+        "awesome-badge": HTMLAwesomeBadgeElement;
         "awesome-button": HTMLAwesomeButtonElement;
         "awesome-divider": HTMLAwesomeDividerElement;
     }
 }
 declare namespace LocalJSX {
+    interface AwesomeBadge {
+    }
     interface AwesomeButton {
         /**
           * The flag of disabling the button. Default to `false`.
@@ -60,6 +71,7 @@ declare namespace LocalJSX {
     interface AwesomeDivider {
     }
     interface IntrinsicElements {
+        "awesome-badge": AwesomeBadge;
         "awesome-button": AwesomeButton;
         "awesome-divider": AwesomeDivider;
     }
@@ -68,6 +80,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "awesome-badge": LocalJSX.AwesomeBadge & JSXBase.HTMLAttributes<HTMLAwesomeBadgeElement>;
             "awesome-button": LocalJSX.AwesomeButton & JSXBase.HTMLAttributes<HTMLAwesomeButtonElement>;
             "awesome-divider": LocalJSX.AwesomeDivider & JSXBase.HTMLAttributes<HTMLAwesomeDividerElement>;
         }
