@@ -32,9 +32,9 @@ export class AwesomeInput implements ComponentInterface {
   @Event() awesomeChange: EventEmitter<[{ value: string }, globalThis.Event]>;
 
   /**
-   * Event of something is input.
+   * Event of something being input.
    */
-  @Event() awesomeInput: EventEmitter<globalThis.Event>;
+  @Event() awesomeInput: EventEmitter<InputEvent>;
 
   render() {
     return (
