@@ -7,13 +7,13 @@
 
 ## Properties
 
-| Property  | Attribute | Description                                  | Type                      | Default                |
-| --------- | --------- | -------------------------------------------- | ------------------------- | ---------------------- |
-| `buttons` | --        | Button definitions of the alert.             | `AlertButtonDefinition[]` | `this.DEFAULT_BUTTONS` |
-| `header`  | `header`  | Header of the alert.                         | `string`                  | `undefined`            |
-| `hidden`  | `hidden`  | A flag to hide the alert. Default to `true`; | `boolean`                 | `true`                 |
-| `message` | `message` | Message of the alert.                        | `string`                  | `undefined`            |
-| `zIndex`  | `z-index` | `z-index` of the alert.                      | `number`                  | `this.DEFAULT_Z_INDEX` |
+| Property  | Attribute | Description                                            | Type                      | Default                |
+| --------- | --------- | ------------------------------------------------------ | ------------------------- | ---------------------- |
+| `active`  | `active`  | If `true`, the alert is displayed. Default to `false`; | `boolean`                 | `false`                |
+| `buttons` | --        | Button definitions of the alert.                       | `AlertButtonDefinition[]` | `this.DEFAULT_BUTTONS` |
+| `header`  | `header`  | Header of the alert.                                   | `string`                  | `undefined`            |
+| `message` | `message` | Message of the alert.                                  | `string`                  | `undefined`            |
+| `zIndex`  | `z-index` | `z-index` of the alert.                                | `number`                  | `this.DEFAULT_Z_INDEX` |
 
 
 ## Methods
