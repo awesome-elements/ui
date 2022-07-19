@@ -13,6 +13,24 @@
 
 <body>
   <div>
+    <h1>Alert</h1>
+    <awesome-divider></awesome-divider>
+    <awesome-alert id="alert-controller"></awesome-alert>
+    <awesome-button onclick="presentAlert()">Show Alert</awesome-button>
+    <script>
+      function presentAlert() {
+        const alertController = document.querySelector('#alert-controller');
+        alertController.present(
+          'Alert', 'This is an alert.',
+          [
+            { name: 'Cancel', variant: 'hollow' },
+            { name: 'OK' }
+          ]
+        );
+      }
+    </script>
+  </div>
+  <div>
     <h1>Badge</h1>
     <awesome-divider></awesome-divider>
     <awesome-badge>badge</awesome-badge>

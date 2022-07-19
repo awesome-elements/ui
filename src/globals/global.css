@@ -1,4 +1,6 @@
 :root {
+  --awesome-ui-background: #ffffff;
+
   --awesome-ui-color-primary: #3880ff;
   --awesome-ui-color-secondary: #3dc2ff;
   --awesome-ui-color-tertiary: #5260ff;
@@ -17,6 +19,7 @@
   --awesome-ui-shadow-offset-xs: 1px;
   --awesome-ui-shadow-offset-sm: 2px;
   --awesome-ui-shadow-offset-md: 5px;
+  --awesome-ui-shadow-offset-lg: 10px;
 
   --awesome-ui-shadow-blur-sm: 2px;
   --awesome-ui-shadow-blur-md: 5px;

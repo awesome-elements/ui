@@ -1,0 +1,20 @@
+:host {
+  display: block;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: var(--awesome-ui-whitespace-md);
+  background: var(--awesome-ui-background);
+  border-radius: var(--awesome-ui-border-radius-lg);
+  box-shadow: 0 var(--awesome-ui-shadow-offset-lg) var(--awesome-ui-shadow-blur-xl) 0 var(--awesome-ui-color-dim);
+}
+
+:host([hidden]) {
+  display: none;
+}
+
+[part='header'] {
+  font-size: 1.5em;
+  padding: var(--awesome-ui-whitespace-md) 0;
+}

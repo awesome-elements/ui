@@ -5,9 +5,43 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { AlertButtonDefinition } from "./components/awesome-alert/awesome-alert";
 import { ButtonVariant } from "./components/awesome-button/awesome-button";
 import { InputType } from "./components/awesome-input/awesome-input";
 export namespace Components {
+    interface AwesomeAlert {
+        "attachingElement": string | globalThis.Element;
+        /**
+          * Button definitions of the alert.
+         */
+        "buttons": AlertButtonDefinition[];
+        /**
+          * Header of the alert.
+         */
+        "header": string;
+        /**
+          * A flag to hide the alert. Default to `true`;
+         */
+        "hidden": boolean;
+        /**
+          * Message of the alert.
+         */
+        "message": string;
+        /**
+          * Present an aleret.
+          * @param header Header of the alert.
+          * @param message Message of the alert.
+          * @param buttons Button definitions of the alert.
+          * @param zIndex `z-index` of the alert.
+          * @param attachingElement The element for alert to attach to.
+          * @returns A funtion to dismiss the alert.
+         */
+        "present": (header: string, message: string, buttons?: AlertButtonDefinition[], zIndex?: number, attachingElement?: string | globalThis.Element) => Promise<() => void>;
+        /**
+          * `z-index` of the alert.
+         */
+        "zIndex": number;
+    }
     interface AwesomeBadge {
     }
     interface AwesomeButton {
@@ -54,6 +88,12 @@ export interface AwesomeInputCustomEvent<T> extends CustomEvent<T> {
     target: HTMLAwesomeInputElement;
 }
 declare global {
+    interface HTMLAwesomeAlertElement extends Components.AwesomeAlert, HTMLStencilElement {
+    }
+    var HTMLAwesomeAlertElement: {
+        prototype: HTMLAwesomeAlertElement;
+        new (): HTMLAwesomeAlertElement;
+    };
     interface HTMLAwesomeBadgeElement extends Components.AwesomeBadge, HTMLStencilElement {
     }
     var HTMLAwesomeBadgeElement: {
@@ -91,6 +131,7 @@ declare global {
         new (): HTMLAwesomeSkeletonElement;
     };
     interface HTMLElementTagNameMap {
+        "awesome-alert": HTMLAwesomeAlertElement;
         "awesome-badge": HTMLAwesomeBadgeElement;
         "awesome-button": HTMLAwesomeButtonElement;
         "awesome-card": HTMLAwesomeCardElement;
@@ -100,6 +141,29 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface AwesomeAlert {
+        "attachingElement"?: string | globalThis.Element;
+        /**
+          * Button definitions of the alert.
+         */
+        "buttons"?: AlertButtonDefinition[];
+        /**
+          * Header of the alert.
+         */
+        "header"?: string;
+        /**
+          * A flag to hide the alert. Default to `true`;
+         */
+        "hidden"?: boolean;
+        /**
+          * Message of the alert.
+         */
+        "message"?: string;
+        /**
+          * `z-index` of the alert.
+         */
+        "zIndex"?: number;
+    }
     interface AwesomeBadge {
     }
     interface AwesomeButton {
@@ -149,6 +213,7 @@ declare namespace LocalJSX {
     interface AwesomeSkeleton {
     }
     interface IntrinsicElements {
+        "awesome-alert": AwesomeAlert;
         "awesome-badge": AwesomeBadge;
         "awesome-button": AwesomeButton;
         "awesome-card": AwesomeCard;
@@ -161,6 +226,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "awesome-alert": LocalJSX.AwesomeAlert & JSXBase.HTMLAttributes<HTMLAwesomeAlertElement>;
             "awesome-badge": LocalJSX.AwesomeBadge & JSXBase.HTMLAttributes<HTMLAwesomeBadgeElement>;
             "awesome-button": LocalJSX.AwesomeButton & JSXBase.HTMLAttributes<HTMLAwesomeButtonElement>;
             "awesome-card": LocalJSX.AwesomeCard & JSXBase.HTMLAttributes<HTMLAwesomeCardElement>;
