@@ -63,6 +63,10 @@ export namespace Components {
           * If `true`, the card would also act as a button. Default to `false`.
          */
         "button": boolean;
+        /**
+          * If this presents and button is `true`, the card would act like an `a` tag using the given `href`.
+         */
+        "href"?: string;
     }
     interface AwesomeDivider {
     }
@@ -85,6 +89,10 @@ export namespace Components {
           * If `true`, the item would also act as a button. Default to `false`.
          */
         "button": boolean;
+        /**
+          * If this presents and button is `true`, the item would act like an `a` tag using the given `href`.
+         */
+        "href"?: string;
     }
     interface AwesomeSkeleton {
     }
@@ -198,6 +206,10 @@ declare namespace LocalJSX {
           * If `true`, the card would also act as a button. Default to `false`.
          */
         "button"?: boolean;
+        /**
+          * If this presents and button is `true`, the card would act like an `a` tag using the given `href`.
+         */
+        "href"?: string;
     }
     interface AwesomeDivider {
     }
@@ -228,6 +240,10 @@ declare namespace LocalJSX {
           * If `true`, the item would also act as a button. Default to `false`.
          */
         "button"?: boolean;
+        /**
+          * If this presents and button is `true`, the item would act like an `a` tag using the given `href`.
+         */
+        "href"?: string;
     }
     interface AwesomeSkeleton {
     }

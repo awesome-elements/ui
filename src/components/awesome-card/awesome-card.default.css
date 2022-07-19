@@ -1,6 +1,7 @@
 :host {
   -webkit-tap-highlight-color: transparent;
   display: block;
+  position: relative;
   margin: var(--awesome-ui-whitespace-sm);
   padding: var(--awesome-ui-whitespace-lg);
   border-radius: var(--awesome-ui-border-radius-lg);

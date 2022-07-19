@@ -1,4 +1,5 @@
 import { Component, Host, h, ComponentInterface, Prop } from '@stencil/core';
+import { renderHrefHandler } from '../../utils/href-handler';
 
 @Component({
   tag: 'awesome-item',
@@ -13,9 +14,15 @@ export class AwesomeItem implements ComponentInterface {
    */
   @Prop() button: boolean = false;
 
+  /**
+   * If this presents and button is `true`, the item would act like an `a` tag using the given `href`.
+   */
+  @Prop({ reflect: true }) href?: string;
+
   render() {
     return (
       <Host>
+        {this.href && renderHrefHandler(this.href)}
         <slot></slot>
       </Host>
     );

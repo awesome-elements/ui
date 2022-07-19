@@ -1,4 +1,5 @@
 import { Component, Host, h, ComponentInterface, Element, Prop } from '@stencil/core';
+import { renderHrefHandler } from '../../utils/href-handler';
 
 export type ButtonVariant = 'solid' | 'hollow' | 'clear';
 
@@ -30,7 +31,7 @@ export class AwesomeButton implements ComponentInterface {
   render() {
     return (
       <Host>
-        {this.href && <a href={this.href}></a>}
+        {this.href && renderHrefHandler(this.href)}
         <slot></slot>
       </Host>
     );

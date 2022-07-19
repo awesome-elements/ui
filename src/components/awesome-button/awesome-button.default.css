@@ -49,12 +49,3 @@
 :host([variant='clear']:active) {
   box-shadow: inset 0 0 var(--awesome-ui-shadow-blur-xl) 0 var(--awesome-ui-color-primary);
 }
-
-a {
-  display: block;
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-}

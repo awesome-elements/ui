@@ -1,5 +1,6 @@
 :host {
   display: block;
+  position: relative;
   width: 100%;
   cursor: default;
   padding: var(--awesome-ui-whitespace-md);
