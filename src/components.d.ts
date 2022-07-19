@@ -10,6 +10,10 @@ import { ButtonVariant } from "./components/awesome-button/awesome-button";
 import { InputType } from "./components/awesome-input/awesome-input";
 export namespace Components {
     interface AwesomeAlert {
+        /**
+          * If `true`, the alert is displayed. Default to `false`;
+         */
+        "active": boolean;
         "attachingElement": string | globalThis.Element;
         /**
           * Button definitions of the alert.
@@ -19,10 +23,6 @@ export namespace Components {
           * Header of the alert.
          */
         "header": string;
-        /**
-          * A flag to hide the alert. Default to `true`;
-         */
-        "hidden": boolean;
         /**
           * Message of the alert.
          */
@@ -176,6 +176,10 @@ declare global {
 }
 declare namespace LocalJSX {
     interface AwesomeAlert {
+        /**
+          * If `true`, the alert is displayed. Default to `false`;
+         */
+        "active"?: boolean;
         "attachingElement"?: string | globalThis.Element;
         /**
           * Button definitions of the alert.
@@ -185,10 +189,6 @@ declare namespace LocalJSX {
           * Header of the alert.
          */
         "header"?: string;
-        /**
-          * A flag to hide the alert. Default to `true`;
-         */
-        "hidden"?: boolean;
         /**
           * Message of the alert.
          */

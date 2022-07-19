@@ -38,9 +38,9 @@ export class AwesomeAlert implements ComponentInterface {
   @Prop() buttons: AlertButtonDefinition[] = this.DEFAULT_BUTTONS;
 
   /**
-   * A flag to hide the alert. Default to `true`;
+   * If `true`, the alert is displayed. Default to `false`;
    */
-  @Prop({ reflect: true }) hidden: boolean = true;
+  @Prop({ reflect: true }) active: boolean = false;
 
   /**
    * `z-index` of the alert.
@@ -77,14 +77,14 @@ export class AwesomeAlert implements ComponentInterface {
     alert.zIndex = zIndex;
     alert.attachingElement = attachingElement;
     this.obtainActualAttachingElement(alert.attachingElement)?.append(alert);
-    alert.hidden = false;
+    alert.active = true;
     return alert.remove;
   }
 
   render() {
     return (
       <Host>
-        {!this.hidden && (
+        {this.active && (
           <awesome-flex>
             <awesome-flex-item xs={12}>
               <div part="header">{this.header}</div>

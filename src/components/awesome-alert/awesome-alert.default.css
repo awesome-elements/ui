@@ -1,5 +1,5 @@
 :host {
-  display: block;
+  display: none;
   position: fixed;
   left: 50%;
   top: 50%;
@@ -10,8 +10,8 @@
   box-shadow: 0 var(--awesome-ui-shadow-offset-lg) var(--awesome-ui-shadow-blur-xl) 0 var(--awesome-ui-color-dim);
 }
 
-:host([hidden]) {
-  display: none;
+:host([active]) {
+  display: block;
 }
 
 [part='header'] {
