@@ -1,12 +1,11 @@
 :root {
-  --awesome-ui-background: #ffffff;
-
   --awesome-ui-color-primary: #3880ff;
   --awesome-ui-color-secondary: #3dc2ff;
   --awesome-ui-color-tertiary: #5260ff;
   --awesome-ui-color-main: #000000;
   --awesome-ui-color-contrast: #ffffff;
   --awesome-ui-color-dim: #808080;
+  --awesome-ui-color-background: #ffffff;
 
   --awesome-ui-border-radius-sm: 2px;
   --awesome-ui-border-radius-md: 5px;

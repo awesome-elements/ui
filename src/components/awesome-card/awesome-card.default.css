@@ -5,7 +5,7 @@
   margin: var(--awesome-ui-whitespace-sm);
   padding: var(--awesome-ui-whitespace-lg);
   border-radius: var(--awesome-ui-border-radius-lg);
-  background: var(--awesome-ui-background);
+  background: var(--awesome-ui-color-background);
   box-shadow: 0 var(--awesome-ui-shadow-offset-sm) var(--awesome-ui-shadow-blur-md) 0 var(--awesome-ui-color-dim);
   transition: box-shadow 0.3s;
 }
