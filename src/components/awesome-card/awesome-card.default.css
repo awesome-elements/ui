@@ -1,4 +1,5 @@
 :host {
+  -webkit-tap-highlight-color: transparent;
   display: block;
   margin: var(--awesome-ui-whitespace-sm);
   padding: var(--awesome-ui-whitespace-lg);
