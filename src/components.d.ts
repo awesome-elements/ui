@@ -46,6 +46,8 @@ export namespace Components {
          */
         "type": InputType;
     }
+    interface AwesomeSkeleton {
+    }
 }
 export interface AwesomeInputCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -82,12 +84,19 @@ declare global {
         prototype: HTMLAwesomeInputElement;
         new (): HTMLAwesomeInputElement;
     };
+    interface HTMLAwesomeSkeletonElement extends Components.AwesomeSkeleton, HTMLStencilElement {
+    }
+    var HTMLAwesomeSkeletonElement: {
+        prototype: HTMLAwesomeSkeletonElement;
+        new (): HTMLAwesomeSkeletonElement;
+    };
     interface HTMLElementTagNameMap {
         "awesome-badge": HTMLAwesomeBadgeElement;
         "awesome-button": HTMLAwesomeButtonElement;
         "awesome-card": HTMLAwesomeCardElement;
         "awesome-divider": HTMLAwesomeDividerElement;
         "awesome-input": HTMLAwesomeInputElement;
+        "awesome-skeleton": HTMLAwesomeSkeletonElement;
     }
 }
 declare namespace LocalJSX {
@@ -137,12 +146,15 @@ declare namespace LocalJSX {
          */
         "type"?: InputType;
     }
+    interface AwesomeSkeleton {
+    }
     interface IntrinsicElements {
         "awesome-badge": AwesomeBadge;
         "awesome-button": AwesomeButton;
         "awesome-card": AwesomeCard;
         "awesome-divider": AwesomeDivider;
         "awesome-input": AwesomeInput;
+        "awesome-skeleton": AwesomeSkeleton;
     }
 }
 export { LocalJSX as JSX };
@@ -154,6 +166,7 @@ declare module "@stencil/core" {
             "awesome-card": LocalJSX.AwesomeCard & JSXBase.HTMLAttributes<HTMLAwesomeCardElement>;
             "awesome-divider": LocalJSX.AwesomeDivider & JSXBase.HTMLAttributes<HTMLAwesomeDividerElement>;
             "awesome-input": LocalJSX.AwesomeInput & JSXBase.HTMLAttributes<HTMLAwesomeInputElement>;
+            "awesome-skeleton": LocalJSX.AwesomeSkeleton & JSXBase.HTMLAttributes<HTMLAwesomeSkeletonElement>;
         }
     }
 }
