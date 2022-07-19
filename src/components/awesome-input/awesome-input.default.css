@@ -1,7 +1,7 @@
 :host {
   display: block;
   cursor: default;
-  width: 15rem;
+  width: 100%;
   margin: var(--awesome-ui-whitespace-sm) 0;
   padding: var(--awesome-ui-whitespace-md);
   border-radius: var(--awesome-ui-border-radius-md);
