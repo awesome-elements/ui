@@ -80,6 +80,12 @@ export namespace Components {
          */
         "type": InputType;
     }
+    interface AwesomeItem {
+        /**
+          * If `true`, the item would also act as a button. Default to `false`.
+         */
+        "button": boolean;
+    }
     interface AwesomeSkeleton {
     }
 }
@@ -124,6 +130,12 @@ declare global {
         prototype: HTMLAwesomeInputElement;
         new (): HTMLAwesomeInputElement;
     };
+    interface HTMLAwesomeItemElement extends Components.AwesomeItem, HTMLStencilElement {
+    }
+    var HTMLAwesomeItemElement: {
+        prototype: HTMLAwesomeItemElement;
+        new (): HTMLAwesomeItemElement;
+    };
     interface HTMLAwesomeSkeletonElement extends Components.AwesomeSkeleton, HTMLStencilElement {
     }
     var HTMLAwesomeSkeletonElement: {
@@ -137,6 +149,7 @@ declare global {
         "awesome-card": HTMLAwesomeCardElement;
         "awesome-divider": HTMLAwesomeDividerElement;
         "awesome-input": HTMLAwesomeInputElement;
+        "awesome-item": HTMLAwesomeItemElement;
         "awesome-skeleton": HTMLAwesomeSkeletonElement;
     }
 }
@@ -210,6 +223,12 @@ declare namespace LocalJSX {
          */
         "type"?: InputType;
     }
+    interface AwesomeItem {
+        /**
+          * If `true`, the item would also act as a button. Default to `false`.
+         */
+        "button"?: boolean;
+    }
     interface AwesomeSkeleton {
     }
     interface IntrinsicElements {
@@ -219,6 +238,7 @@ declare namespace LocalJSX {
         "awesome-card": AwesomeCard;
         "awesome-divider": AwesomeDivider;
         "awesome-input": AwesomeInput;
+        "awesome-item": AwesomeItem;
         "awesome-skeleton": AwesomeSkeleton;
     }
 }
@@ -232,6 +252,7 @@ declare module "@stencil/core" {
             "awesome-card": LocalJSX.AwesomeCard & JSXBase.HTMLAttributes<HTMLAwesomeCardElement>;
             "awesome-divider": LocalJSX.AwesomeDivider & JSXBase.HTMLAttributes<HTMLAwesomeDividerElement>;
             "awesome-input": LocalJSX.AwesomeInput & JSXBase.HTMLAttributes<HTMLAwesomeInputElement>;
+            "awesome-item": LocalJSX.AwesomeItem & JSXBase.HTMLAttributes<HTMLAwesomeItemElement>;
             "awesome-skeleton": LocalJSX.AwesomeSkeleton & JSXBase.HTMLAttributes<HTMLAwesomeSkeletonElement>;
         }
     }
