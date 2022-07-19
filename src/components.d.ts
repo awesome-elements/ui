@@ -100,12 +100,34 @@ export namespace Components {
          */
         "progress": number;
     }
+    interface AwesomeRange {
+        /**
+          * Maximum number of the range. Default to `100`.
+         */
+        "max": number;
+        /**
+          * Minimum number of the range. Default to `0`.
+         */
+        "min": number;
+        /**
+          * Step of the range. Default to `""`.
+         */
+        "step": number | '' | 'any';
+        /**
+          * Value of the range. Default to `0`.
+         */
+        "value": number;
+    }
     interface AwesomeSkeleton {
     }
 }
 export interface AwesomeInputCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLAwesomeInputElement;
+}
+export interface AwesomeRangeCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLAwesomeRangeElement;
 }
 declare global {
     interface HTMLAwesomeAlertElement extends Components.AwesomeAlert, HTMLStencilElement {
@@ -156,6 +178,12 @@ declare global {
         prototype: HTMLAwesomeProgressBarElement;
         new (): HTMLAwesomeProgressBarElement;
     };
+    interface HTMLAwesomeRangeElement extends Components.AwesomeRange, HTMLStencilElement {
+    }
+    var HTMLAwesomeRangeElement: {
+        prototype: HTMLAwesomeRangeElement;
+        new (): HTMLAwesomeRangeElement;
+    };
     interface HTMLAwesomeSkeletonElement extends Components.AwesomeSkeleton, HTMLStencilElement {
     }
     var HTMLAwesomeSkeletonElement: {
@@ -171,6 +199,7 @@ declare global {
         "awesome-input": HTMLAwesomeInputElement;
         "awesome-item": HTMLAwesomeItemElement;
         "awesome-progress-bar": HTMLAwesomeProgressBarElement;
+        "awesome-range": HTMLAwesomeRangeElement;
         "awesome-skeleton": HTMLAwesomeSkeletonElement;
     }
 }
@@ -236,9 +265,9 @@ declare namespace LocalJSX {
          */
         "onAwesomeChange"?: (event: AwesomeInputCustomEvent<[{ value: string }, globalThis.Event]>) => void;
         /**
-          * Event of something is input.
+          * Event of something being input.
          */
-        "onAwesomeInput"?: (event: AwesomeInputCustomEvent<globalThis.Event>) => void;
+        "onAwesomeInput"?: (event: AwesomeInputCustomEvent<InputEvent>) => void;
         /**
           * Placeholder of the input.
          */
@@ -264,6 +293,32 @@ declare namespace LocalJSX {
          */
         "progress"?: number;
     }
+    interface AwesomeRange {
+        /**
+          * Maximum number of the range. Default to `100`.
+         */
+        "max"?: number;
+        /**
+          * Minimum number of the range. Default to `0`.
+         */
+        "min"?: number;
+        /**
+          * Event of value being changed.
+         */
+        "onAwesomeChange"?: (event: AwesomeRangeCustomEvent<[number, globalThis.Event]>) => void;
+        /**
+          * Event of value being input.
+         */
+        "onAwesomeInput"?: (event: AwesomeRangeCustomEvent<InputEvent>) => void;
+        /**
+          * Step of the range. Default to `""`.
+         */
+        "step"?: number | '' | 'any';
+        /**
+          * Value of the range. Default to `0`.
+         */
+        "value"?: number;
+    }
     interface AwesomeSkeleton {
     }
     interface IntrinsicElements {
@@ -275,6 +330,7 @@ declare namespace LocalJSX {
         "awesome-input": AwesomeInput;
         "awesome-item": AwesomeItem;
         "awesome-progress-bar": AwesomeProgressBar;
+        "awesome-range": AwesomeRange;
         "awesome-skeleton": AwesomeSkeleton;
     }
 }
@@ -290,6 +346,7 @@ declare module "@stencil/core" {
             "awesome-input": LocalJSX.AwesomeInput & JSXBase.HTMLAttributes<HTMLAwesomeInputElement>;
             "awesome-item": LocalJSX.AwesomeItem & JSXBase.HTMLAttributes<HTMLAwesomeItemElement>;
             "awesome-progress-bar": LocalJSX.AwesomeProgressBar & JSXBase.HTMLAttributes<HTMLAwesomeProgressBarElement>;
+            "awesome-range": LocalJSX.AwesomeRange & JSXBase.HTMLAttributes<HTMLAwesomeRangeElement>;
             "awesome-skeleton": LocalJSX.AwesomeSkeleton & JSXBase.HTMLAttributes<HTMLAwesomeSkeletonElement>;
         }
     }
