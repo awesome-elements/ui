@@ -1,1 +1,0 @@
-import{s as r}from"./p-1a7ec716.js";r((r=>{for(;r;){const e=r.mode||r.getAttribute("mode");if(e)return e;r=r.parentElement}return"default"}));
