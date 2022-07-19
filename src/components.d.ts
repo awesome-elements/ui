@@ -94,6 +94,12 @@ export namespace Components {
          */
         "href"?: string;
     }
+    interface AwesomeProgressBar {
+        /**
+          * Progress of the bar. From `0` to `1`. Default to `0`;
+         */
+        "progress": number;
+    }
     interface AwesomeSkeleton {
     }
 }
@@ -144,6 +150,12 @@ declare global {
         prototype: HTMLAwesomeItemElement;
         new (): HTMLAwesomeItemElement;
     };
+    interface HTMLAwesomeProgressBarElement extends Components.AwesomeProgressBar, HTMLStencilElement {
+    }
+    var HTMLAwesomeProgressBarElement: {
+        prototype: HTMLAwesomeProgressBarElement;
+        new (): HTMLAwesomeProgressBarElement;
+    };
     interface HTMLAwesomeSkeletonElement extends Components.AwesomeSkeleton, HTMLStencilElement {
     }
     var HTMLAwesomeSkeletonElement: {
@@ -158,6 +170,7 @@ declare global {
         "awesome-divider": HTMLAwesomeDividerElement;
         "awesome-input": HTMLAwesomeInputElement;
         "awesome-item": HTMLAwesomeItemElement;
+        "awesome-progress-bar": HTMLAwesomeProgressBarElement;
         "awesome-skeleton": HTMLAwesomeSkeletonElement;
     }
 }
@@ -245,6 +258,12 @@ declare namespace LocalJSX {
          */
         "href"?: string;
     }
+    interface AwesomeProgressBar {
+        /**
+          * Progress of the bar. From `0` to `1`. Default to `0`;
+         */
+        "progress"?: number;
+    }
     interface AwesomeSkeleton {
     }
     interface IntrinsicElements {
@@ -255,6 +274,7 @@ declare namespace LocalJSX {
         "awesome-divider": AwesomeDivider;
         "awesome-input": AwesomeInput;
         "awesome-item": AwesomeItem;
+        "awesome-progress-bar": AwesomeProgressBar;
         "awesome-skeleton": AwesomeSkeleton;
     }
 }
@@ -269,6 +289,7 @@ declare module "@stencil/core" {
             "awesome-divider": LocalJSX.AwesomeDivider & JSXBase.HTMLAttributes<HTMLAwesomeDividerElement>;
             "awesome-input": LocalJSX.AwesomeInput & JSXBase.HTMLAttributes<HTMLAwesomeInputElement>;
             "awesome-item": LocalJSX.AwesomeItem & JSXBase.HTMLAttributes<HTMLAwesomeItemElement>;
+            "awesome-progress-bar": LocalJSX.AwesomeProgressBar & JSXBase.HTMLAttributes<HTMLAwesomeProgressBarElement>;
             "awesome-skeleton": LocalJSX.AwesomeSkeleton & JSXBase.HTMLAttributes<HTMLAwesomeSkeletonElement>;
         }
     }
