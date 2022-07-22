@@ -11,14 +11,14 @@
 | --------- | --------- | ------------------------------------------------------ | ------------------------- | ---------------------- |
 | `active`  | `active`  | If `true`, the alert is displayed. Default to `false`; | `boolean`                 | `false`                |
 | `buttons` | --        | Button definitions of the alert.                       | `AlertButtonDefinition[]` | `this.DEFAULT_BUTTONS` |
+| `content` | `content` | Content of the alert. It can be HTML string.           | `string`                  | `undefined`            |
 | `header`  | `header`  | Header of the alert.                                   | `string`                  | `undefined`            |
-| `message` | `message` | Message of the alert.                                  | `string`                  | `undefined`            |
 | `zIndex`  | `z-index` | `z-index` of the alert.                                | `number`                  | `this.DEFAULT_Z_INDEX` |
 
 
 ## Methods
 
-### `present(header: string, message: string, buttons?: AlertButtonDefinition[], zIndex?: number, attachingElement?: string | globalThis.Element) => Promise<() => void>`
+### `present(header: string, content: string, buttons?: AlertButtonDefinition[], zIndex?: number, attachingElement?: string | globalThis.Element) => Promise<() => void>`
 
 Present an aleret.
 
@@ -33,8 +33,8 @@ A funtion to dismiss the alert.
 
 | Part        | Description |
 | ----------- | ----------- |
+| `"content"` |             |
 | `"header"`  |             |
-| `"message"` |             |
 
 
 ## Dependencies

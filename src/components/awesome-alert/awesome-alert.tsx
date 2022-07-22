@@ -28,9 +28,9 @@ export class AwesomeAlert implements ComponentInterface {
   @Prop({ reflect: true }) header: string;
 
   /**
-   * Message of the alert.
+   * Content of the alert. It can be HTML string.
    */
-  @Prop({ reflect: true }) message: string;
+  @Prop({ reflect: true }) content: string;
 
   /**
    * Button definitions of the alert.
@@ -56,7 +56,7 @@ export class AwesomeAlert implements ComponentInterface {
   /**
    * Present an aleret.
    * @param header Header of the alert.
-   * @param message Message of the alert.
+   * @param content Content of the alert. It can be HTML string.
    * @param buttons Button definitions of the alert.
    * @param zIndex `z-index` of the alert.
    * @param attachingElement The element for alert to attach to.
@@ -65,14 +65,14 @@ export class AwesomeAlert implements ComponentInterface {
   @Method()
   async present(
     header: string,
-    message: string,
+    content: string,
     buttons: AlertButtonDefinition[] = this.DEFAULT_BUTTONS,
     zIndex: number = this.DEFAULT_Z_INDEX,
     attachingElement: string | globalThis.Element = this.DEFAULT_ATTACHING_ELEMENT,
   ) {
     const alert = document.createElement(this.TAG_NAME);
     alert.header = header;
-    alert.message = message;
+    alert.content = content;
     alert.buttons = buttons;
     alert.zIndex = zIndex;
     alert.attachingElement = attachingElement;
@@ -90,7 +90,7 @@ export class AwesomeAlert implements ComponentInterface {
               <div part="header">{this.header}</div>
             </awesome-flex-item>
             <awesome-flex-item xs={12}>
-              <div part="message">{this.message}</div>
+              <div part="content" innerHTML={this.content}></div>
             </awesome-flex-item>
             <awesome-flex-item>
               <awesome-flex>

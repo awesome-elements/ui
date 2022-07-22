@@ -20,23 +20,23 @@ export namespace Components {
          */
         "buttons": AlertButtonDefinition[];
         /**
+          * Content of the alert. It can be HTML string.
+         */
+        "content": string;
+        /**
           * Header of the alert.
          */
         "header": string;
         /**
-          * Message of the alert.
-         */
-        "message": string;
-        /**
           * Present an aleret.
           * @param header Header of the alert.
-          * @param message Message of the alert.
+          * @param content Content of the alert. It can be HTML string.
           * @param buttons Button definitions of the alert.
           * @param zIndex `z-index` of the alert.
           * @param attachingElement The element for alert to attach to.
           * @returns A funtion to dismiss the alert.
          */
-        "present": (header: string, message: string, buttons?: AlertButtonDefinition[], zIndex?: number, attachingElement?: string | globalThis.Element) => Promise<() => void>;
+        "present": (header: string, content: string, buttons?: AlertButtonDefinition[], zIndex?: number, attachingElement?: string | globalThis.Element) => Promise<() => void>;
         /**
           * `z-index` of the alert.
          */
@@ -215,13 +215,13 @@ declare namespace LocalJSX {
          */
         "buttons"?: AlertButtonDefinition[];
         /**
+          * Content of the alert. It can be HTML string.
+         */
+        "content"?: string;
+        /**
           * Header of the alert.
          */
         "header"?: string;
-        /**
-          * Message of the alert.
-         */
-        "message"?: string;
         /**
           * `z-index` of the alert.
          */

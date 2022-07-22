@@ -21,7 +21,7 @@
       function presentAlert() {
         const alertController = document.querySelector('#alert-controller');
         alertController.present(
-          'Alert', 'This is an alert.',
+          'Alert', 'This is an alert. <br/> <b>And some HTML content</b>',
           [
             { name: 'Cancel', variant: 'hollow' },
             { name: 'OK' }
