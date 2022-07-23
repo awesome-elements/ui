@@ -12,7 +12,7 @@ export class AwesomeItem implements ComponentInterface {
   /**
    * If `true`, the item would also act as a button. Default to `false`.
    */
-  @Prop() button: boolean = false;
+  @Prop({ reflect: true }) button: boolean = false;
 
   /**
    * If this presents and button is `true`, the item would act like an `a` tag using the given `href`.
