@@ -7,10 +7,6 @@ import { Component, Host, h, ComponentInterface } from '@stencil/core';
 })
 export class AwesomeBackdrop implements ComponentInterface {
   render() {
-    return (
-      <Host>
-        <slot></slot>
-      </Host>
-    );
+    return <Host></Host>;
   }
 }
