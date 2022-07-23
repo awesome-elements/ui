@@ -17,6 +17,12 @@ export class AwesomeInput implements ComponentInterface {
   @Prop({ reflect: true }) type: InputType = 'text';
 
   /**
+   * Value of the input.
+   */
+  // eslint-disable-next-line @stencil/strict-mutable
+  @Prop({ reflect: true, mutable: true }) value?: string;
+
+  /**
    * Placeholder of the input.
    */
   @Prop({ reflect: true }) placeholder?: string;
@@ -44,7 +50,7 @@ export class AwesomeInput implements ComponentInterface {
             <slot name="before"></slot>
           </awesome-flex-item>
           <awesome-flex-item>
-            <input disabled={this.disabled} placeholder={this.placeholder} onChange={this.handleOnChangeEvent} onInput={this.handleOnInputEvent} />
+            <input value={this.value} disabled={this.disabled} placeholder={this.placeholder} onChange={this.handleOnChangeEvent} onInput={this.handleOnInputEvent} />
           </awesome-flex-item>
           <awesome-flex-item xs="auto">
             <slot name="after"></slot>
@@ -55,7 +61,8 @@ export class AwesomeInput implements ComponentInterface {
   }
 
   private handleOnChangeEvent = (event: globalThis.Event) => {
-    this.awesomeChange.emit([{ value: (event.currentTarget as HTMLInputElement).value }, event]);
+    this.value = (event.currentTarget as HTMLInputElement).value;
+    this.awesomeChange.emit([{ value: this.value }, event]);
   };
 
   private handleOnInputEvent = (event: InputEvent) => {

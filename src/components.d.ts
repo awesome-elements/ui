@@ -83,6 +83,10 @@ export namespace Components {
           * Type of the input. Default to `text`.
          */
         "type": InputType;
+        /**
+          * Value of the input.
+         */
+        "value"?: string;
     }
     interface AwesomeItem {
         /**
@@ -312,6 +316,10 @@ declare namespace LocalJSX {
           * Type of the input. Default to `text`.
          */
         "type"?: InputType;
+        /**
+          * Value of the input.
+         */
+        "value"?: string;
     }
     interface AwesomeItem {
         /**

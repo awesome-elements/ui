@@ -12,6 +12,7 @@
 | `disabled`    | `disabled`    | The flag of disabling the input. Default to `false`. | `boolean` | `false`     |
 | `placeholder` | `placeholder` | Placeholder of the input.                            | `string`  | `undefined` |
 | `type`        | `type`        | Type of the input. Default to `text`.                | `"text"`  | `'text'`    |
+| `value`       | `value`       | Value of the input.                                  | `string`  | `undefined` |
 
 
 ## Events
