@@ -15,6 +15,6 @@ div {
   height: 10px;
   background: transparent;
   margin: 0 var(--disposition);
-  box-shadow: 0 var(--awesome-ui-shadow-offset-md) var(--awesome-ui-shadow-blur-sm) var(--disposition) var(--awesome-ui-color-dim);
+  box-shadow: 0 var(--awesome-ui-shadow-offset-md) var(--awesome-ui-shadow-blur-sm) var(--disposition) var(--awesome-ui-color-main);
   transform: translateY(-10px);
 }
