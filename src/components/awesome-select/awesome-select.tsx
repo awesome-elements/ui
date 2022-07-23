@@ -1,3 +1,4 @@
+import { updateCSSVariable } from '@awesome-elements/utils/dist';
 import { Component, Host, h, ComponentInterface, Element, Prop, Event, EventEmitter, Watch } from '@stencil/core';
 
 @Component({
@@ -37,7 +38,7 @@ export class AwesomeSelect implements ComponentInterface {
     return (
       <Host>
         <label part="container" htmlFor="toggle">
-          <input id="toggle" type="checkbox" hidden />
+          <input id="toggle" type="checkbox" hidden onChange={this.handleToggleValueChange} />
           <div part="main">
             <span class="text">{this.value || this.placeholder}</span>
             {this.renderArrow()}
@@ -50,6 +51,16 @@ export class AwesomeSelect implements ComponentInterface {
       </Host>
     );
   }
+
+  private handleToggleValueChange = (event: Event) => {
+    const checked = (event.currentTarget as HTMLInputElement).checked;
+    if (checked) {
+      const windowHeight = window.innerHeight;
+      const hostElementClientRect = this.hostElement.getBoundingClientRect();
+      const dropdownMaxHeight = windowHeight - hostElementClientRect.top - hostElementClientRect.height;
+      updateCSSVariable('--dropdown-max-height', `${dropdownMaxHeight}px`, this.hostElement);
+    }
+  };
 
   private renderArrow() {
     return (

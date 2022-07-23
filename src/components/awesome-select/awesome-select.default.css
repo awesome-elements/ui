@@ -53,6 +53,8 @@
 
 [part='dropdown'] {
   position: absolute;
+  overflow-y: auto;
+  max-height: calc(var(--dropdown-max-height) - 1rem);
   height: auto;
   width: 10rem;
   top: 2.5rem;
