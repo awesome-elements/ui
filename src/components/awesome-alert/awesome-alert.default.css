@@ -1,10 +1,15 @@
 @import url(../../utils/normalization.css);
 
 :host {
-  display: none;
+  display: block;
+}
+
+[part='container'] {
   position: fixed;
   left: 50%;
   top: 50%;
+  height: auto;
+  width: auto;
   transform: translate(-50%, -50%);
   padding: var(--awesome-ui-whitespace-md);
   background: var(--awesome-ui-color-background);
@@ -12,11 +17,12 @@
   box-shadow: 0 var(--awesome-ui-shadow-offset-lg) var(--awesome-ui-shadow-blur-xl) 0 var(--awesome-ui-color-dim);
 }
 
-:host([active]) {
-  display: block;
-}
-
 [part='header'] {
   font-size: 1.5em;
   padding: var(--awesome-ui-whitespace-md) 0;
+}
+
+[part='backdrop'] {
+  background: var(--awesome-ui-color-background);
+  opacity: 0.5;
 }

@@ -83,9 +83,10 @@ export class AwesomeAlert implements ComponentInterface {
 
   render() {
     return (
-      <Host>
-        {this.active && (
-          <awesome-flex>
+      <Host hidden={!this.active}>
+        {this.active && [
+          <awesome-backdrop part="backdrop"></awesome-backdrop>,
+          <awesome-flex part="container">
             <awesome-flex-item xs={12}>
               <div part="header">{this.header}</div>
             </awesome-flex-item>
@@ -104,8 +105,8 @@ export class AwesomeAlert implements ComponentInterface {
                 ))}
               </awesome-flex>
             </awesome-flex-item>
-          </awesome-flex>
-        )}
+          </awesome-flex>,
+        ]}
       </Host>
     );
   }
