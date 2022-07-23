@@ -31,16 +31,19 @@ A funtion to dismiss the alert.
 
 ## Shadow Parts
 
-| Part        | Description |
-| ----------- | ----------- |
-| `"content"` |             |
-| `"header"`  |             |
+| Part          | Description |
+| ------------- | ----------- |
+| `"backdrop"`  |             |
+| `"container"` |             |
+| `"content"`   |             |
+| `"header"`    |             |
 
 
 ## Dependencies
 
 ### Depends on
 
+- [awesome-backdrop](../awesome-backdrop)
 - awesome-flex
 - awesome-flex-item
 - [awesome-button](../awesome-button)
@@ -48,6 +51,7 @@ A funtion to dismiss the alert.
 ### Graph
 ```mermaid
 graph TD;
+  awesome-alert --> awesome-backdrop
   awesome-alert --> awesome-flex
   awesome-alert --> awesome-flex-item
   awesome-alert --> awesome-button
