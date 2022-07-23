@@ -1,0 +1,12 @@
+:host {
+  display: block;
+  width: auto;
+}
+
+:host([selected]) {
+  color: var(--awesome-ui-color-primary);
+}
+
+* {
+  box-sizing: border-box;
+}

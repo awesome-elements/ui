@@ -118,6 +118,24 @@ export namespace Components {
          */
         "value": number;
     }
+    interface AwesomeSelect {
+        /**
+          * Placehold when no value is selected.
+         */
+        "placeholder": string;
+        /**
+          * Value of the select.
+         */
+        "value"?: string;
+    }
+    interface AwesomeSelectOption {
+        "obtainActualValue": () => Promise<string>;
+        "selected": boolean;
+        /**
+          * Value of the select option.
+         */
+        "value": string;
+    }
     interface AwesomeSkeleton {
     }
 }
@@ -128,6 +146,10 @@ export interface AwesomeInputCustomEvent<T> extends CustomEvent<T> {
 export interface AwesomeRangeCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLAwesomeRangeElement;
+}
+export interface AwesomeSelectCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLAwesomeSelectElement;
 }
 declare global {
     interface HTMLAwesomeAlertElement extends Components.AwesomeAlert, HTMLStencilElement {
@@ -184,6 +206,18 @@ declare global {
         prototype: HTMLAwesomeRangeElement;
         new (): HTMLAwesomeRangeElement;
     };
+    interface HTMLAwesomeSelectElement extends Components.AwesomeSelect, HTMLStencilElement {
+    }
+    var HTMLAwesomeSelectElement: {
+        prototype: HTMLAwesomeSelectElement;
+        new (): HTMLAwesomeSelectElement;
+    };
+    interface HTMLAwesomeSelectOptionElement extends Components.AwesomeSelectOption, HTMLStencilElement {
+    }
+    var HTMLAwesomeSelectOptionElement: {
+        prototype: HTMLAwesomeSelectOptionElement;
+        new (): HTMLAwesomeSelectOptionElement;
+    };
     interface HTMLAwesomeSkeletonElement extends Components.AwesomeSkeleton, HTMLStencilElement {
     }
     var HTMLAwesomeSkeletonElement: {
@@ -200,6 +234,8 @@ declare global {
         "awesome-item": HTMLAwesomeItemElement;
         "awesome-progress-bar": HTMLAwesomeProgressBarElement;
         "awesome-range": HTMLAwesomeRangeElement;
+        "awesome-select": HTMLAwesomeSelectElement;
+        "awesome-select-option": HTMLAwesomeSelectOptionElement;
         "awesome-skeleton": HTMLAwesomeSkeletonElement;
     }
 }
@@ -319,6 +355,27 @@ declare namespace LocalJSX {
          */
         "value"?: number;
     }
+    interface AwesomeSelect {
+        /**
+          * Event of value being changed.
+         */
+        "onAwesomeChange"?: (event: AwesomeSelectCustomEvent<string>) => void;
+        /**
+          * Placehold when no value is selected.
+         */
+        "placeholder"?: string;
+        /**
+          * Value of the select.
+         */
+        "value"?: string;
+    }
+    interface AwesomeSelectOption {
+        "selected"?: boolean;
+        /**
+          * Value of the select option.
+         */
+        "value"?: string;
+    }
     interface AwesomeSkeleton {
     }
     interface IntrinsicElements {
@@ -331,6 +388,8 @@ declare namespace LocalJSX {
         "awesome-item": AwesomeItem;
         "awesome-progress-bar": AwesomeProgressBar;
         "awesome-range": AwesomeRange;
+        "awesome-select": AwesomeSelect;
+        "awesome-select-option": AwesomeSelectOption;
         "awesome-skeleton": AwesomeSkeleton;
     }
 }
@@ -347,6 +406,8 @@ declare module "@stencil/core" {
             "awesome-item": LocalJSX.AwesomeItem & JSXBase.HTMLAttributes<HTMLAwesomeItemElement>;
             "awesome-progress-bar": LocalJSX.AwesomeProgressBar & JSXBase.HTMLAttributes<HTMLAwesomeProgressBarElement>;
             "awesome-range": LocalJSX.AwesomeRange & JSXBase.HTMLAttributes<HTMLAwesomeRangeElement>;
+            "awesome-select": LocalJSX.AwesomeSelect & JSXBase.HTMLAttributes<HTMLAwesomeSelectElement>;
+            "awesome-select-option": LocalJSX.AwesomeSelectOption & JSXBase.HTMLAttributes<HTMLAwesomeSelectOptionElement>;
             "awesome-skeleton": LocalJSX.AwesomeSkeleton & JSXBase.HTMLAttributes<HTMLAwesomeSkeletonElement>;
         }
     }

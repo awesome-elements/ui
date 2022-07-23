@@ -16,17 +16,18 @@
     <h1>Alert</h1>
     <awesome-divider></awesome-divider>
     <awesome-alert id="alert-controller"></awesome-alert>
-    <awesome-button onclick="presentAlert()">Show Alert</awesome-button>
+    <awesome-button onclick="presentAlert(
+      'Alert', 
+      'This is an alert. <br/> <b>And some HTML content</b>',
+      [
+        { name: 'Cancel', variant: 'hollow' },
+        { name: 'OK' }
+      ]
+    )">Show Alert</awesome-button>
     <script>
-      function presentAlert() {
+      function presentAlert(header, content, buttons) {
         const alertController = document.querySelector('#alert-controller');
-        alertController.present(
-          'Alert', 'This is an alert. <br/> <b>And some HTML content</b>',
-          [
-            { name: 'Cancel', variant: 'hollow' },
-            { name: 'OK' }
-          ]
-        );
+        alertController.present(header, content, buttons);
       }
     </script>
   </div>
@@ -107,6 +108,21 @@
       </awesome-flex-item>
       <awesome-flex-item xs="auto">100</awesome-flex-item>
     </awesome-flex>
+  </div>
+  <div>
+    <h1>Select</h1>
+    <awesome-divider></awesome-divider>
+    <awesome-select id="select" style="width: 10rem">
+      <awesome-select-option>A</awesome-select-option>
+      <awesome-select-option>B</awesome-select-option>
+      <awesome-select-option>C</awesome-select-option>
+    </awesome-select>
+    <script>
+      function handleSelectValueChange(value) {
+        presentAlert('Select value changed!', `The new value is <b>${value}</b>.`);
+      }
+      document.querySelector('#select').addEventListener('awesomeChange', event => handleSelectValueChange(event.detail));
+    </script>
   </div>
   <div>
     <h1>Skeleton</h1>
