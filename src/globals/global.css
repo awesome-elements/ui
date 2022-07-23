@@ -28,9 +28,11 @@
 }
 
 :root {
+  -webkit-tap-highlight-color: transparent;
   font-family: Arial, Helvetica, sans-serif;
+  color: var(--awesome-ui-color-main);
 }
 
-* {
+:root * {
   box-sizing: border-box;
 }
