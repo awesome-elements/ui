@@ -13,6 +13,7 @@
 
   position: relative;
   appearance: none;
+  outline: none;
   height: var(--bar-height);
   width: 100%;
   border-radius: calc(var(--bar-height) / 2);
@@ -24,6 +25,7 @@
     var(--awesome-ui-color-background) 100%
   );
   box-shadow: inset 0 var(--awesome-ui-shadow-offset-xs) var(--awesome-ui-shadow-blur-sm) 0px var(--awesome-ui-color-dim);
+  transition: box-shadow 0.3s;
 }
 
 :host(:hover) [part='native'] {
@@ -38,6 +40,7 @@
   max-width: 100%;
   border-radius: 2px;
   background: var(--awesome-ui-color-primary);
+  transition: box-shadow 0.3s;
 }
 
 :host(:hover) [part='native']::before {
