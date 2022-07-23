@@ -52,17 +52,19 @@ export class AwesomeSelect implements ComponentInterface {
   @Event() awesomeChange: EventEmitter<{ value: string }>;
 
   render() {
+    const zIndex = (this.expanded ? this.dropdownZIndex : 0) || 0;
+
     return (
       <Host>
-        {this.expanded && <awesome-backdrop part="backdrop" zIndex={(this.dropdownZIndex || 0) - 1} onClick={this.handleBackdropClick}></awesome-backdrop>}
-        <label part="container" htmlFor="toggle">
+        {this.expanded && <awesome-backdrop part="backdrop" zIndex={zIndex - 1} onClick={this.handleBackdropClick}></awesome-backdrop>}
+        <label part="container" htmlFor="toggle" style={{ zIndex: zIndex.toString() }}>
           <input id="toggle" type="checkbox" checked={this.expanded} hidden onChange={this.handleToggleValueChange} />
           <div part="main">
             <span class="text">{this.value || this.placeholder}</span>
             {this.renderArrow()}
           </div>
           {/* TODO attaching dropdown element to root element*/}
-          <div part="dropdown" class="popover" style={{ zIndex: this.dropdownZIndex.toString() }}>
+          <div part="dropdown" class="popover" style={{ zIndex: zIndex.toString() }}>
             <slot></slot>
           </div>
         </label>

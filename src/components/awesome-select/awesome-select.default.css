@@ -50,8 +50,11 @@
   transition: all 0.3s;
 }
 
+[part='container']:hover [part='main'] > .arrow {
+  --stroke-color: var(--awesome-ui-color-primary);
+}
+
 #toggle:checked ~ [part='main'] > .arrow {
-  --stroke-color: var(--primary-color);
   transform: rotate(180deg);
 }
 
