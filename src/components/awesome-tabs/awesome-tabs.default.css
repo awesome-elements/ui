@@ -1,0 +1,27 @@
+:host {
+  --shadow-offset: var(--awesome-ui-shadow-offset-lg);
+
+  display: block;
+  position: relative;
+  min-height: calc(var(--shadow-offset) * 2.5);
+  min-width: fit-content;
+  width: 100%;
+  padding: 0 var(--shadow-offset);
+  box-shadow: 0 var(--shadow-offset) var(--awesome-ui-shadow-blur-md) calc(var(--shadow-offset) * -1) var(--awesome-ui-color-dim);
+}
+
+[part='highlight'] {
+  position: absolute;
+  left: var(--highlight-left-offset);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: var(--highlight-width);
+  box-shadow: 0 var(--shadow-offset) var(--awesome-ui-shadow-blur-lg) calc(var(--shadow-offset) * -1) var(--awesome-ui-color-primary);
+  transition-property: left, width;
+  transition-duration: 0.3s;
+}
+
+[part='container'] {
+  position: relative;
+}

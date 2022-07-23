@@ -142,6 +142,23 @@ export namespace Components {
     }
     interface AwesomeSkeleton {
     }
+    interface AwesomeTab {
+        "obtainActualValue": () => Promise<string>;
+        "selected": boolean;
+        /**
+          * Value of the tab.
+         */
+        "value": string;
+    }
+    interface AwesomeTabs {
+        "moveHighlightToTabPosition": (tabElement?: HTMLAwesomeTabElement) => Promise<void>;
+        "resetHighlightPosition": () => Promise<void>;
+        "updateSelectedTab": (tabElement: HTMLAwesomeTabElement) => Promise<void>;
+        /**
+          * Value of the tabs.
+         */
+        "value"?: string;
+    }
 }
 export interface AwesomeInputCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -154,6 +171,10 @@ export interface AwesomeRangeCustomEvent<T> extends CustomEvent<T> {
 export interface AwesomeSelectCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLAwesomeSelectElement;
+}
+export interface AwesomeTabsCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLAwesomeTabsElement;
 }
 declare global {
     interface HTMLAwesomeAlertElement extends Components.AwesomeAlert, HTMLStencilElement {
@@ -228,6 +249,18 @@ declare global {
         prototype: HTMLAwesomeSkeletonElement;
         new (): HTMLAwesomeSkeletonElement;
     };
+    interface HTMLAwesomeTabElement extends Components.AwesomeTab, HTMLStencilElement {
+    }
+    var HTMLAwesomeTabElement: {
+        prototype: HTMLAwesomeTabElement;
+        new (): HTMLAwesomeTabElement;
+    };
+    interface HTMLAwesomeTabsElement extends Components.AwesomeTabs, HTMLStencilElement {
+    }
+    var HTMLAwesomeTabsElement: {
+        prototype: HTMLAwesomeTabsElement;
+        new (): HTMLAwesomeTabsElement;
+    };
     interface HTMLElementTagNameMap {
         "awesome-alert": HTMLAwesomeAlertElement;
         "awesome-badge": HTMLAwesomeBadgeElement;
@@ -241,6 +274,8 @@ declare global {
         "awesome-select": HTMLAwesomeSelectElement;
         "awesome-select-option": HTMLAwesomeSelectOptionElement;
         "awesome-skeleton": HTMLAwesomeSkeletonElement;
+        "awesome-tab": HTMLAwesomeTabElement;
+        "awesome-tabs": HTMLAwesomeTabsElement;
     }
 }
 declare namespace LocalJSX {
@@ -386,6 +421,23 @@ declare namespace LocalJSX {
     }
     interface AwesomeSkeleton {
     }
+    interface AwesomeTab {
+        "selected"?: boolean;
+        /**
+          * Value of the tab.
+         */
+        "value"?: string;
+    }
+    interface AwesomeTabs {
+        /**
+          * Event of value being changed.
+         */
+        "onAwesomeChange"?: (event: AwesomeTabsCustomEvent<{ value: string }>) => void;
+        /**
+          * Value of the tabs.
+         */
+        "value"?: string;
+    }
     interface IntrinsicElements {
         "awesome-alert": AwesomeAlert;
         "awesome-badge": AwesomeBadge;
@@ -399,6 +451,8 @@ declare namespace LocalJSX {
         "awesome-select": AwesomeSelect;
         "awesome-select-option": AwesomeSelectOption;
         "awesome-skeleton": AwesomeSkeleton;
+        "awesome-tab": AwesomeTab;
+        "awesome-tabs": AwesomeTabs;
     }
 }
 export { LocalJSX as JSX };
@@ -417,6 +471,8 @@ declare module "@stencil/core" {
             "awesome-select": LocalJSX.AwesomeSelect & JSXBase.HTMLAttributes<HTMLAwesomeSelectElement>;
             "awesome-select-option": LocalJSX.AwesomeSelectOption & JSXBase.HTMLAttributes<HTMLAwesomeSelectOptionElement>;
             "awesome-skeleton": LocalJSX.AwesomeSkeleton & JSXBase.HTMLAttributes<HTMLAwesomeSkeletonElement>;
+            "awesome-tab": LocalJSX.AwesomeTab & JSXBase.HTMLAttributes<HTMLAwesomeTabElement>;
+            "awesome-tabs": LocalJSX.AwesomeTabs & JSXBase.HTMLAttributes<HTMLAwesomeTabsElement>;
         }
     }
 }
