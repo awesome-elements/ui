@@ -1,6 +1,5 @@
-import { ComponentInterface } from '@awesome-elements/layout/dist/types/stencil-public-runtime';
+import { Component, Host, h, Method, Element, Event, EventEmitter, Prop, Watch, ComponentInterface } from '@stencil/core';
 import { updateCSSVariable } from '@awesome-elements/utils/dist';
-import { Component, Host, h, Method, Element, Event, EventEmitter, Prop, Watch } from '@stencil/core';
 
 @Component({
   tag: 'awesome-tabs',
