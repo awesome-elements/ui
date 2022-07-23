@@ -83,6 +83,7 @@ export class AwesomeTabs implements ComponentInterface {
   render() {
     return (
       <Host>
+        <div part="edge"></div>
         <div part="highlight"></div>
         <awesome-grid part="container" columns="1fr auto 1fr">
           <awesome-grid-item column={2}>

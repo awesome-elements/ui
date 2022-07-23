@@ -11,31 +11,47 @@
   padding: 0 var(--shadow-offset);
 }
 
-:host([orientation='up']) {
-  box-shadow: 0 calc(var(--shadow-offset) * -1) var(--awesome-ui-shadow-blur-md) calc(var(--shadow-offset) * -1) var(--awesome-ui-color-dim);
-}
-
-:host([orientation='down']) {
-  box-shadow: 0 var(--shadow-offset) var(--awesome-ui-shadow-blur-md) calc(var(--shadow-offset) * -1) var(--awesome-ui-color-dim);
-}
-
-[part='highlight'] {
+[part='highlight'],
+[part='edge'] {
+  pointer-events: none;
   position: absolute;
-  left: var(--highlight-left-offset);
+  left: 0;
   top: 0;
   right: 0;
   bottom: 0;
+}
+
+:host([orientation='up']) [part='highlight'],
+:host([orientation='up']) [part='edge'] {
+  transform: translateY(-100%);
+}
+
+:host([orientation='down']) [part='highlight'],
+:host([orientation='down']) [part='edge'] {
+  transform: translateY(100%);
+}
+
+:host([orientation='up']) [part='edge'] {
+  box-shadow: 0 var(--shadow-offset) var(--awesome-ui-shadow-blur-md) calc(var(--shadow-offset) * -1) var(--awesome-ui-color-dim);
+}
+
+:host([orientation='down']) [part='edge'] {
+  box-shadow: 0 calc(var(--shadow-offset) * -1) var(--awesome-ui-shadow-blur-md) calc(var(--shadow-offset) * -1) var(--awesome-ui-color-dim);
+}
+
+[part='highlight'] {
+  left: var(--highlight-left-offset);
   width: var(--highlight-width);
   transition-property: left, width;
   transition-duration: 0.3s;
 }
 
 :host([orientation='up']) [part='highlight'] {
-  box-shadow: 0 calc(var(--shadow-offset) * -1) var(--awesome-ui-shadow-blur-lg) calc(var(--shadow-offset) * -1) var(--awesome-ui-color-primary);
+  box-shadow: 0 var(--shadow-offset) var(--awesome-ui-shadow-blur-lg) calc(var(--shadow-offset) * -1) var(--awesome-ui-color-primary);
 }
 
 :host([orientation='down']) [part='highlight'] {
-  box-shadow: 0 var(--shadow-offset) var(--awesome-ui-shadow-blur-lg) calc(var(--shadow-offset) * -1) var(--awesome-ui-color-primary);
+  box-shadow: 0 calc(var(--shadow-offset) * -1) var(--awesome-ui-shadow-blur-lg) calc(var(--shadow-offset) * -1) var(--awesome-ui-color-primary);
 }
 
 [part='container'] {
