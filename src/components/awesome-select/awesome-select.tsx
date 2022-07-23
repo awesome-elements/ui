@@ -1,5 +1,5 @@
 import { updateCSSVariable } from '@awesome-elements/utils/dist';
-import { Component, Host, h, ComponentInterface, Element, Prop, Event, EventEmitter, Watch } from '@stencil/core';
+import { Component, Host, h, ComponentInterface, Element, Prop, Event, EventEmitter, Watch, State } from '@stencil/core';
 
 @Component({
   tag: 'awesome-select',
@@ -12,6 +12,18 @@ export class AwesomeSelect implements ComponentInterface {
   private readonly CHILD_SELECT_OPTION_TAG_NAME = 'awesome-select-option';
 
   @Element() hostElement: HTMLAwesomeSelectElement;
+
+  @State() expanded: boolean = false;
+
+  @Watch('expanded')
+  handleExpandedChange(expanded: boolean) {
+    if (expanded) {
+      const windowHeight = window.innerHeight;
+      const hostElementClientRect = this.hostElement.getBoundingClientRect();
+      const dropdownMaxHeight = windowHeight - hostElementClientRect.top - hostElementClientRect.height;
+      updateCSSVariable('--dropdown-max-height', `${dropdownMaxHeight}px`, this.hostElement);
+    }
+  }
 
   /**
    * Value of the select.
@@ -37,8 +49,9 @@ export class AwesomeSelect implements ComponentInterface {
   render() {
     return (
       <Host>
+        {this.expanded && <awesome-backdrop part="backdrop" onClick={this.handleBackdropClick}></awesome-backdrop>}
         <label part="container" htmlFor="toggle">
-          <input id="toggle" type="checkbox" hidden onChange={this.handleToggleValueChange} />
+          <input id="toggle" type="checkbox" checked={this.expanded} hidden onChange={this.handleToggleValueChange} />
           <div part="main">
             <span class="text">{this.value || this.placeholder}</span>
             {this.renderArrow()}
@@ -52,14 +65,13 @@ export class AwesomeSelect implements ComponentInterface {
     );
   }
 
+  private handleBackdropClick = () => {
+    this.expanded = false;
+  };
+
   private handleToggleValueChange = (event: Event) => {
     const checked = (event.currentTarget as HTMLInputElement).checked;
-    if (checked) {
-      const windowHeight = window.innerHeight;
-      const hostElementClientRect = this.hostElement.getBoundingClientRect();
-      const dropdownMaxHeight = windowHeight - hostElementClientRect.top - hostElementClientRect.height;
-      updateCSSVariable('--dropdown-max-height', `${dropdownMaxHeight}px`, this.hostElement);
-    }
+    this.expanded = checked;
   };
 
   private renderArrow() {

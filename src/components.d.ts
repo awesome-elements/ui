@@ -42,6 +42,8 @@ export namespace Components {
          */
         "zIndex": number;
     }
+    interface AwesomeBackdrop {
+    }
     interface AwesomeBadge {
     }
     interface AwesomeButton {
@@ -183,6 +185,12 @@ declare global {
         prototype: HTMLAwesomeAlertElement;
         new (): HTMLAwesomeAlertElement;
     };
+    interface HTMLAwesomeBackdropElement extends Components.AwesomeBackdrop, HTMLStencilElement {
+    }
+    var HTMLAwesomeBackdropElement: {
+        prototype: HTMLAwesomeBackdropElement;
+        new (): HTMLAwesomeBackdropElement;
+    };
     interface HTMLAwesomeBadgeElement extends Components.AwesomeBadge, HTMLStencilElement {
     }
     var HTMLAwesomeBadgeElement: {
@@ -263,6 +271,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "awesome-alert": HTMLAwesomeAlertElement;
+        "awesome-backdrop": HTMLAwesomeBackdropElement;
         "awesome-badge": HTMLAwesomeBadgeElement;
         "awesome-button": HTMLAwesomeButtonElement;
         "awesome-card": HTMLAwesomeCardElement;
@@ -301,6 +310,8 @@ declare namespace LocalJSX {
           * `z-index` of the alert.
          */
         "zIndex"?: number;
+    }
+    interface AwesomeBackdrop {
     }
     interface AwesomeBadge {
     }
@@ -440,6 +451,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "awesome-alert": AwesomeAlert;
+        "awesome-backdrop": AwesomeBackdrop;
         "awesome-badge": AwesomeBadge;
         "awesome-button": AwesomeButton;
         "awesome-card": AwesomeCard;
@@ -460,6 +472,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "awesome-alert": LocalJSX.AwesomeAlert & JSXBase.HTMLAttributes<HTMLAwesomeAlertElement>;
+            "awesome-backdrop": LocalJSX.AwesomeBackdrop & JSXBase.HTMLAttributes<HTMLAwesomeBackdropElement>;
             "awesome-badge": LocalJSX.AwesomeBadge & JSXBase.HTMLAttributes<HTMLAwesomeBadgeElement>;
             "awesome-button": LocalJSX.AwesomeButton & JSXBase.HTMLAttributes<HTMLAwesomeButtonElement>;
             "awesome-card": LocalJSX.AwesomeCard & JSXBase.HTMLAttributes<HTMLAwesomeCardElement>;

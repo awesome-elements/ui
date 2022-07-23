@@ -24,10 +24,24 @@
 
 | Part          | Description |
 | ------------- | ----------- |
+| `"backdrop"`  |             |
 | `"container"` |             |
 | `"dropdown"`  |             |
 | `"main"`      |             |
 
+
+## Dependencies
+
+### Depends on
+
+- [awesome-backdrop](../awesome-backdrop)
+
+### Graph
+```mermaid
+graph TD;
+  awesome-select --> awesome-backdrop
+  style awesome-select fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 
