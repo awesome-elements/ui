@@ -33,6 +33,6 @@
   color: var(--awesome-ui-color-main);
 }
 
-:root * {
+* {
   box-sizing: border-box;
 }

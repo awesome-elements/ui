@@ -1,3 +1,5 @@
+@import url(../../utils/normalization.css);
+
 :host {
   display: none;
   position: fixed;
