@@ -83,9 +83,9 @@ export class AwesomeAlert implements ComponentInterface {
 
   render() {
     return (
-      <Host hidden={!this.active}>
+      <Host hidden={!this.active} style={{ zIndex: this.zIndex?.toString() }}>
         {this.active && [
-          <awesome-backdrop part="backdrop"></awesome-backdrop>,
+          <awesome-backdrop part="backdrop" zIndex={0}></awesome-backdrop>,
           <awesome-flex part="container">
             <awesome-flex-item xs={12}>
               <div part="header">{this.header}</div>

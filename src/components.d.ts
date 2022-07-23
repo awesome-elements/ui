@@ -44,6 +44,10 @@ export namespace Components {
         "zIndex": number;
     }
     interface AwesomeBackdrop {
+        /**
+          * `z-index` of the alert.
+         */
+        "zIndex": number;
     }
     interface AwesomeBadge {
     }
@@ -126,6 +130,10 @@ export namespace Components {
         "value": number;
     }
     interface AwesomeSelect {
+        /**
+          * `z-index` of the dropdown.
+         */
+        "dropdownZIndex": number;
         /**
           * Placehold when no value is selected.
          */
@@ -317,6 +325,10 @@ declare namespace LocalJSX {
         "zIndex"?: number;
     }
     interface AwesomeBackdrop {
+        /**
+          * `z-index` of the alert.
+         */
+        "zIndex"?: number;
     }
     interface AwesomeBadge {
     }
@@ -415,6 +427,10 @@ declare namespace LocalJSX {
         "value"?: number;
     }
     interface AwesomeSelect {
+        /**
+          * `z-index` of the dropdown.
+         */
+        "dropdownZIndex"?: number;
         /**
           * Event of value being changed.
          */

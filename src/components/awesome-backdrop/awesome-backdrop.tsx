@@ -1,4 +1,4 @@
-import { Component, Host, h, ComponentInterface } from '@stencil/core';
+import { Component, Host, h, ComponentInterface, Prop } from '@stencil/core';
 
 @Component({
   tag: 'awesome-backdrop',
@@ -6,7 +6,12 @@ import { Component, Host, h, ComponentInterface } from '@stencil/core';
   shadow: true,
 })
 export class AwesomeBackdrop implements ComponentInterface {
+  /**
+   * `z-index` of the alert.
+   */
+  @Prop({ reflect: true }) zIndex: number = 99;
+
   render() {
-    return <Host></Host>;
+    return <Host style={{ zIndex: this.zIndex?.toString() }}></Host>;
   }
 }

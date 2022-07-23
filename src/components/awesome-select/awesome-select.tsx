@@ -26,6 +26,11 @@ export class AwesomeSelect implements ComponentInterface {
   }
 
   /**
+   * `z-index` of the dropdown.
+   */
+  @Prop({ reflect: true }) dropdownZIndex: number = 99;
+
+  /**
    * Value of the select.
    */
   @Prop({ reflect: true }) value?: string;
@@ -49,7 +54,7 @@ export class AwesomeSelect implements ComponentInterface {
   render() {
     return (
       <Host>
-        {this.expanded && <awesome-backdrop part="backdrop" onClick={this.handleBackdropClick}></awesome-backdrop>}
+        {this.expanded && <awesome-backdrop part="backdrop" zIndex={(this.dropdownZIndex || 0) - 1} onClick={this.handleBackdropClick}></awesome-backdrop>}
         <label part="container" htmlFor="toggle">
           <input id="toggle" type="checkbox" checked={this.expanded} hidden onChange={this.handleToggleValueChange} />
           <div part="main">
@@ -57,7 +62,7 @@ export class AwesomeSelect implements ComponentInterface {
             {this.renderArrow()}
           </div>
           {/* TODO attaching dropdown element to root element*/}
-          <div part="dropdown" class="popover">
+          <div part="dropdown" class="popover" style={{ zIndex: this.dropdownZIndex.toString() }}>
             <slot></slot>
           </div>
         </label>

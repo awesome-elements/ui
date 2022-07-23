@@ -7,10 +7,11 @@
 
 ## Properties
 
-| Property      | Attribute     | Description                          | Type     | Default          |
-| ------------- | ------------- | ------------------------------------ | -------- | ---------------- |
-| `placeholder` | `placeholder` | Placehold when no value is selected. | `string` | `'No Selection'` |
-| `value`       | `value`       | Value of the select.                 | `string` | `undefined`      |
+| Property         | Attribute          | Description                          | Type     | Default          |
+| ---------------- | ------------------ | ------------------------------------ | -------- | ---------------- |
+| `dropdownZIndex` | `dropdown-z-index` | `z-index` of the dropdown.           | `number` | `99`             |
+| `placeholder`    | `placeholder`      | Placehold when no value is selected. | `string` | `'No Selection'` |
+| `value`          | `value`            | Value of the select.                 | `string` | `undefined`      |
 
 
 ## Events

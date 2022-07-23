@@ -5,6 +5,13 @@
 <!-- Auto Generated Below -->
 
 
+## Properties
+
+| Property | Attribute | Description             | Type     | Default |
+| -------- | --------- | ----------------------- | -------- | ------- |
+| `zIndex` | `z-index` | `z-index` of the alert. | `number` | `99`    |
+
+
 ## Dependencies
 
 ### Used by
