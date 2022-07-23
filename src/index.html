@@ -37,8 +37,7 @@
     <div id="backdrop-container">
     </div>
     <template id="backdrop-template">
-      <awesome-backdrop style="background: var(--awesome-ui-color-dim); opacity: .5;"
-        onclick="dismissBackdrop()">
+      <awesome-backdrop style="background: var(--awesome-ui-color-dim); opacity: .5;" onclick="dismissBackdrop()">
       </awesome-backdrop>
     </template>
     <awesome-button onclick="showBackdrop()">Show Backdrop (then click anywhere to dismiss)</awesome-button>
@@ -153,6 +152,7 @@
       <awesome-select-option>F</awesome-select-option>
       <awesome-select-option>G</awesome-select-option>
     </awesome-select>
+    <awesome-select disabled style="width: 10rem"></awesome-select>
     <script>
       function handleSelectValueChange(value) {
         presentAlert('Select value changed!', `The new value is <b>${value}</b>.`);

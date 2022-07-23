@@ -7,6 +7,10 @@
   user-select: none;
 }
 
+:host([disabled]) {
+  pointer-events: none;
+}
+
 [part='container'] {
   display: inline-block;
   position: relative;
@@ -72,8 +76,7 @@
   opacity: 1;
 }
 
-:host([disabled]) {
-  pointer-events: none;
+:host([disabled]) [part='main'] {
   filter: contrast(0.5);
   backdrop-filter: contrast(1);
 }
