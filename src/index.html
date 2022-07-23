@@ -32,6 +32,27 @@
     </script>
   </div>
   <div>
+    <h1>Backdrop</h1>
+    <awesome-divider></awesome-divider>
+    <div id="backdrop-container">
+    </div>
+    <template id="backdrop-template">
+      <awesome-backdrop style="background: var(--awesome-ui-color-dim); opacity: .5; z-index: 999;"
+        onclick="dismissBackdrop()">
+      </awesome-backdrop>
+    </template>
+    <awesome-button onclick="showBackdrop()">Show Backdrop (then click anywhere to dismiss)</awesome-button>
+    <script>
+      function showBackdrop() {
+        const backdrop = document.querySelector('#backdrop-template').content.cloneNode(true);
+        const container = document.querySelector('#backdrop-container').append(backdrop);
+      }
+      function dismissBackdrop() {
+        event.currentTarget.remove();
+      }
+    </script>
+  </div>
+  <div>
     <h1>Badge</h1>
     <awesome-divider></awesome-divider>
     <awesome-badge>badge</awesome-badge>
@@ -55,6 +76,11 @@
     <awesome-card style="height: 15rem; width: 15rem;">Card</awesome-card>
     <awesome-card button style="height: 15rem; width: 15rem;">Card as button</awesome-card>
     <awesome-card button href="//bing.com" style="height: 15rem; width: 15rem;">Card as button with link</awesome-card>
+  </div>
+  <div>
+    <h1>Divider</h1>
+    <awesome-divider></awesome-divider>
+    The above line is a divider.
   </div>
   <div>
     <h1>Input</h1>
