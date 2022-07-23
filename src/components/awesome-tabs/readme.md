@@ -7,9 +7,10 @@
 
 ## Properties
 
-| Property | Attribute | Description        | Type     | Default     |
-| -------- | --------- | ------------------ | -------- | ----------- |
-| `value`  | `value`   | Value of the tabs. | `string` | `undefined` |
+| Property      | Attribute     | Description                                   | Type             | Default     |
+| ------------- | ------------- | --------------------------------------------- | ---------------- | ----------- |
+| `orientation` | `orientation` | * Orientation of the tabs. Default to `down`. | `"down" \| "up"` | `'down'`    |
+| `value`       | `value`       | Value of the tabs.                            | `string`         | `undefined` |
 
 
 ## Events

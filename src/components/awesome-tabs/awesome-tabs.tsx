@@ -1,6 +1,8 @@
 import { Component, Host, h, Method, Element, Event, EventEmitter, Prop, Watch, ComponentInterface } from '@stencil/core';
 import { updateCSSVariable } from '@awesome-elements/utils/dist';
 
+export type TabsOrientation = 'up' | 'down';
+
 @Component({
   tag: 'awesome-tabs',
   styleUrls: {
@@ -18,6 +20,11 @@ export class AwesomeTabs implements ComponentInterface {
   private selectedTabElement?: HTMLAwesomeTabElement;
 
   @Element() hostElement: HTMLAwesomeTabsElement;
+
+  /***
+   * Orientation of the tabs. Default to `down`.
+   */
+  @Prop({ reflect: true }) orientation: TabsOrientation = 'down';
 
   /**
    * Value of the tabs.

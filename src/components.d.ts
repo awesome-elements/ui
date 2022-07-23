@@ -8,6 +8,7 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { AlertButtonDefinition } from "./components/awesome-alert/awesome-alert";
 import { ButtonVariant } from "./components/awesome-button/awesome-button";
 import { InputType } from "./components/awesome-input/awesome-input";
+import { TabsOrientation } from "./components/awesome-tabs/awesome-tabs";
 export namespace Components {
     interface AwesomeAlert {
         /**
@@ -154,6 +155,10 @@ export namespace Components {
     }
     interface AwesomeTabs {
         "moveHighlightToTabPosition": (tabElement?: HTMLAwesomeTabElement) => Promise<void>;
+        /**
+          * * Orientation of the tabs. Default to `down`.
+         */
+        "orientation": TabsOrientation;
         "resetHighlightPosition": () => Promise<void>;
         "updateSelectedTab": (tabElement: HTMLAwesomeTabElement) => Promise<void>;
         /**
@@ -444,6 +449,10 @@ declare namespace LocalJSX {
           * Event of value being changed.
          */
         "onAwesomeChange"?: (event: AwesomeTabsCustomEvent<{ value: string }>) => void;
+        /**
+          * * Orientation of the tabs. Default to `down`.
+         */
+        "orientation"?: TabsOrientation;
         /**
           * Value of the tabs.
          */

@@ -155,7 +155,13 @@
   <div>
     <h1>Tabs</h1>
     <awesome-divider></awesome-divider>
-    <awesome-tabs id="tabs" value="One" style="width: fit-content;">
+    <awesome-tabs class="tabs" value="One" style="width: fit-content;">
+      <awesome-tab>One</awesome-tab>
+      <awesome-tab>Two</awesome-tab>
+      <awesome-tab>Three</awesome-tab>
+    </awesome-tabs>
+    <br />
+    <awesome-tabs orientation="up" class="tabs" value="One" style="width: fit-content;">
       <awesome-tab>One</awesome-tab>
       <awesome-tab>Two</awesome-tab>
       <awesome-tab>Three</awesome-tab>
@@ -164,7 +170,7 @@
       function handleTabsValueChange(value) {
         presentAlert('Tabs value changed!', `The new value is <b>${value}</b>.`);
       }
-      document.querySelector('#tabs').addEventListener('awesomeChange', event => handleTabsValueChange(event?.detail?.value));
+      document.querySelectorAll('.tabs').forEach(el => el.addEventListener('awesomeChange', event => handleTabsValueChange(event?.detail?.value)));
     </script>
   </div>
 </body>
