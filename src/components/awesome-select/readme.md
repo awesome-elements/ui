@@ -15,9 +15,9 @@
 
 ## Events
 
-| Event           | Description                   | Type                  |
-| --------------- | ----------------------------- | --------------------- |
-| `awesomeChange` | Event of value being changed. | `CustomEvent<string>` |
+| Event           | Description                   | Type                              |
+| --------------- | ----------------------------- | --------------------------------- |
+| `awesomeChange` | Event of value being changed. | `CustomEvent<{ value: string; }>` |
 
 
 ## Shadow Parts

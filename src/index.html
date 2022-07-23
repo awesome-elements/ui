@@ -60,7 +60,7 @@
     <h1>Input</h1>
     <awesome-divider></awesome-divider>
     <div style="width: 15rem;">
-      <awesome-input value="something" placeholder="placeholder">
+      <awesome-input id="input" placeholder="placeholder">
         <span slot="before">before</span>
         <span slot="after">after</span>
       </awesome-input>
@@ -68,6 +68,12 @@
         <span slot="before">before</span>
         <span slot="after">after</span>
       </awesome-input>
+      <script>
+        function handleInputValueChange(value) {
+          presentAlert('Input value changed!', `The new value is <b>${value}</b>.`);
+        }
+        document.querySelector('#input').addEventListener('awesomeChange', event => handleSelectValueChange(event?.detail?.value));
+      </script>
     </div>
   </div>
   <div>
@@ -121,7 +127,7 @@
       function handleSelectValueChange(value) {
         presentAlert('Select value changed!', `The new value is <b>${value}</b>.`);
       }
-      document.querySelector('#select').addEventListener('awesomeChange', event => handleSelectValueChange(event.detail));
+      document.querySelector('#select').addEventListener('awesomeChange', event => handleSelectValueChange(event?.detail?.value));
     </script>
   </div>
   <div>

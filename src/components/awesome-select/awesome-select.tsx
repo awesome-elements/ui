@@ -20,7 +20,7 @@ export class AwesomeSelect implements ComponentInterface {
   @Watch('value')
   handleValueChanged(value: string) {
     this.updateOptionHighlights();
-    this.awesomeChange.emit(value);
+    this.awesomeChange.emit({ value });
   }
 
   /**
@@ -31,7 +31,7 @@ export class AwesomeSelect implements ComponentInterface {
   /**
    * Event of value being changed.
    */
-  @Event() awesomeChange: EventEmitter<string>;
+  @Event() awesomeChange: EventEmitter<{ value: string }>;
 
   render() {
     return (
