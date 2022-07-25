@@ -90,7 +90,7 @@
       function handleCheckboxValueChange(value) {
         presentAlert('Chackbox value changed!', `The new value is <b>${value}</b>.`);
       }
-      document.querySelector('#checkbox').addEventListener('awesomeChange', event => handleSelectValueChange(event?.detail?.checked));
+      document.querySelector('#checkbox').addEventListener('awesomeChange', event => handleCheckboxValueChange(event?.detail?.checked));
     </script>
   </div>
   <div>
@@ -114,7 +114,7 @@
         function handleInputValueChange(value) {
           presentAlert('Input value changed!', `The new value is <b>${value}</b>.`);
         }
-        document.querySelector('#input').addEventListener('awesomeChange', event => handleSelectValueChange(event?.detail?.value));
+        document.querySelector('#input').addEventListener('awesomeChange', event => handleInputValueChange(event?.detail?.value));
       </script>
     </div>
   </div>
