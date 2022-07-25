@@ -9,6 +9,7 @@
   margin: var(--awesome-ui-whitespace-sm);
   padding: var(--awesome-ui-whitespace-md);
   border-radius: var(--awesome-ui-border-radius-md);
+  overflow: hidden;
   transition: box-shadow 0.3s;
 }
 
@@ -17,16 +18,23 @@
   filter: contrast(0.5);
 }
 
-:host([variant='solid']) {
+:host([variant='round']) {
+  border-radius: 50%;
+}
+
+:host([variant='solid']),
+:host([variant='round']) {
   color: var(--awesome-ui-color-contrast);
   background: var(--awesome-ui-color-primary);
   box-shadow: 0 var(--awesome-ui-shadow-offset-sm) var(--awesome-ui-shadow-blur-sm) 0 var(--awesome-ui-color-dim);
 }
-:host([variant='solid']:hover) {
+:host([variant='solid']:hover),
+:host([variant='round']:hover) {
   background: var(--awesome-ui-color-primary);
   box-shadow: 0 var(--awesome-ui-shadow-offset-sm) var(--awesome-ui-shadow-blur-md) 0 var(--awesome-ui-color-dim);
 }
-:host([variant='solid']:active) {
+:host([variant='solid']:active),
+:host([variant='round']:active) {
   background: var(--awesome-ui-color-primary);
   box-shadow: inset 0 var(--awesome-ui-shadow-offset-sm) var(--awesome-ui-shadow-blur-md) 0 var(--awesome-ui-color-dim);
 }

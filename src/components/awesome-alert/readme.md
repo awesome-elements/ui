@@ -55,6 +55,8 @@ graph TD;
   awesome-alert --> awesome-flex
   awesome-alert --> awesome-flex-item
   awesome-alert --> awesome-button
+  awesome-button --> awesome-grid
+  awesome-button --> awesome-grid-item
   style awesome-alert fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

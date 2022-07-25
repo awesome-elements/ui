@@ -1,7 +1,7 @@
 import { Component, Host, h, ComponentInterface, Element, Prop } from '@stencil/core';
 import { renderHrefHandler } from '../../utils/href-handler';
 
-export type ButtonVariant = 'solid' | 'hollow' | 'clear';
+export type ButtonVariant = 'solid' | 'hollow' | 'clear' | 'round';
 
 @Component({
   tag: 'awesome-button',
@@ -32,7 +32,11 @@ export class AwesomeButton implements ComponentInterface {
     return (
       <Host>
         {this.href && renderHrefHandler(this.href)}
-        <slot></slot>
+        <awesome-grid rows="1fr auto 1fr" columns="1fr auto 1fr">
+          <awesome-grid-item row={2} column={2}>
+            <slot></slot>
+          </awesome-grid-item>
+        </awesome-grid>
       </Host>
     );
   }

@@ -7,11 +7,11 @@
 
 ## Properties
 
-| Property   | Attribute  | Description                                                               | Type                             | Default     |
-| ---------- | ---------- | ------------------------------------------------------------------------- | -------------------------------- | ----------- |
-| `disabled` | `disabled` | The flag of disabling the button. Default to `false`.                     | `boolean`                        | `false`     |
-| `href`     | `href`     | If presents, the button would act like an `a` tag using the given `href`. | `string`                         | `undefined` |
-| `variant`  | `variant`  | Variant of the button. Default to `solid`.                                | `"clear" \| "hollow" \| "solid"` | `'solid'`   |
+| Property   | Attribute  | Description                                                               | Type                                        | Default     |
+| ---------- | ---------- | ------------------------------------------------------------------------- | ------------------------------------------- | ----------- |
+| `disabled` | `disabled` | The flag of disabling the button. Default to `false`.                     | `boolean`                                   | `false`     |
+| `href`     | `href`     | If presents, the button would act like an `a` tag using the given `href`. | `string`                                    | `undefined` |
+| `variant`  | `variant`  | Variant of the button. Default to `solid`.                                | `"clear" \| "hollow" \| "round" \| "solid"` | `'solid'`   |
 
 
 ## Dependencies
@@ -20,9 +20,16 @@
 
  - [awesome-alert](../awesome-alert)
 
+### Depends on
+
+- awesome-grid
+- awesome-grid-item
+
 ### Graph
 ```mermaid
 graph TD;
+  awesome-button --> awesome-grid
+  awesome-button --> awesome-grid-item
   awesome-alert --> awesome-button
   style awesome-button fill:#f9f,stroke:#333,stroke-width:4px
 ```
