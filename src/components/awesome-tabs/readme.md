@@ -25,6 +25,7 @@
 | Part          | Description |
 | ------------- | ----------- |
 | `"container"` |             |
+| `"edge"`      |             |
 | `"highlight"` |             |
 
 
