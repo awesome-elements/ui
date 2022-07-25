@@ -26,7 +26,7 @@
 :host([variant='round']) {
   color: var(--awesome-ui-color-contrast);
   background: var(--awesome-ui-color-primary);
-  box-shadow: 0 var(--awesome-ui-shadow-offset-sm) var(--awesome-ui-shadow-blur-sm) 0 var(--awesome-ui-color-dim);
+  box-shadow: 0 var(--awesome-ui-shadow-offset-xs) var(--awesome-ui-shadow-blur-xs) 0 var(--awesome-ui-color-dim);
 }
 :host([variant='solid']:hover),
 :host([variant='round']:hover) {
