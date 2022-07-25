@@ -24,6 +24,7 @@
 
 | Part          | Description |
 | ------------- | ----------- |
+| `"checkbox"`  |             |
 | `"container"` |             |
 
 
