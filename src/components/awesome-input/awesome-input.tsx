@@ -35,7 +35,7 @@ export class AwesomeInput implements ComponentInterface {
   /**
    * Event of content being changed.
    */
-  @Event() awesomeChange: EventEmitter<[{ value: string; innerEvent: globalThis.Event }]>;
+  @Event() awesomeChange: EventEmitter<{ value: string; innerEvent: globalThis.Event }>;
 
   /**
    * Event of something being input.
@@ -62,7 +62,7 @@ export class AwesomeInput implements ComponentInterface {
 
   private handleOnChangeEvent = (event: globalThis.Event) => {
     this.value = (event.currentTarget as HTMLInputElement).value;
-    this.awesomeChange.emit([{ value: this.value, innerEvent: event }]);
+    this.awesomeChange.emit({ value: this.value, innerEvent: event });
   };
 
   private handleOnInputEvent = (event: InputEvent) => {

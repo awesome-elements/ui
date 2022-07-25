@@ -17,10 +17,10 @@
 
 ## Events
 
-| Event           | Description                     | Type                                                   |
-| --------------- | ------------------------------- | ------------------------------------------------------ |
-| `awesomeChange` | Event of content being changed. | `CustomEvent<[{ value: string; innerEvent: Event; }]>` |
-| `awesomeInput`  | Event of something being input. | `CustomEvent<{ innerEvent: InputEvent; }>`             |
+| Event           | Description                     | Type                                                 |
+| --------------- | ------------------------------- | ---------------------------------------------------- |
+| `awesomeChange` | Event of content being changed. | `CustomEvent<{ value: string; innerEvent: Event; }>` |
+| `awesomeInput`  | Event of something being input. | `CustomEvent<{ innerEvent: InputEvent; }>`           |
 
 
 ## Shadow Parts

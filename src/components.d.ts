@@ -410,7 +410,7 @@ declare namespace LocalJSX {
         /**
           * Event of content being changed.
          */
-        "onAwesomeChange"?: (event: AwesomeInputCustomEvent<[{ value: string; innerEvent: globalThis.Event }]>) => void;
+        "onAwesomeChange"?: (event: AwesomeInputCustomEvent<{ value: string; innerEvent: globalThis.Event }>) => void;
         /**
           * Event of something being input.
          */
