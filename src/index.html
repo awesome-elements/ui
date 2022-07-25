@@ -81,6 +81,19 @@
     <awesome-card button href="//bing.com" style="height: 15rem; width: 15rem;">Card as button with link</awesome-card>
   </div>
   <div>
+    <h1>Checkbox</h1>
+    <awesome-divider></awesome-divider>
+    <awesome-checkbox id="checkbox"></awesome-checkbox>Normal
+    <awesome-checkbox disabled></awesome-checkbox>Disabled
+    <awesome-checkbox checked disabled></awesome-checkbox>Disabled & checked
+    <script>
+      function handleCheckboxValueChange(value) {
+        presentAlert('Chackbox value changed!', `The new value is <b>${value}</b>.`);
+      }
+      document.querySelector('#checkbox').addEventListener('awesomeChange', event => handleSelectValueChange(event?.detail?.checked));
+    </script>
+  </div>
+  <div>
     <h1>Divider</h1>
     <awesome-divider></awesome-divider>
     The above line is a divider.

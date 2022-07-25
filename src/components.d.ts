@@ -75,6 +75,16 @@ export namespace Components {
          */
         "href"?: string;
     }
+    interface AwesomeCheckbox {
+        /**
+          * If `true`, the checkbox is checked. Default to `false`;
+         */
+        "checked": boolean;
+        /**
+          * The flag of disabling the checkbox. Default to `false`.
+         */
+        "disabled": boolean;
+    }
     interface AwesomeDivider {
     }
     interface AwesomeInput {
@@ -177,6 +187,10 @@ export namespace Components {
         "value"?: string;
     }
 }
+export interface AwesomeCheckboxCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLAwesomeCheckboxElement;
+}
 export interface AwesomeInputCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLAwesomeInputElement;
@@ -223,6 +237,12 @@ declare global {
     var HTMLAwesomeCardElement: {
         prototype: HTMLAwesomeCardElement;
         new (): HTMLAwesomeCardElement;
+    };
+    interface HTMLAwesomeCheckboxElement extends Components.AwesomeCheckbox, HTMLStencilElement {
+    }
+    var HTMLAwesomeCheckboxElement: {
+        prototype: HTMLAwesomeCheckboxElement;
+        new (): HTMLAwesomeCheckboxElement;
     };
     interface HTMLAwesomeDividerElement extends Components.AwesomeDivider, HTMLStencilElement {
     }
@@ -296,6 +316,7 @@ declare global {
         "awesome-badge": HTMLAwesomeBadgeElement;
         "awesome-button": HTMLAwesomeButtonElement;
         "awesome-card": HTMLAwesomeCardElement;
+        "awesome-checkbox": HTMLAwesomeCheckboxElement;
         "awesome-divider": HTMLAwesomeDividerElement;
         "awesome-input": HTMLAwesomeInputElement;
         "awesome-item": HTMLAwesomeItemElement;
@@ -364,6 +385,20 @@ declare namespace LocalJSX {
           * If this presents and button is `true`, the card would act like an `a` tag using the given `href`.
          */
         "href"?: string;
+    }
+    interface AwesomeCheckbox {
+        /**
+          * If `true`, the checkbox is checked. Default to `false`;
+         */
+        "checked"?: boolean;
+        /**
+          * The flag of disabling the checkbox. Default to `false`.
+         */
+        "disabled"?: boolean;
+        /**
+          * Event of status being changed.
+         */
+        "onAwesomeChange"?: (event: AwesomeCheckboxCustomEvent<{ checked: boolean; innerEvent: globalThis.Event }>) => void;
     }
     interface AwesomeDivider {
     }
@@ -491,6 +526,7 @@ declare namespace LocalJSX {
         "awesome-badge": AwesomeBadge;
         "awesome-button": AwesomeButton;
         "awesome-card": AwesomeCard;
+        "awesome-checkbox": AwesomeCheckbox;
         "awesome-divider": AwesomeDivider;
         "awesome-input": AwesomeInput;
         "awesome-item": AwesomeItem;
@@ -513,6 +549,7 @@ declare module "@stencil/core" {
             "awesome-badge": LocalJSX.AwesomeBadge & JSXBase.HTMLAttributes<HTMLAwesomeBadgeElement>;
             "awesome-button": LocalJSX.AwesomeButton & JSXBase.HTMLAttributes<HTMLAwesomeButtonElement>;
             "awesome-card": LocalJSX.AwesomeCard & JSXBase.HTMLAttributes<HTMLAwesomeCardElement>;
+            "awesome-checkbox": LocalJSX.AwesomeCheckbox & JSXBase.HTMLAttributes<HTMLAwesomeCheckboxElement>;
             "awesome-divider": LocalJSX.AwesomeDivider & JSXBase.HTMLAttributes<HTMLAwesomeDividerElement>;
             "awesome-input": LocalJSX.AwesomeInput & JSXBase.HTMLAttributes<HTMLAwesomeInputElement>;
             "awesome-item": LocalJSX.AwesomeItem & JSXBase.HTMLAttributes<HTMLAwesomeItemElement>;
