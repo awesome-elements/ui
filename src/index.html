@@ -81,19 +81,6 @@
     <awesome-card button href="//bing.com" style="height: 15rem; width: 15rem;">Card as button with link</awesome-card>
   </div>
   <div>
-    <h1>Checkbox</h1>
-    <awesome-divider></awesome-divider>
-    <awesome-checkbox id="checkbox">Normal</awesome-checkbox>
-    <awesome-checkbox disabled>Disabled</awesome-checkbox>
-    <awesome-checkbox checked disabled>Disabled & checked</awesome-checkbox>
-    <script>
-      function handleCheckboxValueChange(value) {
-        presentAlert('Chackbox value changed!', `The new value is <b>${value}</b>.`);
-      }
-      document.querySelector('#checkbox').addEventListener('awesomeChange', event => handleCheckboxValueChange(event?.detail?.checked));
-    </script>
-  </div>
-  <div>
     <h1>Divider</h1>
     <awesome-divider></awesome-divider>
     The above line is a divider.
@@ -221,6 +208,23 @@
         presentAlert('Tabs value changed!', `The new value is <b>${value}</b>.`);
       }
       document.querySelectorAll('.tabs').forEach(el => el.addEventListener('awesomeChange', event => handleTabsValueChange(event?.detail?.value)));
+    </script>
+  </div>
+  <div>
+    <h1>Toggle</h1>
+    <awesome-divider></awesome-divider>
+    <awesome-toggle class="toggle">Checkbox</awesome-toggle>
+    <awesome-toggle disabled>Disabled</awesome-toggle>
+    <awesome-toggle checked disabled>Disabled & checked</awesome-toggle>
+    <br />
+    <awesome-toggle class="toggle" variant="switch">Switch</awesome-toggle>
+    <awesome-toggle variant="switch" disabled>Disabled</awesome-toggle>
+    <awesome-toggle variant="switch" checked disabled>Disabled & checked</awesome-toggle>
+    <script>
+      function handleToggleStatusChange(status) {
+        presentAlert('Toogle status changed!', `The new value is <b>${status}</b>.`);
+      }
+      document.querySelectorAll('.toggle').forEach(el => el.addEventListener('awesomeChange', event => handleToggleStatusChange(event?.detail?.checked)));
     </script>
   </div>
 </body>

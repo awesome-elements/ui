@@ -9,6 +9,7 @@ import { AlertButtonDefinition } from "./components/awesome-alert/awesome-alert"
 import { ButtonVariant } from "./components/awesome-button/awesome-button";
 import { InputType } from "./components/awesome-input/awesome-input";
 import { TabsOrientation } from "./components/awesome-tabs/awesome-tabs";
+import { ToggleVariant } from "./components/awesome-toggle/awesome-toggle";
 export namespace Components {
     interface AwesomeAlert {
         /**
@@ -74,16 +75,6 @@ export namespace Components {
           * If this presents and button is `true`, the card would act like an `a` tag using the given `href`.
          */
         "href"?: string;
-    }
-    interface AwesomeCheckbox {
-        /**
-          * If `true`, the checkbox is checked. Default to `false`;
-         */
-        "checked": boolean;
-        /**
-          * The flag of disabling the checkbox. Default to `false`.
-         */
-        "disabled": boolean;
     }
     interface AwesomeDivider {
     }
@@ -186,10 +177,20 @@ export namespace Components {
          */
         "value"?: string;
     }
-}
-export interface AwesomeCheckboxCustomEvent<T> extends CustomEvent<T> {
-    detail: T;
-    target: HTMLAwesomeCheckboxElement;
+    interface AwesomeToggle {
+        /**
+          * If `true`, the toggle is checked. Default to `false`;
+         */
+        "checked": boolean;
+        /**
+          * The flag of disabling the toggle. Default to `false`.
+         */
+        "disabled": boolean;
+        /**
+          * Variant of the toogle. Default to `checkbox`.
+         */
+        "variant": ToggleVariant;
+    }
 }
 export interface AwesomeInputCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -206,6 +207,10 @@ export interface AwesomeSelectCustomEvent<T> extends CustomEvent<T> {
 export interface AwesomeTabsCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLAwesomeTabsElement;
+}
+export interface AwesomeToggleCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLAwesomeToggleElement;
 }
 declare global {
     interface HTMLAwesomeAlertElement extends Components.AwesomeAlert, HTMLStencilElement {
@@ -237,12 +242,6 @@ declare global {
     var HTMLAwesomeCardElement: {
         prototype: HTMLAwesomeCardElement;
         new (): HTMLAwesomeCardElement;
-    };
-    interface HTMLAwesomeCheckboxElement extends Components.AwesomeCheckbox, HTMLStencilElement {
-    }
-    var HTMLAwesomeCheckboxElement: {
-        prototype: HTMLAwesomeCheckboxElement;
-        new (): HTMLAwesomeCheckboxElement;
     };
     interface HTMLAwesomeDividerElement extends Components.AwesomeDivider, HTMLStencilElement {
     }
@@ -310,13 +309,18 @@ declare global {
         prototype: HTMLAwesomeTabsElement;
         new (): HTMLAwesomeTabsElement;
     };
+    interface HTMLAwesomeToggleElement extends Components.AwesomeToggle, HTMLStencilElement {
+    }
+    var HTMLAwesomeToggleElement: {
+        prototype: HTMLAwesomeToggleElement;
+        new (): HTMLAwesomeToggleElement;
+    };
     interface HTMLElementTagNameMap {
         "awesome-alert": HTMLAwesomeAlertElement;
         "awesome-backdrop": HTMLAwesomeBackdropElement;
         "awesome-badge": HTMLAwesomeBadgeElement;
         "awesome-button": HTMLAwesomeButtonElement;
         "awesome-card": HTMLAwesomeCardElement;
-        "awesome-checkbox": HTMLAwesomeCheckboxElement;
         "awesome-divider": HTMLAwesomeDividerElement;
         "awesome-input": HTMLAwesomeInputElement;
         "awesome-item": HTMLAwesomeItemElement;
@@ -328,6 +332,7 @@ declare global {
         "awesome-spinner": HTMLAwesomeSpinnerElement;
         "awesome-tab": HTMLAwesomeTabElement;
         "awesome-tabs": HTMLAwesomeTabsElement;
+        "awesome-toggle": HTMLAwesomeToggleElement;
     }
 }
 declare namespace LocalJSX {
@@ -385,20 +390,6 @@ declare namespace LocalJSX {
           * If this presents and button is `true`, the card would act like an `a` tag using the given `href`.
          */
         "href"?: string;
-    }
-    interface AwesomeCheckbox {
-        /**
-          * If `true`, the checkbox is checked. Default to `false`;
-         */
-        "checked"?: boolean;
-        /**
-          * The flag of disabling the checkbox. Default to `false`.
-         */
-        "disabled"?: boolean;
-        /**
-          * Event of status being changed.
-         */
-        "onAwesomeChange"?: (event: AwesomeCheckboxCustomEvent<{ checked: boolean; innerEvent: globalThis.Event }>) => void;
     }
     interface AwesomeDivider {
     }
@@ -520,13 +511,30 @@ declare namespace LocalJSX {
          */
         "value"?: string;
     }
+    interface AwesomeToggle {
+        /**
+          * If `true`, the toggle is checked. Default to `false`;
+         */
+        "checked"?: boolean;
+        /**
+          * The flag of disabling the toggle. Default to `false`.
+         */
+        "disabled"?: boolean;
+        /**
+          * Event of status being changed.
+         */
+        "onAwesomeChange"?: (event: AwesomeToggleCustomEvent<{ checked: boolean; innerEvent: globalThis.Event }>) => void;
+        /**
+          * Variant of the toogle. Default to `checkbox`.
+         */
+        "variant"?: ToggleVariant;
+    }
     interface IntrinsicElements {
         "awesome-alert": AwesomeAlert;
         "awesome-backdrop": AwesomeBackdrop;
         "awesome-badge": AwesomeBadge;
         "awesome-button": AwesomeButton;
         "awesome-card": AwesomeCard;
-        "awesome-checkbox": AwesomeCheckbox;
         "awesome-divider": AwesomeDivider;
         "awesome-input": AwesomeInput;
         "awesome-item": AwesomeItem;
@@ -538,6 +546,7 @@ declare namespace LocalJSX {
         "awesome-spinner": AwesomeSpinner;
         "awesome-tab": AwesomeTab;
         "awesome-tabs": AwesomeTabs;
+        "awesome-toggle": AwesomeToggle;
     }
 }
 export { LocalJSX as JSX };
@@ -549,7 +558,6 @@ declare module "@stencil/core" {
             "awesome-badge": LocalJSX.AwesomeBadge & JSXBase.HTMLAttributes<HTMLAwesomeBadgeElement>;
             "awesome-button": LocalJSX.AwesomeButton & JSXBase.HTMLAttributes<HTMLAwesomeButtonElement>;
             "awesome-card": LocalJSX.AwesomeCard & JSXBase.HTMLAttributes<HTMLAwesomeCardElement>;
-            "awesome-checkbox": LocalJSX.AwesomeCheckbox & JSXBase.HTMLAttributes<HTMLAwesomeCheckboxElement>;
             "awesome-divider": LocalJSX.AwesomeDivider & JSXBase.HTMLAttributes<HTMLAwesomeDividerElement>;
             "awesome-input": LocalJSX.AwesomeInput & JSXBase.HTMLAttributes<HTMLAwesomeInputElement>;
             "awesome-item": LocalJSX.AwesomeItem & JSXBase.HTMLAttributes<HTMLAwesomeItemElement>;
@@ -561,6 +569,7 @@ declare module "@stencil/core" {
             "awesome-spinner": LocalJSX.AwesomeSpinner & JSXBase.HTMLAttributes<HTMLAwesomeSpinnerElement>;
             "awesome-tab": LocalJSX.AwesomeTab & JSXBase.HTMLAttributes<HTMLAwesomeTabElement>;
             "awesome-tabs": LocalJSX.AwesomeTabs & JSXBase.HTMLAttributes<HTMLAwesomeTabsElement>;
+            "awesome-toggle": LocalJSX.AwesomeToggle & JSXBase.HTMLAttributes<HTMLAwesomeToggleElement>;
         }
     }
 }
