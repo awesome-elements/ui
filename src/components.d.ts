@@ -153,6 +153,8 @@ export namespace Components {
     }
     interface AwesomeSkeleton {
     }
+    interface AwesomeSpinner {
+    }
     interface AwesomeTab {
         "obtainActualValue": () => Promise<string>;
         "selected": boolean;
@@ -270,6 +272,12 @@ declare global {
         prototype: HTMLAwesomeSkeletonElement;
         new (): HTMLAwesomeSkeletonElement;
     };
+    interface HTMLAwesomeSpinnerElement extends Components.AwesomeSpinner, HTMLStencilElement {
+    }
+    var HTMLAwesomeSpinnerElement: {
+        prototype: HTMLAwesomeSpinnerElement;
+        new (): HTMLAwesomeSpinnerElement;
+    };
     interface HTMLAwesomeTabElement extends Components.AwesomeTab, HTMLStencilElement {
     }
     var HTMLAwesomeTabElement: {
@@ -296,6 +304,7 @@ declare global {
         "awesome-select": HTMLAwesomeSelectElement;
         "awesome-select-option": HTMLAwesomeSelectOptionElement;
         "awesome-skeleton": HTMLAwesomeSkeletonElement;
+        "awesome-spinner": HTMLAwesomeSpinnerElement;
         "awesome-tab": HTMLAwesomeTabElement;
         "awesome-tabs": HTMLAwesomeTabsElement;
     }
@@ -453,6 +462,8 @@ declare namespace LocalJSX {
     }
     interface AwesomeSkeleton {
     }
+    interface AwesomeSpinner {
+    }
     interface AwesomeTab {
         "selected"?: boolean;
         /**
@@ -488,6 +499,7 @@ declare namespace LocalJSX {
         "awesome-select": AwesomeSelect;
         "awesome-select-option": AwesomeSelectOption;
         "awesome-skeleton": AwesomeSkeleton;
+        "awesome-spinner": AwesomeSpinner;
         "awesome-tab": AwesomeTab;
         "awesome-tabs": AwesomeTabs;
     }
@@ -509,6 +521,7 @@ declare module "@stencil/core" {
             "awesome-select": LocalJSX.AwesomeSelect & JSXBase.HTMLAttributes<HTMLAwesomeSelectElement>;
             "awesome-select-option": LocalJSX.AwesomeSelectOption & JSXBase.HTMLAttributes<HTMLAwesomeSelectOptionElement>;
             "awesome-skeleton": LocalJSX.AwesomeSkeleton & JSXBase.HTMLAttributes<HTMLAwesomeSkeletonElement>;
+            "awesome-spinner": LocalJSX.AwesomeSpinner & JSXBase.HTMLAttributes<HTMLAwesomeSpinnerElement>;
             "awesome-tab": LocalJSX.AwesomeTab & JSXBase.HTMLAttributes<HTMLAwesomeTabElement>;
             "awesome-tabs": LocalJSX.AwesomeTabs & JSXBase.HTMLAttributes<HTMLAwesomeTabsElement>;
         }
