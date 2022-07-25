@@ -81,8 +81,7 @@
 }
 
 :host([disabled]) [part='main'] {
-  filter: contrast(0.5);
-  backdrop-filter: contrast(1);
+  filter: contrast(0.6);
 }
 
 .popover {

@@ -34,8 +34,7 @@
 
 :host([disabled]) [part='native'] {
   pointer-events: none;
-  filter: contrast(0.5);
-  backdrop-filter: contrast(1);
+  filter: contrast(0.6);
 }
 
 [part='native']::before {
