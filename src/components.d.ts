@@ -114,6 +114,10 @@ export namespace Components {
     }
     interface AwesomeRange {
         /**
+          * The flag of disabling the range. Default to `false`.
+         */
+        "disabled": boolean;
+        /**
           * Maximum number of the range. Default to `100`.
          */
         "max": number;
@@ -436,6 +440,10 @@ declare namespace LocalJSX {
         "progress"?: number;
     }
     interface AwesomeRange {
+        /**
+          * The flag of disabling the range. Default to `false`.
+         */
+        "disabled"?: boolean;
         /**
           * Maximum number of the range. Default to `100`.
          */

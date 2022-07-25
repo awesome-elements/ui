@@ -7,12 +7,13 @@
 
 ## Properties
 
-| Property | Attribute | Description                                    | Type                    | Default |
-| -------- | --------- | ---------------------------------------------- | ----------------------- | ------- |
-| `max`    | `max`     | Maximum number of the range. Default to `100`. | `number`                | `100`   |
-| `min`    | `min`     | Minimum number of the range. Default to `0`.   | `number`                | `0`     |
-| `step`   | `step`    | Step of the range. Default to `""`.            | `"" \| "any" \| number` | `''`    |
-| `value`  | `value`   | Value of the range. Default to `0`.            | `number`                | `0`     |
+| Property   | Attribute  | Description                                          | Type                    | Default |
+| ---------- | ---------- | ---------------------------------------------------- | ----------------------- | ------- |
+| `disabled` | `disabled` | The flag of disabling the range. Default to `false`. | `boolean`               | `false` |
+| `max`      | `max`      | Maximum number of the range. Default to `100`.       | `number`                | `100`   |
+| `min`      | `min`      | Minimum number of the range. Default to `0`.         | `number`                | `0`     |
+| `step`     | `step`     | Step of the range. Default to `""`.                  | `"" \| "any" \| number` | `''`    |
+| `value`    | `value`    | Value of the range. Default to `0`.                  | `number`                | `0`     |
 
 
 ## Events

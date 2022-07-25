@@ -32,6 +32,11 @@ export class AwesomeRange implements ComponentInterface {
   // eslint-disable-next-line @stencil/strict-mutable
   @Prop({ reflect: true, mutable: true }) value: number = 0;
 
+  /**
+   * The flag of disabling the range. Default to `false`.
+   */
+  @Prop({ reflect: true }) disabled: boolean = false;
+
   @Watch('value')
   handleValueChange(value: number) {
     const positionPercentage = ((value - this.min) / (this.max - this.min)) * 100;
@@ -55,7 +60,17 @@ export class AwesomeRange implements ComponentInterface {
   render() {
     return (
       <Host>
-        <input part="native" type="range" min={this.min} max={this.max} step={this.step} value={this.value} onChange={this.handleOnChangeEvent} onInput={this.handleOnInputEvent} />
+        <input
+          part="native"
+          type="range"
+          min={this.min}
+          max={this.max}
+          step={this.step}
+          value={this.value}
+          disabled={this.disabled}
+          onChange={this.handleOnChangeEvent}
+          onInput={this.handleOnInputEvent}
+        />
       </Host>
     );
   }
