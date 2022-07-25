@@ -4,6 +4,7 @@
   display: block;
   cursor: default;
   width: 100%;
+  background: var(--awesome-ui-color-background);
   margin: var(--awesome-ui-whitespace-sm) 0;
   padding: var(--awesome-ui-whitespace-md);
   border-radius: var(--awesome-ui-border-radius-md);
@@ -26,15 +27,16 @@
   backdrop-filter: contrast(1);
 }
 
-input {
+[part='native'] {
   width: 100%;
   outline: none;
   border: none;
   font-size: 1em;
+  background: none;
   padding: 0 var(--awesome-ui-whitespace-md);
   caret-color: var(--awesome-ui-color-primary);
 }
 
-input:disabled {
+[part='native']:disabled {
   background: inherit;
 }

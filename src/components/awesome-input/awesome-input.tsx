@@ -50,7 +50,7 @@ export class AwesomeInput implements ComponentInterface {
             <slot name="before"></slot>
           </awesome-flex-item>
           <awesome-flex-item>
-            <input value={this.value} disabled={this.disabled} placeholder={this.placeholder} onChange={this.handleOnChangeEvent} onInput={this.handleOnInputEvent} />
+            <input part="native" value={this.value} disabled={this.disabled} placeholder={this.placeholder} onChange={this.handleOnChangeEvent} onInput={this.handleOnInputEvent} />
           </awesome-flex-item>
           <awesome-flex-item xs="auto">
             <slot name="after"></slot>

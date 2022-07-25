@@ -23,6 +23,13 @@
 | `awesomeInput`  | Event of something being input. | `CustomEvent<{ innerEvent: InputEvent; }>`             |
 
 
+## Shadow Parts
+
+| Part       | Description |
+| ---------- | ----------- |
+| `"native"` |             |
+
+
 ## Dependencies
 
 ### Depends on
