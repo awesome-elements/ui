@@ -22,6 +22,8 @@
 ```mermaid
 graph TD;
   awesome-select-option --> awesome-item
+  awesome-item --> awesome-flex
+  awesome-item --> awesome-flex-item
   style awesome-select-option fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

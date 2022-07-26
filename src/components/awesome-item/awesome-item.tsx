@@ -23,7 +23,17 @@ export class AwesomeItem implements ComponentInterface {
     return (
       <Host>
         {this.href && renderHrefHandler(this.href)}
-        <slot></slot>
+        <awesome-flex>
+          <awesome-flex-item xs="auto">
+            <slot name="before"></slot>
+          </awesome-flex-item>
+          <awesome-flex-item part="main">
+            <slot></slot>
+          </awesome-flex-item>
+          <awesome-flex-item xs="auto">
+            <slot name="after"></slot>
+          </awesome-flex-item>
+        </awesome-flex>
       </Host>
     );
   }
