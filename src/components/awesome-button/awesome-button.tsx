@@ -1,7 +1,7 @@
 import { Component, Host, h, ComponentInterface, Element, Prop } from '@stencil/core';
 import { renderHrefHandler } from '../../utils/href-handler';
 
-export type ButtonVariant = 'solid' | 'hollow' | 'clear' | 'round';
+export type ButtonVariant = 'solid' | 'hollow' | 'clear' | 'round' | 'link';
 
 @Component({
   tag: 'awesome-button',

@@ -59,3 +59,13 @@
 :host([variant='clear']:active) {
   box-shadow: inset 0 0 var(--awesome-ui-shadow-blur-xl) 0 var(--awesome-ui-color-primary);
 }
+
+:host([variant='link']) {
+  color: var(--awesome-ui-color-main);
+}
+:host([variant='link']:hover) {
+  color: var(--awesome-ui-color-primary);
+}
+:host([variant='link']:active) {
+  color: var(--awesome-ui-color-dim);
+}
