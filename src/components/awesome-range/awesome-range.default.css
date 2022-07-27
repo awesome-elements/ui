@@ -20,8 +20,11 @@
   transition: box-shadow 0.3s;
 }
 
-:host([disabled]) [part='native'] {
+:host([disabled]) {
   pointer-events: none;
+}
+
+:host([disabled]) [part='native'] {
   filter: contrast(0.6);
 }
 
