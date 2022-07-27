@@ -1,7 +1,8 @@
 @import url(../../utils/normalization.css);
 
 :host {
-  --awesome-range-handle-position: unset;
+  --awesome-range-handle-position-ratio: unset;
+  --thumb-size: 12px;
 
   display: inline-block;
   position: relative;
@@ -9,27 +10,14 @@
 }
 
 [part='native'] {
-  --bar-height: 4px;
+  --bar-height: 2px;
 
   position: relative;
   appearance: none;
   outline: none;
-  height: var(--bar-height);
+  height: 0;
   width: 100%;
-  border-radius: calc(var(--bar-height) / 2);
-  background: linear-gradient(
-    90deg,
-    var(--awesome-ui-color-primary) 0%,
-    var(--awesome-ui-color-primary) var(--awesome-range-handle-position),
-    var(--awesome-ui-color-background) var(--awesome-range-handle-position),
-    var(--awesome-ui-color-background) 100%
-  );
-  box-shadow: inset 0 var(--awesome-ui-shadow-offset-xs) var(--awesome-ui-shadow-blur-sm) 0px var(--awesome-ui-color-dim);
   transition: box-shadow 0.3s;
-}
-
-:host(:hover) [part='native'] {
-  box-shadow: inset 0 var(--awesome-ui-shadow-offset-xs) var(--awesome-ui-shadow-blur-md) 0px var(--awesome-ui-color-dim);
 }
 
 :host([disabled]) [part='native'] {
@@ -37,27 +25,45 @@
   filter: contrast(0.6);
 }
 
-[part='native']::before {
+[part='native']::before,
+[part='native']::after {
   content: '';
   position: absolute;
-  height: 4px;
-  width: var(--awesome-range-handle-position);
+  height: var(--bar-height);
   max-width: 100%;
-  border-radius: 2px;
-  background: var(--awesome-ui-color-primary);
+  border-radius: var(--bar-height);
   transition: box-shadow 0.3s;
 }
 
+[part='native']::before {
+  left: calc(var(--thumb-size) / 2);
+  width: calc(var(--awesome-range-handle-position-ratio) * (100% - var(--thumb-size)));
+  background: var(--awesome-ui-color-primary);
+  box-shadow: 0 0 var(--awesome-ui-shadow-blur-xs) 0 var(--awesome-ui-color-primary);
+}
+
 :host(:hover) [part='native']::before {
-  box-shadow: 0 0 var(--awesome-ui-shadow-blur-md) 0px var(--awesome-ui-color-primary);
+  box-shadow: 0 0 var(--awesome-ui-shadow-blur-md) 0 var(--awesome-ui-color-primary);
+}
+
+[part='native']::after {
+  z-index: -1;
+  right: calc(var(--thumb-size) / 2);
+  width: calc((100% - var(--thumb-size)) - var(--awesome-range-handle-position-ratio) * (100% - var(--thumb-size)));
+  background: var(--awesome-ui-color-dim);
+  box-shadow: 0 0 var(--awesome-ui-shadow-blur-xs) 0 var(--awesome-ui-color-dim);
+}
+
+:host(:hover) [part='native']::after {
+  box-shadow: 0 0 var(--awesome-ui-shadow-blur-md) 0 var(--awesome-ui-color-dim);
 }
 
 [part='native']::-webkit-slider-thumb {
   position: relative;
   appearance: none;
   cursor: pointer;
-  height: 16px;
-  width: 16px;
+  height: var(--thumb-size);
+  width: var(--thumb-size);
   border-radius: 50%;
   background: var(--awesome-ui-color-primary);
   box-shadow: 0 var(--awesome-ui-shadow-offset-xs) var(--awesome-ui-shadow-blur-sm) 0px var(--awesome-ui-color-dim);
@@ -67,11 +73,12 @@
 
 :host(:hover) [part='native']::-webkit-slider-thumb {
   box-shadow: 0 var(--awesome-ui-shadow-offset-xs) var(--awesome-ui-shadow-blur-md) 0px var(--awesome-ui-color-dim),
-    0 0 var(--awesome-ui-shadow-blur-sm) 0px var(--awesome-ui-color-primary);
+    0 0 var(--awesome-ui-shadow-blur-md) 0px var(--awesome-ui-color-primary);
 }
 
 :host(:active) [part='native']::-webkit-slider-thumb {
-  box-shadow: 0 0 var(--awesome-ui-shadow-blur-md) 0px var(--awesome-ui-color-primary);
+  box-shadow: 0 var(--awesome-ui-shadow-offset-xs) var(--awesome-ui-shadow-blur-md) 0px var(--awesome-ui-color-dim),
+    0 0 var(--awesome-ui-shadow-blur-md) 0px var(--awesome-ui-color-primary);
 }
 
 [part='native']::-webkit-slider-thumb:active {

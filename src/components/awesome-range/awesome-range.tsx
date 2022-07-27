@@ -39,8 +39,8 @@ export class AwesomeRange implements ComponentInterface {
 
   @Watch('value')
   handleValueChange(value: number) {
-    const positionPercentage = ((value - this.min) / (this.max - this.min)) * 100;
-    updateCSSVariable('--awesome-range-handle-position', `${positionPercentage}%`, this.hostElement);
+    const positionRatio = ((value - this.min) / (this.max - this.min));
+    updateCSSVariable('--awesome-range-handle-position-ratio', `${positionRatio}`, this.hostElement);
   }
 
   /**
