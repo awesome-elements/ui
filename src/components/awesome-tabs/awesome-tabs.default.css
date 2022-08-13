@@ -40,7 +40,7 @@
 }
 
 [part='highlight'] {
-  left: var(--highlight-left-offset);
+  left: calc(var(--highlight-left-offset) + var(--shadow-offset));
   width: var(--highlight-width);
   transition-property: left, width;
   transition-duration: 0.3s;
