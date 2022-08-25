@@ -1,5 +1,4 @@
 import { Component, Host, h, ComponentInterface, Prop, Event, EventEmitter } from '@stencil/core';
-import '@awesome-elements/layout';
 
 export type InputType = 'text';
 

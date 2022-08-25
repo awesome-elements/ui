@@ -1,4 +1,5 @@
 import { setMode } from '@stencil/core';
+import '@awesome-elements/layout';
 
 const defaultMode = 'default';
 

@@ -1,6 +1,5 @@
-import { ComponentInterface } from '@awesome-elements/layout/dist/types/stencil-public-runtime';
 import { updateCSSVariable } from '@awesome-elements/utils/dist';
-import { Component, Host, h, Prop, Watch, Element } from '@stencil/core';
+import { Component, Host, h, Prop, Watch, Element, ComponentInterface } from '@stencil/core';
 
 @Component({
   tag: 'awesome-progress-bar',
