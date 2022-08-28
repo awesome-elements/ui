@@ -1,14 +1,15 @@
 import { setMode } from '@stencil/core';
 import '@awesome-elements/layout';
 
+const modes = ['default'];
 const defaultMode = 'default';
 
 function isAwesomeElement(element: HTMLElement) {
   return element.tagName && element.tagName.startsWith('AWESOME-');
 }
 
-function isAllowedModeValue(_mode: string) {
-  return true;
+function isAllowedModeValue(mode: string) {
+  return modes.includes(mode);
 }
 
 setMode((element: any) => {
@@ -18,7 +19,7 @@ setMode((element: any) => {
       if (isAllowedModeValue(elementMode)) {
         return elementMode;
       } else if (isAwesomeElement(element)) {
-        console.warn('Invalid ionic mode: "' + elementMode + '", expected: "ios" or "md"');
+        console.warn(`Invalid mode: "${elementMode}", expected one from ${JSON.stringify(modes)}.`);
       }
     }
     element = element.parentElement;
