@@ -1,1 +1,0 @@
-import{s as e}from"./p-ea3591f3.js";const o=["default"];function n(e){return e.tagName&&e.tagName.startsWith("AWESOME-")}e((e=>{for(;e;){const r=e.mode||e.getAttribute("mode");if(r){if(o.includes(r))return r;n(e)&&console.warn(`Invalid mode: "${r}", expected one from ${JSON.stringify(o)}.`)}e=e.parentElement}return"default"}));
