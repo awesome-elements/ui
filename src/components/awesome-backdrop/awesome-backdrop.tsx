@@ -2,7 +2,9 @@ import { Component, Host, h, ComponentInterface, Prop } from '@stencil/core';
 
 @Component({
   tag: 'awesome-backdrop',
-  styleUrls: ['awesome-backdrop.default.css'],
+  styleUrls: {
+    default: 'awesome-backdrop.default.css',
+  },
   shadow: true,
 })
 export class AwesomeBackdrop implements ComponentInterface {
