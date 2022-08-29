@@ -1,0 +1,88 @@
+@import url(../../utils/normalization.css);
+
+:host {
+  display: inline-block;
+}
+
+[part='container'] {
+  display: block;
+  position: relative;
+  cursor: pointer;
+}
+
+:host([disabled]) [part='container'] {
+  pointer-events: none;
+}
+
+[part='toggle'] {
+  display: inline-block;
+  position: relative;
+  margin-right: var(--awesome-ui-soft-whitespace-sm);
+  background: var(--awesome-ui-soft-color-primary);
+  box-shadow: inset 0 var(--awesome-ui-soft-shadow-offset-xs) var(--awesome-ui-soft-shadow-blur-sm) 0 var(--awesome-ui-soft-color-shadow);
+  transition-property: background, box-shadow;
+  transition-duration: 0.3s;
+}
+
+[part='toggle']:hover {
+  box-shadow: inset 0 var(--awesome-ui-soft-shadow-offset-xs) var(--awesome-ui-soft-shadow-blur-md) 0 var(--awesome-ui-soft-color-shadow);
+}
+
+[part='toggle']:active {
+  box-shadow: inset 0 var(--awesome-ui-soft-shadow-offset-xs) var(--awesome-ui-soft-shadow-blur-lg) 0 var(--awesome-ui-soft-color-primary);
+}
+
+:host(:not([checked])) [part='toggle'] {
+  background: var(--awesome-ui-soft-color-background);
+}
+
+:host([disabled]) [part='toggle'] {
+  filter: contrast(0.6);
+}
+
+:host([variant='checkbox']) [part='toggle'] {
+  height: 1rem;
+  width: 1rem;
+  border-radius: var(--awesome-ui-soft-border-radius-md);
+}
+
+:host([variant='switch']) [part='toggle'] {
+  height: 1rem;
+  width: 2rem;
+  border-radius: 100vmax;
+}
+
+.check-mark {
+  opacity: 1;
+  transform: scale(0.8);
+  transition-property: opacity, transform;
+  transition-duration: 0.3s;
+}
+
+:host(:not([checked])) .check-mark {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.thumb {
+  --scale: 0.8;
+
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  background: var(--awesome-ui-soft-color-contrast);
+  transform: scale(var(--scale)) translateX(calc(100% / var(--scale)));
+  transition: transform 0.3s;
+}
+
+[part='toggle']:hover .thumb {
+  box-shadow: 0 var(--awesome-ui-soft-shadow-offset-xs) var(--awesome-ui-soft-shadow-blur-sm) 0 var(--awesome-ui-soft-color-shadow);
+}
+
+:host(:not([checked])) .thumb {
+  background: var(--awesome-ui-soft-color-primary);
+  transform: scale(var(--scale));
+}

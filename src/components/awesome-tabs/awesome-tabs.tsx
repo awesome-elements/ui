@@ -7,6 +7,7 @@ export type TabsOrientation = 'up' | 'down';
   tag: 'awesome-tabs',
   styleUrls: {
     default: 'awesome-tabs.default.css',
+    soft: 'awesome-tabs.soft.css',
   },
   shadow: true,
 })

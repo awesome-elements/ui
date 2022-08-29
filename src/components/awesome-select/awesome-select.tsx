@@ -6,6 +6,7 @@ import { renderArrow } from '../../utils/arrow';
   tag: 'awesome-select',
   styleUrls: {
     default: 'awesome-select.default.css',
+    soft: 'awesome-select.soft.css',
   },
   shadow: true,
 })

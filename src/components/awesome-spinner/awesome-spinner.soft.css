@@ -1,0 +1,21 @@
+:host {
+  display: block;
+  width: 5rem;
+}
+
+[part='ring'] {
+  border-radius: 50%;
+  width: 100%;
+  box-shadow: 0 var(--awesome-ui-soft-shadow-offset-sm) var(--awesome-ui-soft-shadow-blur-sm) -1px var(--awesome-ui-soft-color-primary),
+    inset 0 calc(var(--awesome-ui-soft-shadow-offset-sm) * -1) var(--awesome-ui-soft-shadow-blur-sm) -1px var(--awesome-ui-soft-color-primary);
+  animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

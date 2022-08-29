@@ -1,0 +1,14 @@
+@import url(../../utils/normalization.css);
+
+:host {
+  display: inline-block;
+  user-select: none;
+  cursor: pointer;
+  padding: var(--awesome-ui-soft-whitespace-md);
+  color: var(--awesome-ui-soft-color-main);
+  transition: color 0.3s;
+}
+
+:host([selected]) {
+  color: var(--awesome-ui-soft-color-primary);
+}

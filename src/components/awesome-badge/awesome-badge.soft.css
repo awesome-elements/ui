@@ -1,0 +1,10 @@
+@import url(../../utils/normalization.css);
+
+:host {
+  display: inline-block;
+  padding: var(--awesome-ui-soft-whitespace-sm);
+  color: var(--awesome-ui-soft-color-main);
+  background: var(--awesome-ui-soft-color-primary);
+  border-radius: var(--awesome-ui-soft-border-radius-lg);
+  user-select: none;
+}

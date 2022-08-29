@@ -1,0 +1,22 @@
+@import url(../../utils/normalization.css);
+
+:host {
+  --progress: unset;
+
+  display: block;
+  position: relative;
+  height: 4px;
+  width: 100%;
+  border-radius: 2px;
+  box-shadow: inset 0 0 var(--awesome-ui-soft-shadow-blur-md) 0px var(--awesome-ui-soft-color-shadow);
+}
+
+div {
+  position: absolute;
+  height: 4px;
+  width: calc(var(--progress) * 100%);
+  max-width: 100%;
+  border-radius: 2px;
+  background: var(--awesome-ui-soft-color-primary);
+  box-shadow: 0 0 var(--awesome-ui-soft-shadow-blur-md) 1px var(--awesome-ui-soft-color-primary);
+}

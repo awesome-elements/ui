@@ -5,6 +5,7 @@ body {
 }
 
 @import url(./global.default.css);
+@import url(./global.soft.css);
 
 :root {
   -webkit-tap-highlight-color: transparent;

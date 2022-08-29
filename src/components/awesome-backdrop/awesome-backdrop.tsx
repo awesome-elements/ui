@@ -4,6 +4,7 @@ import { Component, Host, h, ComponentInterface, Prop } from '@stencil/core';
   tag: 'awesome-backdrop',
   styleUrls: {
     default: 'awesome-backdrop.default.css',
+    soft: 'awesome-backdrop.soft.css',
   },
   shadow: true,
 })

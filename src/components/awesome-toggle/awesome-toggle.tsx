@@ -6,6 +6,7 @@ export type ToggleVariant = 'checkbox' | 'switch';
   tag: 'awesome-toggle',
   styleUrls: {
     default: 'awesome-toggle.default.css',
+    soft: 'awesome-toggle.soft.css',
   },
   shadow: true,
 })

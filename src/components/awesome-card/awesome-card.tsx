@@ -5,6 +5,7 @@ import { renderHrefHandler } from '../../utils/href-handler';
   tag: 'awesome-card',
   styleUrls: {
     default: 'awesome-card.default.css',
+    soft: 'awesome-card.soft.css',
   },
   shadow: true,
 })

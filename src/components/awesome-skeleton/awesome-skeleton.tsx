@@ -6,6 +6,7 @@ export type SkeletonType = 'text';
   tag: 'awesome-skeleton',
   styleUrls: {
     default: 'awesome-skeleton.default.css',
+    soft: 'awesome-skeleton.soft.css',
   },
   shadow: true,
 })

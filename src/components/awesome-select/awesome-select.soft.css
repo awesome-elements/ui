@@ -1,0 +1,92 @@
+@import url(../../utils/normalization.css);
+
+:host {
+  display: block;
+  width: 100%;
+  margin: var(--awesome-ui-soft-whitespace-sm) 0;
+  user-select: none;
+}
+
+:host([disabled]) {
+  pointer-events: none;
+}
+
+[part='container'] {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  width: 10rem;
+  margin: var(--awesome-ui-soft-whitespace-sm) 0;
+  transition: all 0.3s;
+}
+
+[part='main'] {
+  display: block;
+  cursor: pointer;
+  min-height: 1em;
+  height: 100%;
+  width: 100%;
+  background: var(--awesome-ui-soft-color-background);
+  padding: var(--awesome-ui-soft-whitespace-md);
+  border-radius: var(--awesome-ui-soft-border-radius-md);
+  box-shadow: inset 0 var(--awesome-ui-soft-shadow-offset-xs) var(--awesome-ui-soft-shadow-blur-sm) 0 var(--awesome-ui-soft-color-shadow);
+  transition: box-shadow 0.3s;
+}
+
+[part='main']:hover {
+  box-shadow: inset 0 var(--awesome-ui-soft-shadow-offset-xs) var(--awesome-ui-soft-shadow-blur-md) 0 var(--awesome-ui-soft-color-shadow);
+}
+
+#toggle:checked ~ [part='main'] {
+  box-shadow: inset 0 var(--awesome-ui-soft-shadow-offset-xs) var(--awesome-ui-soft-shadow-blur-md) 0 var(--awesome-ui-soft-color-shadow),
+    inset 0 calc(var(--awesome-ui-soft-shadow-offset-xs) * -1) var(--awesome-ui-soft-shadow-blur-sm) 0 var(--awesome-ui-soft-color-primary);
+}
+
+:host(:not([value])) [part='main'] > .text {
+  color: var(--awesome-ui-soft-color-dim);
+}
+
+[part='main'] > .arrow {
+  float: right;
+  transition: all 0.3s;
+}
+
+[part='container']:hover [part='main'] > .arrow {
+  --stroke-color: var(--awesome-ui-soft-color-primary);
+}
+
+#toggle:checked ~ [part='main'] > .arrow {
+  transform: rotate(180deg);
+}
+
+[part='dropdown'] {
+  position: absolute;
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-height: calc(var(--dropdown-max-height) - 1rem);
+  height: auto;
+  width: 10rem;
+  top: 2.5rem;
+  left: 0;
+  opacity: 0;
+  transform: scaleY(0);
+  transform-origin: top;
+  z-index: 999;
+  transition: all 0.3s;
+}
+
+#toggle:checked ~ [part='dropdown'] {
+  transform: scaleY(1);
+  opacity: 1;
+}
+
+:host([disabled]) [part='main'] {
+  filter: contrast(0.6);
+}
+
+.popover {
+  padding: var(--awesome-ui-soft-whitespace-md);
+  background: var(--awesome-ui-soft-color-background);
+  border-radius: var(--awesome-ui-soft-border-radius-lg);
+  box-shadow: 0 var(--awesome-ui-soft-shadow-offset-lg) var(--awesome-ui-soft-shadow-blur-xl) 0 var(--awesome-ui-soft-color-shadow);
+}

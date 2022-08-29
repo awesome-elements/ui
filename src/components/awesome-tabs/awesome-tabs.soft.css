@@ -1,0 +1,59 @@
+@import url(../../utils/normalization.css);
+
+:host {
+  --shadow-offset: var(--awesome-ui-soft-shadow-offset-lg);
+
+  display: block;
+  position: relative;
+  min-height: calc(var(--shadow-offset) * 2.5);
+  min-width: fit-content;
+  width: 100%;
+  padding: 0 var(--shadow-offset);
+}
+
+[part='highlight'],
+[part='edge'] {
+  pointer-events: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+:host([orientation='up']) [part='highlight'],
+:host([orientation='up']) [part='edge'] {
+  transform: translateY(-100%);
+}
+
+:host([orientation='down']) [part='highlight'],
+:host([orientation='down']) [part='edge'] {
+  transform: translateY(100%);
+}
+
+:host([orientation='up']) [part='edge'] {
+  box-shadow: 0 var(--shadow-offset) var(--awesome-ui-soft-shadow-blur-md) calc(var(--shadow-offset) * -1) var(--awesome-ui-soft-color-shadow);
+}
+
+:host([orientation='down']) [part='edge'] {
+  box-shadow: 0 calc(var(--shadow-offset) * -1) var(--awesome-ui-soft-shadow-blur-md) calc(var(--shadow-offset) * -1) var(--awesome-ui-soft-color-shadow);
+}
+
+[part='highlight'] {
+  left: calc(var(--highlight-left-offset) + var(--shadow-offset));
+  width: var(--highlight-width);
+  transition-property: left, width;
+  transition-duration: 0.3s;
+}
+
+:host([orientation='up']) [part='highlight'] {
+  box-shadow: 0 var(--shadow-offset) var(--awesome-ui-soft-shadow-blur-lg) calc(var(--shadow-offset) * -1) var(--awesome-ui-soft-color-primary);
+}
+
+:host([orientation='down']) [part='highlight'] {
+  box-shadow: 0 calc(var(--shadow-offset) * -1) var(--awesome-ui-soft-shadow-blur-lg) calc(var(--shadow-offset) * -1) var(--awesome-ui-soft-color-primary);
+}
+
+[part='container'] {
+  position: relative;
+}

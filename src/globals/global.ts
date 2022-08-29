@@ -1,7 +1,7 @@
 import { setMode } from '@stencil/core';
 import '@awesome-elements/layout';
 
-const modes = ['default'];
+const modes = ['default', 'soft'];
 const defaultMode = 'default';
 
 function isAwesomeElement(element: HTMLElement) {

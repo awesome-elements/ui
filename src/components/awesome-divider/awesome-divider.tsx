@@ -4,6 +4,7 @@ import { Component, Host, h, ComponentInterface } from '@stencil/core';
   tag: 'awesome-divider',
   styleUrls: {
     default: 'awesome-divider.default.css',
+    soft: 'awesome-divider.soft.css',
   },
   shadow: true,
 })

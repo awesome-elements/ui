@@ -6,6 +6,7 @@ export type InputType = 'text' | 'number' | 'password';
   tag: 'awesome-input',
   styleUrls: {
     default: 'awesome-input.default.css',
+    soft: 'awesome-input.soft.css',
   },
   shadow: true,
 })

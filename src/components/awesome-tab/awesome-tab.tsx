@@ -4,6 +4,7 @@ import { Component, Host, h, ComponentInterface, Element, Prop, Method } from '@
   tag: 'awesome-tab',
   styleUrls: {
     default: 'awesome-tab.default.css',
+    soft: 'awesome-tab.soft.css',
   },
   shadow: true,
 })

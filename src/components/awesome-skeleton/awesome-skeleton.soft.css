@@ -1,0 +1,24 @@
+@import url(../../utils/normalization.css);
+
+:host {
+  display: block;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  margin: var(--awesome-ui-soft-whitespace-sm);
+  border-radius: var(--awesome-ui-soft-border-radius-sm);
+  box-shadow: 0 0 var(--awesome-ui-soft-shadow-blur-xxl) 0 var(--awesome-ui-soft-color-shadow);
+  animation: skeleton 2s infinite;
+}
+
+@keyframes skeleton {
+  0% {
+    box-shadow: inset 0 0 var(--awesome-ui-soft-shadow-blur-xxl) 0 var(--awesome-ui-soft-color-shadow);
+  }
+  50% {
+    box-shadow: inset 0 0 var(--awesome-ui-soft-shadow-blur-xxl) -10px var(--awesome-ui-soft-color-shadow);
+  }
+  100% {
+    box-shadow: inset 0 0 var(--awesome-ui-soft-shadow-blur-xxl) 0 var(--awesome-ui-soft-color-shadow);
+  }
+}

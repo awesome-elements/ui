@@ -4,6 +4,7 @@ import { Component, Host, h, ComponentInterface } from '@stencil/core';
   tag: 'awesome-badge',
   styleUrls: {
     default: 'awesome-badge.default.css',
+    soft: 'awesome-badge.soft.css',
   },
   shadow: true,
 })

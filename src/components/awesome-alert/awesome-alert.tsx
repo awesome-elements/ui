@@ -11,6 +11,7 @@ export type AlertButtonDefinition = {
   tag: 'awesome-alert',
   styleUrls: {
     default: 'awesome-alert.default.css',
+    soft: 'awesome-alert.soft.css',
   },
   shadow: true,
 })

@@ -4,6 +4,7 @@ import { Component, Host, h, ComponentInterface } from '@stencil/core';
   tag: 'awesome-spinner',
   styleUrls: {
     default: 'awesome-spinner.default.css',
+    soft: 'awesome-spinner.soft.css',
   },
   shadow: true,
 })

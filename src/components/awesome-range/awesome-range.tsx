@@ -5,6 +5,7 @@ import { Component, Host, h, ComponentInterface, Prop, Watch, Element, Event, Ev
   tag: 'awesome-range',
   styleUrls: {
     default: 'awesome-range.default.css',
+    soft: 'awesome-range.soft.css',
   },
   shadow: true,
 })
@@ -39,7 +40,7 @@ export class AwesomeRange implements ComponentInterface {
 
   @Watch('value')
   handleValueChange(value: number) {
-    const positionRatio = ((value - this.min) / (this.max - this.min));
+    const positionRatio = (value - this.min) / (this.max - this.min);
     updateCSSVariable('--awesome-range-handle-position-ratio', `${positionRatio}`, this.hostElement);
   }
 

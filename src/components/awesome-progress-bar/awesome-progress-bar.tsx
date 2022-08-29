@@ -5,6 +5,7 @@ import { Component, Host, h, Prop, Watch, Element, ComponentInterface } from '@s
   tag: 'awesome-progress-bar',
   styleUrls: {
     default: 'awesome-progress-bar.default.css',
+    soft: 'awesome-progress-bar.soft.css',
   },
   shadow: true,
 })

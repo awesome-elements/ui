@@ -7,6 +7,7 @@ export type ButtonVariant = 'solid' | 'hollow' | 'clear' | 'round' | 'link';
   tag: 'awesome-button',
   styleUrls: {
     default: 'awesome-button.default.css',
+    soft: 'awesome-button.soft.css',
   },
   shadow: true,
 })

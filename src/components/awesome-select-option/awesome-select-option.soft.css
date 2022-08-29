@@ -1,0 +1,10 @@
+@import url(../../utils/normalization.css);
+
+:host {
+  display: block;
+  width: auto;
+}
+
+:host([selected]) {
+  color: var(--awesome-ui-soft-color-primary);
+}

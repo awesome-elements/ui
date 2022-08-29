@@ -1,0 +1,13 @@
+@import url(../../utils/normalization.css);
+
+:host {
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  opacity: 0;
+  backdrop-filter: blur(var(--awesome-ui-soft-shadow-blur-md));
+}

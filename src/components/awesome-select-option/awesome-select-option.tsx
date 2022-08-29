@@ -4,6 +4,7 @@ import { Component, Host, h, ComponentInterface, Element, Prop, Method } from '@
   tag: 'awesome-select-option',
   styleUrls: {
     default: 'awesome-select-option.default.css',
+    soft: 'awesome-select-option.soft.css',
   },
   shadow: true,
 })

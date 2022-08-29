@@ -1,0 +1,89 @@
+@import url(../../utils/normalization.css);
+
+:host {
+  --awesome-range-handle-position-ratio: unset;
+  --thumb-size: 12px;
+
+  display: inline-block;
+  position: relative;
+  width: 100%;
+}
+
+[part='native'] {
+  --bar-height: 2px;
+
+  position: relative;
+  appearance: none;
+  outline: none;
+  height: 0;
+  width: 100%;
+  transition: box-shadow 0.3s;
+}
+
+:host([disabled]) {
+  pointer-events: none;
+}
+
+:host([disabled]) [part='native'] {
+  filter: contrast(0.6);
+}
+
+[part='native']::before,
+[part='native']::after {
+  content: '';
+  position: absolute;
+  height: var(--bar-height);
+  max-width: 100%;
+  border-radius: var(--bar-height);
+  transition: box-shadow 0.3s;
+}
+
+[part='native']::before {
+  left: calc(var(--thumb-size) / 2);
+  width: calc(var(--awesome-range-handle-position-ratio) * (100% - var(--thumb-size)));
+  background: var(--awesome-ui-soft-color-primary);
+  box-shadow: 0 0 var(--awesome-ui-soft-shadow-blur-xs) 0 var(--awesome-ui-soft-color-primary);
+}
+
+:host(:hover) [part='native']::before {
+  box-shadow: 0 0 var(--awesome-ui-soft-shadow-blur-md) 0 var(--awesome-ui-soft-color-primary);
+}
+
+[part='native']::after {
+  z-index: -1;
+  right: calc(var(--thumb-size) / 2);
+  width: calc((100% - var(--thumb-size)) - var(--awesome-range-handle-position-ratio) * (100% - var(--thumb-size)));
+  background: var(--awesome-ui-soft-color-dim);
+  box-shadow: 0 0 var(--awesome-ui-soft-shadow-blur-xs) 0 var(--awesome-ui-soft-color-shadow);
+}
+
+:host(:hover) [part='native']::after {
+  box-shadow: 0 0 var(--awesome-ui-soft-shadow-blur-md) 0 var(--awesome-ui-soft-color-shadow);
+}
+
+[part='native']::-webkit-slider-thumb {
+  position: relative;
+  appearance: none;
+  cursor: pointer;
+  height: var(--thumb-size);
+  width: var(--thumb-size);
+  border-radius: 50%;
+  background: var(--awesome-ui-soft-color-primary);
+  box-shadow: 0 var(--awesome-ui-soft-shadow-offset-xs) var(--awesome-ui-soft-shadow-blur-sm) 0px var(--awesome-ui-soft-color-shadow);
+  transition-property: box-shadow, border-radius;
+  transition-duration: 0.3s;
+}
+
+:host(:hover) [part='native']::-webkit-slider-thumb {
+  box-shadow: 0 var(--awesome-ui-soft-shadow-offset-xs) var(--awesome-ui-soft-shadow-blur-md) 0px var(--awesome-ui-soft-color-shadow),
+    0 0 var(--awesome-ui-soft-shadow-blur-md) 0px var(--awesome-ui-soft-color-primary);
+}
+
+:host(:active) [part='native']::-webkit-slider-thumb {
+  box-shadow: 0 var(--awesome-ui-soft-shadow-offset-xs) var(--awesome-ui-soft-shadow-blur-md) 0px var(--awesome-ui-soft-color-shadow),
+    0 0 var(--awesome-ui-soft-shadow-blur-md) 0px var(--awesome-ui-soft-color-primary);
+}
+
+[part='native']::-webkit-slider-thumb:active {
+  border-radius: var(--awesome-ui-soft-border-radius-md);
+}

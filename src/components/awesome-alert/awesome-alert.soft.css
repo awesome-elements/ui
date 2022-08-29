@@ -1,0 +1,29 @@
+@import url(../../utils/normalization.css);
+
+:host {
+  display: block;
+  position: relative;
+}
+
+[part='container'] {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  height: auto;
+  width: auto;
+  transform: translate(-50%, -50%);
+  padding: var(--awesome-ui-soft-whitespace-md);
+  background: var(--awesome-ui-soft-color-background);
+  border-radius: var(--awesome-ui-soft-border-radius-lg);
+  box-shadow: 0 var(--awesome-ui-soft-shadow-offset-lg) var(--awesome-ui-soft-shadow-blur-xl) 0 var(--awesome-ui-soft-color-shadow);
+}
+
+[part='header'] {
+  font-size: 1.5em;
+  padding: var(--awesome-ui-soft-whitespace-md) 0;
+}
+
+[part='backdrop'] {
+  background: var(--awesome-ui-soft-color-background);
+  opacity: 0.5;
+}
