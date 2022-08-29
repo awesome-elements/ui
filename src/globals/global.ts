@@ -22,7 +22,7 @@ setMode((element: any) => {
         console.warn(`Invalid mode: "${elementMode}", expected one from ${JSON.stringify(modes)}.`);
       }
     }
-    element = element.parentElement;
+    element = element.parentElement || element.getRootNode()?.host;
   }
   return defaultMode;
 });
