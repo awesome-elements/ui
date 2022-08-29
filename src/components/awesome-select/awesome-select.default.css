@@ -29,16 +29,16 @@
   background: var(--awesome-ui-color-background);
   padding: var(--awesome-ui-whitespace-md);
   border-radius: var(--awesome-ui-border-radius-md);
-  box-shadow: inset 0 var(--awesome-ui-shadow-offset-xs) var(--awesome-ui-shadow-blur-sm) 0 var(--awesome-ui-color-dim);
+  box-shadow: inset 0 var(--awesome-ui-shadow-offset-xs) var(--awesome-ui-shadow-blur-sm) 0 var(--awesome-ui-color-shadow);
   transition: box-shadow 0.3s;
 }
 
 [part='main']:hover {
-  box-shadow: inset 0 var(--awesome-ui-shadow-offset-xs) var(--awesome-ui-shadow-blur-md) 0 var(--awesome-ui-color-dim);
+  box-shadow: inset 0 var(--awesome-ui-shadow-offset-xs) var(--awesome-ui-shadow-blur-md) 0 var(--awesome-ui-color-shadow);
 }
 
 #toggle:checked ~ [part='main'] {
-  box-shadow: inset 0 var(--awesome-ui-shadow-offset-xs) var(--awesome-ui-shadow-blur-md) 0 var(--awesome-ui-color-dim),
+  box-shadow: inset 0 var(--awesome-ui-shadow-offset-xs) var(--awesome-ui-shadow-blur-md) 0 var(--awesome-ui-color-shadow),
     inset 0 calc(var(--awesome-ui-shadow-offset-xs) * -1) var(--awesome-ui-shadow-blur-sm) 0 var(--awesome-ui-color-primary);
 }
 
@@ -88,5 +88,5 @@
   padding: var(--awesome-ui-whitespace-md);
   background: var(--awesome-ui-color-background);
   border-radius: var(--awesome-ui-border-radius-lg);
-  box-shadow: 0 var(--awesome-ui-shadow-offset-lg) var(--awesome-ui-shadow-blur-xl) 0 var(--awesome-ui-color-dim);
+  box-shadow: 0 var(--awesome-ui-shadow-offset-lg) var(--awesome-ui-shadow-blur-xl) 0 var(--awesome-ui-color-shadow);
 }

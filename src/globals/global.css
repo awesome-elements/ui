@@ -8,6 +8,7 @@
   --awesome-ui-color-contrast: var(--awesome-ui-default-color-contrast);
   --awesome-ui-color-dim: var(--awesome-ui-default-color-dim);
   --awesome-ui-color-background: var(--awesome-ui-default-color-background);
+  --awesome-ui-color-shadow: var(--awesome-ui-default-color-shadow);
 
   --awesome-ui-border-radius-sm: var(--awesome-ui-default-border-radius-sm);
   --awesome-ui-border-radius-md: var(--awesome-ui-default-border-radius-md);

@@ -32,11 +32,11 @@
 }
 
 :host([orientation='up']) [part='edge'] {
-  box-shadow: 0 var(--shadow-offset) var(--awesome-ui-shadow-blur-md) calc(var(--shadow-offset) * -1) var(--awesome-ui-color-dim);
+  box-shadow: 0 var(--shadow-offset) var(--awesome-ui-shadow-blur-md) calc(var(--shadow-offset) * -1) var(--awesome-ui-color-shadow);
 }
 
 :host([orientation='down']) [part='edge'] {
-  box-shadow: 0 calc(var(--shadow-offset) * -1) var(--awesome-ui-shadow-blur-md) calc(var(--shadow-offset) * -1) var(--awesome-ui-color-dim);
+  box-shadow: 0 calc(var(--shadow-offset) * -1) var(--awesome-ui-shadow-blur-md) calc(var(--shadow-offset) * -1) var(--awesome-ui-color-shadow);
 }
 
 [part='highlight'] {

@@ -19,13 +19,13 @@
   position: relative;
   margin-right: var(--awesome-ui-whitespace-sm);
   background: var(--awesome-ui-color-primary);
-  box-shadow: inset 0 var(--awesome-ui-shadow-offset-xs) var(--awesome-ui-shadow-blur-sm) 0 var(--awesome-ui-color-dim);
+  box-shadow: inset 0 var(--awesome-ui-shadow-offset-xs) var(--awesome-ui-shadow-blur-sm) 0 var(--awesome-ui-color-shadow);
   transition-property: background, box-shadow;
   transition-duration: 0.3s;
 }
 
 [part='toggle']:hover {
-  box-shadow: inset 0 var(--awesome-ui-shadow-offset-xs) var(--awesome-ui-shadow-blur-md) 0 var(--awesome-ui-color-dim);
+  box-shadow: inset 0 var(--awesome-ui-shadow-offset-xs) var(--awesome-ui-shadow-blur-md) 0 var(--awesome-ui-color-shadow);
 }
 
 [part='toggle']:active {
@@ -79,7 +79,7 @@
 }
 
 [part='toggle']:hover .thumb {
-  box-shadow: 0 var(--awesome-ui-shadow-offset-xs) var(--awesome-ui-shadow-blur-sm) 0 var(--awesome-ui-color-dim);
+  box-shadow: 0 var(--awesome-ui-shadow-offset-xs) var(--awesome-ui-shadow-blur-sm) 0 var(--awesome-ui-color-shadow);
 }
 
 :host(:not([checked])) .thumb {

@@ -54,11 +54,11 @@
   right: calc(var(--thumb-size) / 2);
   width: calc((100% - var(--thumb-size)) - var(--awesome-range-handle-position-ratio) * (100% - var(--thumb-size)));
   background: var(--awesome-ui-color-dim);
-  box-shadow: 0 0 var(--awesome-ui-shadow-blur-xs) 0 var(--awesome-ui-color-dim);
+  box-shadow: 0 0 var(--awesome-ui-shadow-blur-xs) 0 var(--awesome-ui-color-shadow);
 }
 
 :host(:hover) [part='native']::after {
-  box-shadow: 0 0 var(--awesome-ui-shadow-blur-md) 0 var(--awesome-ui-color-dim);
+  box-shadow: 0 0 var(--awesome-ui-shadow-blur-md) 0 var(--awesome-ui-color-shadow);
 }
 
 [part='native']::-webkit-slider-thumb {
@@ -69,18 +69,18 @@
   width: var(--thumb-size);
   border-radius: 50%;
   background: var(--awesome-ui-color-primary);
-  box-shadow: 0 var(--awesome-ui-shadow-offset-xs) var(--awesome-ui-shadow-blur-sm) 0px var(--awesome-ui-color-dim);
+  box-shadow: 0 var(--awesome-ui-shadow-offset-xs) var(--awesome-ui-shadow-blur-sm) 0px var(--awesome-ui-color-shadow);
   transition-property: box-shadow, border-radius;
   transition-duration: 0.3s;
 }
 
 :host(:hover) [part='native']::-webkit-slider-thumb {
-  box-shadow: 0 var(--awesome-ui-shadow-offset-xs) var(--awesome-ui-shadow-blur-md) 0px var(--awesome-ui-color-dim),
+  box-shadow: 0 var(--awesome-ui-shadow-offset-xs) var(--awesome-ui-shadow-blur-md) 0px var(--awesome-ui-color-shadow),
     0 0 var(--awesome-ui-shadow-blur-md) 0px var(--awesome-ui-color-primary);
 }
 
 :host(:active) [part='native']::-webkit-slider-thumb {
-  box-shadow: 0 var(--awesome-ui-shadow-offset-xs) var(--awesome-ui-shadow-blur-md) 0px var(--awesome-ui-color-dim),
+  box-shadow: 0 var(--awesome-ui-shadow-offset-xs) var(--awesome-ui-shadow-blur-md) 0px var(--awesome-ui-color-shadow),
     0 0 var(--awesome-ui-shadow-blur-md) 0px var(--awesome-ui-color-primary);
 }
 

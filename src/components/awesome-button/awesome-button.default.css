@@ -26,17 +26,17 @@
 :host([variant='round']) {
   color: var(--awesome-ui-color-contrast);
   background: var(--awesome-ui-color-primary);
-  box-shadow: 0 var(--awesome-ui-shadow-offset-xs) var(--awesome-ui-shadow-blur-xs) 0 var(--awesome-ui-color-dim);
+  box-shadow: 0 var(--awesome-ui-shadow-offset-xs) var(--awesome-ui-shadow-blur-xs) 0 var(--awesome-ui-color-shadow);
 }
 :host([variant='solid']:hover),
 :host([variant='round']:hover) {
   background: var(--awesome-ui-color-primary);
-  box-shadow: 0 var(--awesome-ui-shadow-offset-sm) var(--awesome-ui-shadow-blur-md) 0 var(--awesome-ui-color-dim);
+  box-shadow: 0 var(--awesome-ui-shadow-offset-sm) var(--awesome-ui-shadow-blur-md) 0 var(--awesome-ui-color-shadow);
 }
 :host([variant='solid']:active),
 :host([variant='round']:active) {
   background: var(--awesome-ui-color-primary);
-  box-shadow: inset 0 var(--awesome-ui-shadow-offset-sm) var(--awesome-ui-shadow-blur-md) 0 var(--awesome-ui-color-dim);
+  box-shadow: inset 0 var(--awesome-ui-shadow-offset-sm) var(--awesome-ui-shadow-blur-md) 0 var(--awesome-ui-color-shadow);
 }
 
 :host([variant='hollow']) {

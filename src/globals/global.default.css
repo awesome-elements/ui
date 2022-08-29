@@ -1,11 +1,12 @@
 :root {
-  --awesome-ui-default-color-primary: #3880ff;
-  --awesome-ui-default-color-secondary: #3dc2ff;
-  --awesome-ui-default-color-tertiary: #5260ff;
-  --awesome-ui-default-color-main: #000000;
-  --awesome-ui-default-color-contrast: #ffffff;
-  --awesome-ui-default-color-dim: #808080;
-  --awesome-ui-default-color-background: #ffffff;
+  --awesome-ui-default-color-primary: hsl(218, 100%, 61%);
+  --awesome-ui-default-color-secondary: hsl(199, 100%, 62%);
+  --awesome-ui-default-color-tertiary: hsl(235, 100%, 66%);
+  --awesome-ui-default-color-main: hsl(0, 0%, 0%);
+  --awesome-ui-default-color-contrast: hsl(0, 0%, 100%);
+  --awesome-ui-default-color-dim: hsl(0, 0%, 50%);
+  --awesome-ui-default-color-background: hsl(0, 0%, 100%);
+  --awesome-ui-default-color-shadow: hsl(0, 0%, 0%, 0.5);
 
   --awesome-ui-default-border-radius-sm: 2px;
   --awesome-ui-default-border-radius-md: 5px;

@@ -8,16 +8,16 @@
   margin: var(--awesome-ui-whitespace-sm) 0;
   padding: var(--awesome-ui-whitespace-md);
   border-radius: var(--awesome-ui-border-radius-md);
-  box-shadow: inset 0 var(--awesome-ui-shadow-offset-xs) var(--awesome-ui-shadow-blur-sm) 0 var(--awesome-ui-color-dim);
+  box-shadow: inset 0 var(--awesome-ui-shadow-offset-xs) var(--awesome-ui-shadow-blur-sm) 0 var(--awesome-ui-color-shadow);
   transition: box-shadow 0.3s;
 }
 
 :host(:hover) {
-  box-shadow: inset 0 var(--awesome-ui-shadow-offset-xs) var(--awesome-ui-shadow-blur-md) 0 var(--awesome-ui-color-dim);
+  box-shadow: inset 0 var(--awesome-ui-shadow-offset-xs) var(--awesome-ui-shadow-blur-md) 0 var(--awesome-ui-color-shadow);
 }
 
 :host(:focus-within) {
-  box-shadow: inset 0 var(--awesome-ui-shadow-offset-xs) var(--awesome-ui-shadow-blur-md) 0 var(--awesome-ui-color-dim),
+  box-shadow: inset 0 var(--awesome-ui-shadow-offset-xs) var(--awesome-ui-shadow-blur-md) 0 var(--awesome-ui-color-shadow),
     inset 0 calc(var(--awesome-ui-shadow-offset-xs) * -1) var(--awesome-ui-shadow-blur-sm) 0 var(--awesome-ui-color-primary);
 }
 
