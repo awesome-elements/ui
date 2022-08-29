@@ -4,6 +4,7 @@
   display: block;
   position: relative;
   width: 100%;
+  margin: var(--awesome-ui-whitespace-md) 0;
   cursor: default;
   border-radius: var(--awesome-ui-border-radius-md);
   user-select: none;
