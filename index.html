@@ -1,4 +1,4 @@
-<!doctype html><html dir="ltr" lang="en"><head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"> <title>Awesome-Elements UI</title> <script type="module" src="./build/awesome-elements.esm.js"></script> <script nomodule="" src="./build/awesome-elements.js"></script> <link rel="stylesheet" href="./build/p-96ada300.css"> </head> <body> <awesome-wrap> <div> <h1>Alert</h1> <awesome-divider></awesome-divider> <awesome-alert id="alert-controller"></awesome-alert> <awesome-button onclick="presentAlert(
+<!doctype html><html dir="ltr" lang="en"><head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"> <title>Awesome-Elements UI</title> <script type="module" src="./build/awesome-elements.esm.js"></script> <script nomodule="" src="./build/awesome-elements.js"></script> <link rel="stylesheet" href="./build/p-fedfef33.css"> </head> <body> <awesome-wrap> <div> <h1>Alert</h1> <awesome-divider></awesome-divider> <awesome-alert id="alert-controller"></awesome-alert> <awesome-button onclick="presentAlert(
         'Alert', 
         'This is an alert. <br/> <b>And some HTML content</b>',
         [
@@ -10,7 +10,7 @@
             const alertController = document.querySelector('#alert-controller');
             alertController.present(header, content, buttons);
           }
-        </script> </div> <div> <h1>Backdrop</h1> <awesome-divider></awesome-divider> <div id="backdrop-container"></div> <template id="backdrop-template"> <awesome-backdrop onclick="dismissBackdrop()" style="background: var(--awesome-ui-color-dim); opacity: 0.5;"></awesome-backdrop> </template> <awesome-button onclick="showBackdrop()">Show Backdrop (then click anywhere to dismiss)</awesome-button> <script>
+        </script> </div> <div> <h1>Backdrop</h1> <awesome-divider></awesome-divider> <div id="backdrop-container"></div> <template id="backdrop-template"> <awesome-backdrop onclick="dismissBackdrop()" style="background: hsl(0, 0%, 50%); opacity: 0.5;"></awesome-backdrop> </template> <awesome-button onclick="showBackdrop()">Show Backdrop (then click anywhere to dismiss)</awesome-button> <script>
           function showBackdrop() {
             const backdrop = document.querySelector('#backdrop-template').content.cloneNode(true);
             const container = document.querySelector('#backdrop-container').append(backdrop);
