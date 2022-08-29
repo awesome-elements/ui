@@ -18,7 +18,7 @@ export class AwesomeTab implements ComponentInterface {
   }
 
   private get actualValue() {
-    return this.value || this.hostElement?.innerText;
+    return this.value || this.hostElement?.innerHTML;
   }
 
   @Element() hostElement: HTMLAwesomeTabElement;
