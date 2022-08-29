@@ -4,7 +4,6 @@
   display: block;
   position: relative;
   width: 100%;
-  margin: var(--awesome-ui-default-whitespace-md) 0;
   cursor: default;
   border-radius: var(--awesome-ui-default-border-radius-md);
   user-select: none;
@@ -27,6 +26,7 @@ awesome-flex-item {
 }
 
 [part='main'] {
+  margin-bottom: var(--awesome-ui-default-whitespace-sm);
   padding: var(--awesome-ui-default-whitespace-md);
   box-shadow: 0 10px 5px -10px var(--awesome-ui-default-color-shadow);
   transition: box-shadow 0.1s;
