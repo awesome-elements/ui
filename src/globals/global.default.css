@@ -28,3 +28,9 @@
   --awesome-ui-default-shadow-blur-xl: 25px;
   --awesome-ui-default-shadow-blur-xxl: 50px;
 }
+
+body[mode='default'] {
+  background: var(--awesome-ui-default-color-background);
+  color: var(--awesome-ui-default-color-main);
+  margin: 0;
+}

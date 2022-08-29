@@ -1,7 +1,7 @@
 @import url(../../utils/normalization.css);
 
 :host {
-  --shadow-offset: var(--awesome-ui-shadow-offset-lg);
+  --shadow-offset: var(--awesome-ui-default-shadow-offset-lg);
 
   display: block;
   position: relative;
@@ -32,11 +32,11 @@
 }
 
 :host([orientation='up']) [part='edge'] {
-  box-shadow: 0 var(--shadow-offset) var(--awesome-ui-shadow-blur-md) calc(var(--shadow-offset) * -1) var(--awesome-ui-color-shadow);
+  box-shadow: 0 var(--shadow-offset) var(--awesome-ui-default-shadow-blur-md) calc(var(--shadow-offset) * -1) var(--awesome-ui-default-color-shadow);
 }
 
 :host([orientation='down']) [part='edge'] {
-  box-shadow: 0 calc(var(--shadow-offset) * -1) var(--awesome-ui-shadow-blur-md) calc(var(--shadow-offset) * -1) var(--awesome-ui-color-shadow);
+  box-shadow: 0 calc(var(--shadow-offset) * -1) var(--awesome-ui-default-shadow-blur-md) calc(var(--shadow-offset) * -1) var(--awesome-ui-default-color-shadow);
 }
 
 [part='highlight'] {
@@ -47,11 +47,11 @@
 }
 
 :host([orientation='up']) [part='highlight'] {
-  box-shadow: 0 var(--shadow-offset) var(--awesome-ui-shadow-blur-lg) calc(var(--shadow-offset) * -1) var(--awesome-ui-color-primary);
+  box-shadow: 0 var(--shadow-offset) var(--awesome-ui-default-shadow-blur-lg) calc(var(--shadow-offset) * -1) var(--awesome-ui-default-color-primary);
 }
 
 :host([orientation='down']) [part='highlight'] {
-  box-shadow: 0 calc(var(--shadow-offset) * -1) var(--awesome-ui-shadow-blur-lg) calc(var(--shadow-offset) * -1) var(--awesome-ui-color-primary);
+  box-shadow: 0 calc(var(--shadow-offset) * -1) var(--awesome-ui-default-shadow-blur-lg) calc(var(--shadow-offset) * -1) var(--awesome-ui-default-color-primary);
 }
 
 [part='container'] {

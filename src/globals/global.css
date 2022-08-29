@@ -1,45 +1,14 @@
-@import url(./global.default.css);
-
-:root {
-  --awesome-ui-color-primary: var(--awesome-ui-default-color-primary);
-  --awesome-ui-color-secondary: var(--awesome-ui-default-color-secondary);
-  --awesome-ui-color-tertiary: var(--awesome-ui-default-color-tertiary);
-  --awesome-ui-color-main: var(--awesome-ui-default-color-main);
-  --awesome-ui-color-contrast: var(--awesome-ui-default-color-contrast);
-  --awesome-ui-color-dim: var(--awesome-ui-default-color-dim);
-  --awesome-ui-color-background: var(--awesome-ui-default-color-background);
-  --awesome-ui-color-shadow: var(--awesome-ui-default-color-shadow);
-
-  --awesome-ui-border-radius-sm: var(--awesome-ui-default-border-radius-sm);
-  --awesome-ui-border-radius-md: var(--awesome-ui-default-border-radius-md);
-  --awesome-ui-border-radius-lg: var(--awesome-ui-default-border-radius-lg);
-
-  --awesome-ui-whitespace-sm: var(--awesome-ui-default-whitespace-sm);
-  --awesome-ui-whitespace-md: var(--awesome-ui-default-whitespace-md);
-  --awesome-ui-whitespace-lg: var(--awesome-ui-default-whitespace-lg);
-
-  --awesome-ui-shadow-offset-xs: var(--awesome-ui-default-shadow-offset-xs);
-  --awesome-ui-shadow-offset-sm: var(--awesome-ui-default-shadow-offset-sm);
-  --awesome-ui-shadow-offset-md: var(--awesome-ui-default-shadow-offset-md);
-  --awesome-ui-shadow-offset-lg: var(--awesome-ui-default-shadow-offset-lg);
-
-  --awesome-ui-shadow-blur-xs: var(--awesome-ui-default-shadow-blur-xs);
-  --awesome-ui-shadow-blur-sm: var(--awesome-ui-default-shadow-blur-sm);
-  --awesome-ui-shadow-blur-md: var(--awesome-ui-default-shadow-blur-md);
-  --awesome-ui-shadow-blur-lg: var(--awesome-ui-default-shadow-blur-lg);
-  --awesome-ui-shadow-blur-xl: var(--awesome-ui-default-shadow-blur-xl);
-  --awesome-ui-shadow-blur-xxl: var(--awesome-ui-default-shadow-blur-xxl);
+body {
+  background: var(--awesome-ui-default-color-background);
+  color: var(--awesome-ui-default-color-main);
+  margin: 0;
 }
+
+@import url(./global.default.css);
 
 :root {
   -webkit-tap-highlight-color: transparent;
   font-family: Arial, Helvetica, sans-serif;
-}
-
-body {
-  background: var(--awesome-ui-color-background);
-  color: var(--awesome-ui-color-main);
-  margin: 0;
 }
 
 * {

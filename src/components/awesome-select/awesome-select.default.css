@@ -3,7 +3,7 @@
 :host {
   display: block;
   width: 100%;
-  margin: var(--awesome-ui-whitespace-sm) 0;
+  margin: var(--awesome-ui-default-whitespace-sm) 0;
   user-select: none;
 }
 
@@ -16,7 +16,7 @@
   position: relative;
   cursor: pointer;
   width: 10rem;
-  margin: var(--awesome-ui-whitespace-sm) 0;
+  margin: var(--awesome-ui-default-whitespace-sm) 0;
   transition: all 0.3s;
 }
 
@@ -26,24 +26,24 @@
   min-height: 1em;
   height: 100%;
   width: 100%;
-  background: var(--awesome-ui-color-background);
-  padding: var(--awesome-ui-whitespace-md);
-  border-radius: var(--awesome-ui-border-radius-md);
-  box-shadow: inset 0 var(--awesome-ui-shadow-offset-xs) var(--awesome-ui-shadow-blur-sm) 0 var(--awesome-ui-color-shadow);
+  background: var(--awesome-ui-default-color-background);
+  padding: var(--awesome-ui-default-whitespace-md);
+  border-radius: var(--awesome-ui-default-border-radius-md);
+  box-shadow: inset 0 var(--awesome-ui-default-shadow-offset-xs) var(--awesome-ui-default-shadow-blur-sm) 0 var(--awesome-ui-default-color-shadow);
   transition: box-shadow 0.3s;
 }
 
 [part='main']:hover {
-  box-shadow: inset 0 var(--awesome-ui-shadow-offset-xs) var(--awesome-ui-shadow-blur-md) 0 var(--awesome-ui-color-shadow);
+  box-shadow: inset 0 var(--awesome-ui-default-shadow-offset-xs) var(--awesome-ui-default-shadow-blur-md) 0 var(--awesome-ui-default-color-shadow);
 }
 
 #toggle:checked ~ [part='main'] {
-  box-shadow: inset 0 var(--awesome-ui-shadow-offset-xs) var(--awesome-ui-shadow-blur-md) 0 var(--awesome-ui-color-shadow),
-    inset 0 calc(var(--awesome-ui-shadow-offset-xs) * -1) var(--awesome-ui-shadow-blur-sm) 0 var(--awesome-ui-color-primary);
+  box-shadow: inset 0 var(--awesome-ui-default-shadow-offset-xs) var(--awesome-ui-default-shadow-blur-md) 0 var(--awesome-ui-default-color-shadow),
+    inset 0 calc(var(--awesome-ui-default-shadow-offset-xs) * -1) var(--awesome-ui-default-shadow-blur-sm) 0 var(--awesome-ui-default-color-primary);
 }
 
 :host(:not([value])) [part='main'] > .text {
-  color: var(--awesome-ui-color-dim);
+  color: var(--awesome-ui-default-color-dim);
 }
 
 [part='main'] > .arrow {
@@ -52,7 +52,7 @@
 }
 
 [part='container']:hover [part='main'] > .arrow {
-  --stroke-color: var(--awesome-ui-color-primary);
+  --stroke-color: var(--awesome-ui-default-color-primary);
 }
 
 #toggle:checked ~ [part='main'] > .arrow {
@@ -85,8 +85,8 @@
 }
 
 .popover {
-  padding: var(--awesome-ui-whitespace-md);
-  background: var(--awesome-ui-color-background);
-  border-radius: var(--awesome-ui-border-radius-lg);
-  box-shadow: 0 var(--awesome-ui-shadow-offset-lg) var(--awesome-ui-shadow-blur-xl) 0 var(--awesome-ui-color-shadow);
+  padding: var(--awesome-ui-default-whitespace-md);
+  background: var(--awesome-ui-default-color-background);
+  border-radius: var(--awesome-ui-default-border-radius-lg);
+  box-shadow: 0 var(--awesome-ui-default-shadow-offset-lg) var(--awesome-ui-default-shadow-blur-xl) 0 var(--awesome-ui-default-color-shadow);
 }

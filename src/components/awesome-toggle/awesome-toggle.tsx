@@ -48,7 +48,7 @@ export class AwesomeToggle implements ComponentInterface {
       case 'checkbox':
         content = (
           <svg class="check-mark" viewBox="0 0 100 100">
-            <path d="M10,55L40,80L90,20" fill="none" stroke="var(--awesome-ui-color-contrast)" stroke-width={20} />
+            <path d="M10,55L40,80L90,20" fill="none" stroke="var(--awesome-ui-default-color-contrast)" stroke-width={20} />
           </svg>
         );
         break;

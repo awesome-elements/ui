@@ -8,7 +8,7 @@
   height: 4px;
   width: 100%;
   border-radius: 2px;
-  box-shadow: inset 0 0 var(--awesome-ui-shadow-blur-md) 0px var(--awesome-ui-color-shadow);
+  box-shadow: inset 0 0 var(--awesome-ui-default-shadow-blur-md) 0px var(--awesome-ui-default-color-shadow);
 }
 
 div {
@@ -17,6 +17,6 @@ div {
   width: calc(var(--progress) * 100%);
   max-width: 100%;
   border-radius: 2px;
-  background: var(--awesome-ui-color-primary);
-  box-shadow: 0 0 var(--awesome-ui-shadow-blur-md) 1px var(--awesome-ui-color-primary);
+  background: var(--awesome-ui-default-color-primary);
+  box-shadow: 0 0 var(--awesome-ui-default-shadow-blur-md) 1px var(--awesome-ui-default-color-primary);
 }

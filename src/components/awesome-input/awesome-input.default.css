@@ -4,21 +4,21 @@
   display: block;
   cursor: default;
   width: 100%;
-  background: var(--awesome-ui-color-background);
-  margin: var(--awesome-ui-whitespace-sm) 0;
-  padding: var(--awesome-ui-whitespace-md);
-  border-radius: var(--awesome-ui-border-radius-md);
-  box-shadow: inset 0 var(--awesome-ui-shadow-offset-xs) var(--awesome-ui-shadow-blur-sm) 0 var(--awesome-ui-color-shadow);
+  background: var(--awesome-ui-default-color-background);
+  margin: var(--awesome-ui-default-whitespace-sm) 0;
+  padding: var(--awesome-ui-default-whitespace-md);
+  border-radius: var(--awesome-ui-default-border-radius-md);
+  box-shadow: inset 0 var(--awesome-ui-default-shadow-offset-xs) var(--awesome-ui-default-shadow-blur-sm) 0 var(--awesome-ui-default-color-shadow);
   transition: box-shadow 0.3s;
 }
 
 :host(:hover) {
-  box-shadow: inset 0 var(--awesome-ui-shadow-offset-xs) var(--awesome-ui-shadow-blur-md) 0 var(--awesome-ui-color-shadow);
+  box-shadow: inset 0 var(--awesome-ui-default-shadow-offset-xs) var(--awesome-ui-default-shadow-blur-md) 0 var(--awesome-ui-default-color-shadow);
 }
 
 :host(:focus-within) {
-  box-shadow: inset 0 var(--awesome-ui-shadow-offset-xs) var(--awesome-ui-shadow-blur-md) 0 var(--awesome-ui-color-shadow),
-    inset 0 calc(var(--awesome-ui-shadow-offset-xs) * -1) var(--awesome-ui-shadow-blur-sm) 0 var(--awesome-ui-color-primary);
+  box-shadow: inset 0 var(--awesome-ui-default-shadow-offset-xs) var(--awesome-ui-default-shadow-blur-md) 0 var(--awesome-ui-default-color-shadow),
+    inset 0 calc(var(--awesome-ui-default-shadow-offset-xs) * -1) var(--awesome-ui-default-shadow-blur-sm) 0 var(--awesome-ui-default-color-primary);
 }
 
 :host([disabled]) {
@@ -32,6 +32,6 @@
   border: none;
   font-size: 1em;
   background: none;
-  padding: 0 var(--awesome-ui-whitespace-md);
-  caret-color: var(--awesome-ui-color-primary);
+  padding: 0 var(--awesome-ui-default-whitespace-md);
+  caret-color: var(--awesome-ui-default-color-primary);
 }

@@ -4,11 +4,11 @@
   display: inline-block;
   user-select: none;
   cursor: pointer;
-  padding: var(--awesome-ui-whitespace-md);
-  color: var(--awesome-ui-color-main);
+  padding: var(--awesome-ui-default-whitespace-md);
+  color: var(--awesome-ui-default-color-main);
   transition: color 0.3s;
 }
 
 :host([selected]) {
-  color: var(--awesome-ui-color-primary);
+  color: var(--awesome-ui-default-color-primary);
 }

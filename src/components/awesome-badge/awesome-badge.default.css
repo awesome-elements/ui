@@ -2,9 +2,9 @@
 
 :host {
   display: inline-block;
-  padding: var(--awesome-ui-whitespace-sm);
-  color: var(--awesome-ui-color-main);
-  background: var(--awesome-ui-color-primary);
-  border-radius: var(--awesome-ui-border-radius-lg);
+  padding: var(--awesome-ui-default-whitespace-sm);
+  color: var(--awesome-ui-default-color-main);
+  background: var(--awesome-ui-default-color-primary);
+  border-radius: var(--awesome-ui-default-border-radius-lg);
   user-select: none;
 }

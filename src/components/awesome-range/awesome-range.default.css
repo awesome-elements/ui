@@ -41,24 +41,24 @@
 [part='native']::before {
   left: calc(var(--thumb-size) / 2);
   width: calc(var(--awesome-range-handle-position-ratio) * (100% - var(--thumb-size)));
-  background: var(--awesome-ui-color-primary);
-  box-shadow: 0 0 var(--awesome-ui-shadow-blur-xs) 0 var(--awesome-ui-color-primary);
+  background: var(--awesome-ui-default-color-primary);
+  box-shadow: 0 0 var(--awesome-ui-default-shadow-blur-xs) 0 var(--awesome-ui-default-color-primary);
 }
 
 :host(:hover) [part='native']::before {
-  box-shadow: 0 0 var(--awesome-ui-shadow-blur-md) 0 var(--awesome-ui-color-primary);
+  box-shadow: 0 0 var(--awesome-ui-default-shadow-blur-md) 0 var(--awesome-ui-default-color-primary);
 }
 
 [part='native']::after {
   z-index: -1;
   right: calc(var(--thumb-size) / 2);
   width: calc((100% - var(--thumb-size)) - var(--awesome-range-handle-position-ratio) * (100% - var(--thumb-size)));
-  background: var(--awesome-ui-color-dim);
-  box-shadow: 0 0 var(--awesome-ui-shadow-blur-xs) 0 var(--awesome-ui-color-shadow);
+  background: var(--awesome-ui-default-color-dim);
+  box-shadow: 0 0 var(--awesome-ui-default-shadow-blur-xs) 0 var(--awesome-ui-default-color-shadow);
 }
 
 :host(:hover) [part='native']::after {
-  box-shadow: 0 0 var(--awesome-ui-shadow-blur-md) 0 var(--awesome-ui-color-shadow);
+  box-shadow: 0 0 var(--awesome-ui-default-shadow-blur-md) 0 var(--awesome-ui-default-color-shadow);
 }
 
 [part='native']::-webkit-slider-thumb {
@@ -68,22 +68,22 @@
   height: var(--thumb-size);
   width: var(--thumb-size);
   border-radius: 50%;
-  background: var(--awesome-ui-color-primary);
-  box-shadow: 0 var(--awesome-ui-shadow-offset-xs) var(--awesome-ui-shadow-blur-sm) 0px var(--awesome-ui-color-shadow);
+  background: var(--awesome-ui-default-color-primary);
+  box-shadow: 0 var(--awesome-ui-default-shadow-offset-xs) var(--awesome-ui-default-shadow-blur-sm) 0px var(--awesome-ui-default-color-shadow);
   transition-property: box-shadow, border-radius;
   transition-duration: 0.3s;
 }
 
 :host(:hover) [part='native']::-webkit-slider-thumb {
-  box-shadow: 0 var(--awesome-ui-shadow-offset-xs) var(--awesome-ui-shadow-blur-md) 0px var(--awesome-ui-color-shadow),
-    0 0 var(--awesome-ui-shadow-blur-md) 0px var(--awesome-ui-color-primary);
+  box-shadow: 0 var(--awesome-ui-default-shadow-offset-xs) var(--awesome-ui-default-shadow-blur-md) 0px var(--awesome-ui-default-color-shadow),
+    0 0 var(--awesome-ui-default-shadow-blur-md) 0px var(--awesome-ui-default-color-primary);
 }
 
 :host(:active) [part='native']::-webkit-slider-thumb {
-  box-shadow: 0 var(--awesome-ui-shadow-offset-xs) var(--awesome-ui-shadow-blur-md) 0px var(--awesome-ui-color-shadow),
-    0 0 var(--awesome-ui-shadow-blur-md) 0px var(--awesome-ui-color-primary);
+  box-shadow: 0 var(--awesome-ui-default-shadow-offset-xs) var(--awesome-ui-default-shadow-blur-md) 0px var(--awesome-ui-default-color-shadow),
+    0 0 var(--awesome-ui-default-shadow-blur-md) 0px var(--awesome-ui-default-color-primary);
 }
 
 [part='native']::-webkit-slider-thumb:active {
-  border-radius: var(--awesome-ui-border-radius-md);
+  border-radius: var(--awesome-ui-default-border-radius-md);
 }

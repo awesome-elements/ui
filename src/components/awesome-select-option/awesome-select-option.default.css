@@ -6,5 +6,5 @@
 }
 
 :host([selected]) {
-  color: var(--awesome-ui-color-primary);
+  color: var(--awesome-ui-default-color-primary);
 }
