@@ -6,6 +6,7 @@
   width: 100%;
   cursor: default;
   border-radius: var(--awesome-ui-default-border-radius-md);
+  margin: var(--awesome-ui-default-whitespace-sm) 0;
   user-select: none;
   transition: box-shadow 0.1s;
 }
@@ -26,7 +27,6 @@ awesome-flex-item {
 }
 
 [part='main'] {
-  margin: var(--awesome-ui-default-whitespace-sm) 0;
   padding: var(--awesome-ui-default-whitespace-md);
   box-shadow: 0 10px 5px -10px var(--awesome-ui-default-color-shadow);
   transition: box-shadow 0.1s;
