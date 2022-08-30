@@ -14,6 +14,7 @@
   transform: translate(-50%, -50%);
   padding: var(--awesome-ui-soft-whitespace-md);
   background: var(--awesome-ui-soft-color-background);
+  backdrop-filter: blur(var(--awesome-ui-soft-shadow-blur-lg));
   border-radius: var(--awesome-ui-soft-border-radius-lg);
   box-shadow: 0 var(--awesome-ui-soft-shadow-offset-lg) var(--awesome-ui-soft-shadow-blur-xl) 0 var(--awesome-ui-soft-color-shadow);
 }

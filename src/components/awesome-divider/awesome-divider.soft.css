@@ -4,17 +4,18 @@
   display: block;
   position: relative;
   width: 100%;
-  height: 2px;
+  height: 5px;
   margin: 0.5rem 0;
 }
 
 div {
-  --disposition: calc(-1 * (var(--awesome-ui-soft-shadow-offset-sm) - 1px));
-
   display: block;
-  height: 10px;
+  height: 100%;
   background: transparent;
-  margin: 0 var(--disposition);
-  box-shadow: 0 var(--awesome-ui-soft-shadow-offset-sm) var(--awesome-ui-soft-shadow-blur-sm) var(--disposition) var(--awesome-ui-soft-color-main);
-  transform: translateY(-10px);
+  border-radius: 100vmax;
+  box-shadow: var(--awesome-ui-soft-shadow-offset-xs) var(--awesome-ui-soft-shadow-offset-xs) var(--awesome-ui-soft-shadow-blur-xs) 0 var(--awesome-ui-soft-color-shadow),
+    calc(var(--awesome-ui-soft-shadow-offset-xs) * -1) calc(var(--awesome-ui-soft-shadow-offset-xs) * -1) var(--awesome-ui-soft-shadow-blur-xs) 0 var(--awesome-ui-soft-color-light),
+    inset var(--awesome-ui-soft-shadow-offset-xs) var(--awesome-ui-soft-shadow-offset-xs) var(--awesome-ui-soft-shadow-blur-xs) 0 var(--awesome-ui-soft-color-light),
+    inset calc(var(--awesome-ui-soft-shadow-offset-xs) * -1) calc(var(--awesome-ui-soft-shadow-offset-xs) * -1) var(--awesome-ui-soft-shadow-blur-xs) 0
+      var(--awesome-ui-soft-color-shadow);
 }

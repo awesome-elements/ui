@@ -5,32 +5,34 @@
   --awesome-ui-soft-color-main: hsl(0, 0%, 0%);
   --awesome-ui-soft-color-contrast: hsl(0, 0%, 100%);
   --awesome-ui-soft-color-dim: hsl(0, 0%, 50%);
-  --awesome-ui-soft-color-background: hsl(0, 0%, 100%);
+  --awesome-ui-soft-color-background: hsl(0, 0%, 100%, 0.3);
   --awesome-ui-soft-color-shadow: hsl(0, 0%, 0%, 0.5);
+  --awesome-ui-soft-color-light: hsl(0, 0%, 100%, .8);
+  
+  --awesome-ui-soft-border-radius-sm: 10px;
+  --awesome-ui-soft-border-radius-md: 20px;
+  --awesome-ui-soft-border-radius-lg: 50px;
 
-  --awesome-ui-soft-border-radius-sm: 5px;
-  --awesome-ui-soft-border-radius-md: 10px;
-  --awesome-ui-soft-border-radius-lg: 20px;
-
-  --awesome-ui-soft-whitespace-sm: 0.5rem;
-  --awesome-ui-soft-whitespace-md: 1rem;
-  --awesome-ui-soft-whitespace-lg: 2rem;
+  --awesome-ui-soft-whitespace-sm: 1rem;
+  --awesome-ui-soft-whitespace-md: 2rem;
+  --awesome-ui-soft-whitespace-lg: 3rem;
 
   --awesome-ui-soft-shadow-offset-xs: 2px;
   --awesome-ui-soft-shadow-offset-sm: 5px;
   --awesome-ui-soft-shadow-offset-md: 10px;
   --awesome-ui-soft-shadow-offset-lg: 20px;
+  --awesome-ui-soft-shadow-offset-xl: 40px;
 
-  --awesome-ui-soft-shadow-blur-xs: 2px;
-  --awesome-ui-soft-shadow-blur-sm: 5px;
-  --awesome-ui-soft-shadow-blur-md: 10px;
-  --awesome-ui-soft-shadow-blur-lg: 20px;
-  --awesome-ui-soft-shadow-blur-xl: 50px;
-  --awesome-ui-soft-shadow-blur-xxl: 100px;
+  --awesome-ui-soft-shadow-blur-xs: 3px;
+  --awesome-ui-soft-shadow-blur-sm: 7.5px;
+  --awesome-ui-soft-shadow-blur-md: 12.5px;
+  --awesome-ui-soft-shadow-blur-lg: 25px;
+  --awesome-ui-soft-shadow-blur-xl: 60px;
+  --awesome-ui-soft-shadow-blur-xxl: 120px;
 }
 
 body[mode='soft'] {
-  background: var(--awesome-ui-soft-color-background);
+  background: azure;
   color: var(--awesome-ui-soft-color-main);
   margin: 0;
 }

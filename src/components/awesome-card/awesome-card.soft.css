@@ -1,14 +1,16 @@
 @import url(../../utils/normalization.css);
 
 :host {
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-light-color: transparent;
   display: block;
   position: relative;
-  margin: var(--awesome-ui-soft-whitespace-sm);
-  padding: var(--awesome-ui-soft-whitespace-lg);
+  margin: var(--awesome-ui-soft-whitespace-md);
+  padding: var(--awesome-ui-soft-whitespace-md);
   border-radius: var(--awesome-ui-soft-border-radius-lg);
   background: var(--awesome-ui-soft-color-background);
-  box-shadow: 0 var(--awesome-ui-soft-shadow-offset-sm) var(--awesome-ui-soft-shadow-blur-md) 0 var(--awesome-ui-soft-color-shadow);
+  box-shadow: var(--awesome-ui-soft-shadow-offset-md) var(--awesome-ui-soft-shadow-offset-md) var(--awesome-ui-soft-shadow-blur-lg) 0 var(--awesome-ui-soft-color-shadow),
+    calc(var(--awesome-ui-soft-shadow-offset-md) * -1) calc(var(--awesome-ui-soft-shadow-offset-md) * -1) var(--awesome-ui-soft-shadow-blur-lg) 0
+      var(--awesome-ui-soft-color-light);
   transition: box-shadow 0.3s;
 }
 
@@ -17,9 +19,19 @@
 }
 
 :host([button]:hover) {
-  box-shadow: 0 var(--awesome-ui-soft-shadow-offset-sm) var(--awesome-ui-soft-shadow-blur-lg) 0 var(--awesome-ui-soft-color-shadow);
+  box-shadow: var(--awesome-ui-soft-shadow-offset-md) var(--awesome-ui-soft-shadow-offset-md) var(--awesome-ui-soft-shadow-blur-lg) 0 var(--awesome-ui-soft-color-shadow),
+    calc(var(--awesome-ui-soft-shadow-offset-md) * -1) calc(var(--awesome-ui-soft-shadow-offset-md) * -1) var(--awesome-ui-soft-shadow-blur-lg) 0
+      var(--awesome-ui-soft-color-light),
+    inset var(--awesome-ui-soft-shadow-offset-sm) var(--awesome-ui-soft-shadow-offset-sm) var(--awesome-ui-soft-shadow-blur-md) 0 var(--awesome-ui-soft-color-light),
+    inset calc(var(--awesome-ui-soft-shadow-offset-sm) * -1) calc(var(--awesome-ui-soft-shadow-offset-sm) * -1) var(--awesome-ui-soft-shadow-blur-md) 0
+      var(--awesome-ui-soft-color-shadow);
 }
 
 :host([button]:active) {
-  box-shadow: inset 0 var(--awesome-ui-soft-shadow-offset-sm) var(--awesome-ui-soft-shadow-blur-md) 0 var(--awesome-ui-soft-color-shadow);
+  box-shadow: var(--awesome-ui-soft-shadow-offset-md) var(--awesome-ui-soft-shadow-offset-md) var(--awesome-ui-soft-shadow-blur-lg) 0 var(--awesome-ui-soft-color-shadow),
+    calc(var(--awesome-ui-soft-shadow-offset-md) * -1) calc(var(--awesome-ui-soft-shadow-offset-md) * -1) var(--awesome-ui-soft-shadow-blur-lg) 0
+      var(--awesome-ui-soft-color-light),
+    inset var(--awesome-ui-soft-shadow-offset-sm) var(--awesome-ui-soft-shadow-offset-sm) var(--awesome-ui-soft-shadow-blur-md) 0 var(--awesome-ui-soft-color-shadow),
+    inset calc(var(--awesome-ui-soft-shadow-offset-sm) * -1) calc(var(--awesome-ui-soft-shadow-offset-sm) * -1) var(--awesome-ui-soft-shadow-blur-md) 0
+      var(--awesome-ui-soft-color-light);
 }
