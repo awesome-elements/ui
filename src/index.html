@@ -105,6 +105,13 @@
             <span slot="before">before</span>
             <span slot="after">after</span>
           </awesome-input>
+          <awesome-input type="number" min="0" max="10" placeholder="placeholder">
+            <span slot="before">number</span>
+            <span slot="after">(from 0 - 10)</span>
+          </awesome-input>
+          <awesome-input type="password" placeholder="placeholder">
+            <span slot="before">password</span>
+          </awesome-input>
           <script>
             function handleInputValueChange(value) {
               presentAlert('Input value changed!', `The new value is <b>${value}</b>.`);

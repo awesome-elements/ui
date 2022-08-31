@@ -84,6 +84,14 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
+          * The maxiumn number for the input. Only valid when `type` is set to `"number"`.
+         */
+        "max": number;
+        /**
+          * The minimum number for the input. Only valid when `type` is set to `"number"`.
+         */
+        "min": number;
+        /**
           * Placeholder of the input.
          */
         "placeholder"?: string;
@@ -402,6 +410,14 @@ declare namespace LocalJSX {
           * The flag of disabling the input. Default to `false`.
          */
         "disabled"?: boolean;
+        /**
+          * The maxiumn number for the input. Only valid when `type` is set to `"number"`.
+         */
+        "max"?: number;
+        /**
+          * The minimum number for the input. Only valid when `type` is set to `"number"`.
+         */
+        "min"?: number;
         /**
           * Event of content being changed.
          */

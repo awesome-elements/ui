@@ -1,6 +1,6 @@
 import { Component, Host, h, ComponentInterface, Prop, Event, EventEmitter } from '@stencil/core';
 
-export type InputType = 'text';
+export type InputType = 'text' | 'number' | 'password';
 
 @Component({
   tag: 'awesome-input',
@@ -20,6 +20,16 @@ export class AwesomeInput implements ComponentInterface {
    */
   // eslint-disable-next-line @stencil/strict-mutable
   @Prop({ reflect: true, mutable: true }) value?: string;
+
+  /**
+   * The minimum number for the input. Only valid when `type` is set to `"number"`.
+   */
+  @Prop({ reflect: true }) min: number;
+
+  /**
+   * The maxiumn number for the input. Only valid when `type` is set to `"number"`.
+   */
+  @Prop({ reflect: true }) max: number;
 
   /**
    * Placeholder of the input.
@@ -49,7 +59,17 @@ export class AwesomeInput implements ComponentInterface {
             <slot name="before"></slot>
           </awesome-flex-item>
           <awesome-flex-item>
-            <input part="native" value={this.value} disabled={this.disabled} placeholder={this.placeholder} onChange={this.handleOnChangeEvent} onInput={this.handleOnInputEvent} />
+            <input
+              part="native"
+              type={this.type}
+              min={this.min}
+              max={this.max}
+              value={this.value}
+              disabled={this.disabled}
+              placeholder={this.placeholder}
+              onChange={this.handleOnChangeEvent}
+              onInput={this.handleOnInputEvent}
+            />
           </awesome-flex-item>
           <awesome-flex-item xs="auto">
             <slot name="after"></slot>
