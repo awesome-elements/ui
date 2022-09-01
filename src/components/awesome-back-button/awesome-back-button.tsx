@@ -5,6 +5,7 @@ import { renderArrow } from '../../utils/arrow';
   tag: 'awesome-back-button',
   styleUrls: {
     default: 'awesome-back-button.default.css',
+    soft: 'awesome-back-button.soft.css',
   },
   shadow: true,
 })
