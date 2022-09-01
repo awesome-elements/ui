@@ -1,6 +1,6 @@
 import { updateCSSVariable } from '@awesome-elements/utils/dist';
 import { Component, Host, h, ComponentInterface, Element, Prop, Event, EventEmitter, Watch, State } from '@stencil/core';
-import { renderArrow } from '../../utils/arrow';
+import { renderArrowWithoutTail } from '../../utils/svg/arrow';
 
 @Component({
   tag: 'awesome-select',
@@ -62,7 +62,7 @@ export class AwesomeSelect implements ComponentInterface {
           <input id="toggle" type="checkbox" checked={this.expanded} hidden onChange={this.handleToggleValueChange} />
           <div part="main">
             <span class="text">{this.value || this.placeholder}</span>
-            {renderArrow('down', { height: '1em', width: '1em' })}
+            {renderArrowWithoutTail('down', { height: '1em', width: '1em' })}
           </div>
           {/* TODO attaching dropdown element to root element*/}
           <div part="dropdown" class="popover" style={{ zIndex: zIndex.toString() }}>

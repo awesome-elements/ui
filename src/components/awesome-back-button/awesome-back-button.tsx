@@ -1,5 +1,5 @@
 import { Component, Host, h, ComponentInterface, Prop } from '@stencil/core';
-import { renderArrow } from '../../utils/arrow';
+import { renderArrow } from '../../utils/svg/arrow';
 
 @Component({
   tag: 'awesome-back-button',
