@@ -19,6 +19,7 @@
 ### Used by
 
  - [awesome-alert](../awesome-alert)
+ - [awesome-back-button](../awesome-back-button)
 
 ### Depends on
 
@@ -31,6 +32,7 @@ graph TD;
   awesome-button --> awesome-grid
   awesome-button --> awesome-grid-item
   awesome-alert --> awesome-button
+  awesome-back-button --> awesome-button
   style awesome-button fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

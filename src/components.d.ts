@@ -44,6 +44,12 @@ export namespace Components {
          */
         "zIndex": number;
     }
+    interface AwesomeBackButton {
+        /**
+          * The default href to be used when there is no browsing history.
+         */
+        "defaultHref": string;
+    }
     interface AwesomeBackdrop {
         /**
           * `z-index` of the alert.
@@ -231,6 +237,12 @@ declare global {
         prototype: HTMLAwesomeAlertElement;
         new (): HTMLAwesomeAlertElement;
     };
+    interface HTMLAwesomeBackButtonElement extends Components.AwesomeBackButton, HTMLStencilElement {
+    }
+    var HTMLAwesomeBackButtonElement: {
+        prototype: HTMLAwesomeBackButtonElement;
+        new (): HTMLAwesomeBackButtonElement;
+    };
     interface HTMLAwesomeBackdropElement extends Components.AwesomeBackdrop, HTMLStencilElement {
     }
     var HTMLAwesomeBackdropElement: {
@@ -329,6 +341,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "awesome-alert": HTMLAwesomeAlertElement;
+        "awesome-back-button": HTMLAwesomeBackButtonElement;
         "awesome-backdrop": HTMLAwesomeBackdropElement;
         "awesome-badge": HTMLAwesomeBadgeElement;
         "awesome-button": HTMLAwesomeButtonElement;
@@ -370,6 +383,12 @@ declare namespace LocalJSX {
           * `z-index` of the alert.
          */
         "zIndex"?: number;
+    }
+    interface AwesomeBackButton {
+        /**
+          * The default href to be used when there is no browsing history.
+         */
+        "defaultHref"?: string;
     }
     interface AwesomeBackdrop {
         /**
@@ -555,6 +574,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "awesome-alert": AwesomeAlert;
+        "awesome-back-button": AwesomeBackButton;
         "awesome-backdrop": AwesomeBackdrop;
         "awesome-badge": AwesomeBadge;
         "awesome-button": AwesomeButton;
@@ -578,6 +598,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "awesome-alert": LocalJSX.AwesomeAlert & JSXBase.HTMLAttributes<HTMLAwesomeAlertElement>;
+            "awesome-back-button": LocalJSX.AwesomeBackButton & JSXBase.HTMLAttributes<HTMLAwesomeBackButtonElement>;
             "awesome-backdrop": LocalJSX.AwesomeBackdrop & JSXBase.HTMLAttributes<HTMLAwesomeBackdropElement>;
             "awesome-badge": LocalJSX.AwesomeBadge & JSXBase.HTMLAttributes<HTMLAwesomeBadgeElement>;
             "awesome-button": LocalJSX.AwesomeButton & JSXBase.HTMLAttributes<HTMLAwesomeButtonElement>;

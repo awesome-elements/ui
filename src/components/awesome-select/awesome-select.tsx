@@ -1,5 +1,6 @@
 import { updateCSSVariable } from '@awesome-elements/utils/dist';
 import { Component, Host, h, ComponentInterface, Element, Prop, Event, EventEmitter, Watch, State } from '@stencil/core';
+import { renderArrow } from '../../utils/arrow';
 
 @Component({
   tag: 'awesome-select',
@@ -61,7 +62,7 @@ export class AwesomeSelect implements ComponentInterface {
           <input id="toggle" type="checkbox" checked={this.expanded} hidden onChange={this.handleToggleValueChange} />
           <div part="main">
             <span class="text">{this.value || this.placeholder}</span>
-            {this.renderArrow()}
+            {renderArrow('down', { height: '1em', width: '1em' })}
           </div>
           {/* TODO attaching dropdown element to root element*/}
           <div part="dropdown" class="popover" style={{ zIndex: zIndex.toString() }}>
@@ -80,14 +81,6 @@ export class AwesomeSelect implements ComponentInterface {
     const checked = (event.currentTarget as HTMLInputElement).checked;
     this.expanded = checked;
   };
-
-  private renderArrow() {
-    return (
-      <svg class="arrow" width="1em" height="1em" viewBox="0 0 100 100">
-        <path stroke-width="10" stroke="var(--stroke-color, black)" fill="transparent" d="M20,30 L50,70 L 80 30"></path>
-      </svg>
-    );
-  }
 
   private updateOptionHighlights() {
     this.hostElement?.querySelectorAll(this.CHILD_SELECT_OPTION_TAG_NAME).forEach(async option => {
