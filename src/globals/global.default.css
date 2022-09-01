@@ -29,6 +29,12 @@
   --awesome-ui-default-shadow-blur-xxl: 50px;
 }
 
+body.dark {
+  --awesome-ui-default-color-main: hsl(0, 0%, 100%);
+  --awesome-ui-default-color-contrast: hsl(0, 0%, 0%);
+  --awesome-ui-default-color-background: hsl(0, 0%, 20%);
+}
+
 body[mode='default'] {
   background: var(--awesome-ui-default-color-background);
   color: var(--awesome-ui-default-color-main);
