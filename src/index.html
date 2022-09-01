@@ -43,8 +43,15 @@
         <h1>Back Button</h1>
         <awesome-divider></awesome-divider>
         <awesome-button onclick="location.href = location.href + '#'">Push a browsing history state (adding a #)</awesome-button>
-        <div style="height: 3rem; width: 3rem">
-          <awesome-back-button default-href="//bing.com"></awesome-back-button>
+        <br />
+        Without setting <b>href</b>:
+        <div style="height: 3rem; width: 3rem; display: inline-block">
+          <awesome-back-button></awesome-back-button>
+        </div>
+        <br />
+        With <b>href</b> set as "/":
+        <div style="height: 3rem; width: 3rem; display: inline-block">
+          <awesome-back-button href="/"></awesome-back-button>
         </div>
       </div>
       <div>

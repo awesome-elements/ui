@@ -46,9 +46,9 @@ export namespace Components {
     }
     interface AwesomeBackButton {
         /**
-          * The default href to be used when there is no browsing history.
+          * If does not present, the button would try to navigate back according to the browsing history.
          */
-        "defaultHref": string;
+        "href": string;
     }
     interface AwesomeBackdrop {
         /**
@@ -386,9 +386,9 @@ declare namespace LocalJSX {
     }
     interface AwesomeBackButton {
         /**
-          * The default href to be used when there is no browsing history.
+          * If does not present, the button would try to navigate back according to the browsing history.
          */
-        "defaultHref"?: string;
+        "href"?: string;
     }
     interface AwesomeBackdrop {
         /**

@@ -10,9 +10,9 @@ import { renderArrow } from '../../utils/arrow';
 })
 export class AwesomeBackButton implements ComponentInterface {
   /**
-   * The default href to be used when there is no browsing history.
+   * If does not present, the button would try to navigate back according to the browsing history.
    */
-  @Prop({ reflect: true }) defaultHref: string;
+  @Prop({ reflect: true }) href: string;
 
   render() {
     return (
@@ -25,15 +25,10 @@ export class AwesomeBackButton implements ComponentInterface {
   }
 
   private handleButtonClick = () => {
-    const currentHref = window.location.href;
-    history.back();
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        const failingToGoBack = window.location.href === currentHref;
-        if (failingToGoBack) {
-          location.href = this.defaultHref;
-        }
-      });
-    });
+    if (this.href) {
+      location.href = this.href;
+    } else {
+      history.back();
+    }
   };
 }

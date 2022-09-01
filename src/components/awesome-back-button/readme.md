@@ -7,9 +7,9 @@
 
 ## Properties
 
-| Property      | Attribute      | Description                                                    | Type     | Default     |
-| ------------- | -------------- | -------------------------------------------------------------- | -------- | ----------- |
-| `defaultHref` | `default-href` | The default href to be used when there is no browsing history. | `string` | `undefined` |
+| Property | Attribute | Description                                                                                   | Type     | Default     |
+| -------- | --------- | --------------------------------------------------------------------------------------------- | -------- | ----------- |
+| `href`   | `href`    | If does not present, the button would try to navigate back according to the browsing history. | `string` | `undefined` |
 
 
 ## Shadow Parts
