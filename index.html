@@ -1,10 +1,14 @@
-<!doctype html><html dir="ltr" lang="en"><head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"> <title>Awesome-Elements UI</title> <script type="module" src="./build/awesome-elements.esm.js"></script> <script nomodule="" src="./build/awesome-elements.js"></script> <link rel="stylesheet" href="./build/p-3bd1ead6.css"> </head> <body> <style>awesome-wrap::part(inner) {
+<!doctype html><html dir="ltr" lang="en"><head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"> <title>Awesome-Elements UI</title> <script type="module" src="./build/awesome-elements.esm.js"></script> <script nomodule="" src="./build/awesome-elements.js"></script> <link rel="stylesheet" href="./build/p-a5547356.css"> </head> <body> <style>awesome-wrap::part(inner) {
         padding: 8px;
-      }</style> <awesome-wrap> <div> <awesome-toggle id="dark-toggle" variant="switch">Dark Theme</awesome-toggle> <script>
-          function handleDarkThemeToggleStatusChange(status) {
-            document.body.classList.toggle('dark', status);
+      }</style> <awesome-wrap> <div> <awesome-tabs id="theme-picker" value="light" style="width: fit-content;"> <awesome-tab value="light">Light</awesome-tab> <awesome-tab value="dim">Dim</awesome-tab> <awesome-tab value="dark">Dark</awesome-tab> </awesome-tabs> <script>
+          function handleThemePickerValueChange(value) {
+            document.body.classList.toggle('dim', false);
+            document.body.classList.toggle('dark', false);
+            if (value !== 'light') {
+              document.body.classList.toggle(value, true);
+            }
           }
-          document.querySelector('#dark-toggle').addEventListener('awesomeChange', event => handleDarkThemeToggleStatusChange(event?.detail?.checked));
+          document.querySelector('#theme-picker').addEventListener('awesomeChange', event => handleThemePickerValueChange(event?.detail?.value));
         </script> </div> <div> <h1>Alert</h1> <awesome-divider></awesome-divider> <awesome-alert id="alert-controller"></awesome-alert> <awesome-button onclick="presentAlert(
         'Alert', 
         'This is an alert. <br/> <b>And some HTML content</b>',
