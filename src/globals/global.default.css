@@ -29,10 +29,18 @@
   --awesome-ui-default-shadow-blur-xxl: 50px;
 }
 
+body.dim {
+  --awesome-ui-default-color-main: hsl(0, 0%, 100%);
+  --awesome-ui-default-color-contrast: hsl(0, 0%, 0%);
+  --awesome-ui-default-color-background: hsl(0, 0%, 25%);
+  --awesome-ui-default-color-shadow: hsl(0, 0%, 0%, 0.7);
+}
+
 body.dark {
   --awesome-ui-default-color-main: hsl(0, 0%, 100%);
   --awesome-ui-default-color-contrast: hsl(0, 0%, 0%);
-  --awesome-ui-default-color-background: hsl(0, 0%, 20%);
+  --awesome-ui-default-color-background: hsl(0, 0%, 10%);
+  --awesome-ui-default-color-shadow: hsl(0, 0%, 60%, 0.5);
 }
 
 body[mode='default'] {

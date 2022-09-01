@@ -18,12 +18,20 @@
     </style>
     <awesome-wrap>
       <div>
-        <awesome-toggle id="dark-toggle" variant="switch">Dark Theme</awesome-toggle>
+        <awesome-tabs id="theme-picker" value="light" style="width: fit-content">
+          <awesome-tab value="light">Light</awesome-tab>
+          <awesome-tab value="dim">Dim</awesome-tab>
+          <awesome-tab value="dark">Dark</awesome-tab>
+        </awesome-tabs>
         <script>
-          function handleDarkThemeToggleStatusChange(status) {
-            document.body.classList.toggle('dark', status);
+          function handleThemePickerValueChange(value) {
+            document.body.classList.toggle('dim', false);
+            document.body.classList.toggle('dark', false);
+            if (value !== 'light') {
+              document.body.classList.toggle(value, true);
+            }
           }
-          document.querySelector('#dark-toggle').addEventListener('awesomeChange', event => handleDarkThemeToggleStatusChange(event?.detail?.checked));
+          document.querySelector('#theme-picker').addEventListener('awesomeChange', event => handleThemePickerValueChange(event?.detail?.value));
         </script>
       </div>
       <div>
