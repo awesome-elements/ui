@@ -1,6 +1,11 @@
-<!doctype html><html dir="ltr" lang="en"><head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"> <title>Awesome-Elements UI</title> <script type="module" src="./build/awesome-elements.esm.js"></script> <script nomodule="" src="./build/awesome-elements.js"></script> <link rel="stylesheet" href="./build/p-fedfef33.css"> </head> <body> <style>awesome-wrap::part(inner) {
+<!doctype html><html dir="ltr" lang="en"><head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"> <title>Awesome-Elements UI</title> <script type="module" src="./build/awesome-elements.esm.js"></script> <script nomodule="" src="./build/awesome-elements.js"></script> <link rel="stylesheet" href="./build/p-3bd1ead6.css"> </head> <body> <style>awesome-wrap::part(inner) {
         padding: 8px;
-      }</style> <awesome-wrap> <div> <h1>Alert</h1> <awesome-divider></awesome-divider> <awesome-alert id="alert-controller"></awesome-alert> <awesome-button onclick="presentAlert(
+      }</style> <awesome-wrap> <div> <awesome-toggle id="dark-toggle" variant="switch">Dark Theme</awesome-toggle> <script>
+          function handleDarkThemeToggleStatusChange(status) {
+            document.body.classList.toggle('dark', status);
+          }
+          document.querySelector('#dark-toggle').addEventListener('awesomeChange', event => handleDarkThemeToggleStatusChange(event?.detail?.checked));
+        </script> </div> <div> <h1>Alert</h1> <awesome-divider></awesome-divider> <awesome-alert id="alert-controller"></awesome-alert> <awesome-button onclick="presentAlert(
         'Alert', 
         'This is an alert. <br/> <b>And some HTML content</b>',
         [
