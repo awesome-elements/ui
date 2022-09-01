@@ -12,7 +12,7 @@
             const alertController = document.querySelector('#alert-controller');
             alertController.present(header, content, buttons);
           }
-        </script> </div> <div> <h1>Backdrop</h1> <awesome-divider></awesome-divider> <div id="backdrop-container"></div> <template id="backdrop-template"> <awesome-backdrop onclick="dismissBackdrop()" style="background: hsl(0, 0%, 50%); opacity: 0.5;"></awesome-backdrop> </template> <awesome-button onclick="showBackdrop()">Show Backdrop (then click anywhere to dismiss)</awesome-button> <script>
+        </script> </div> <div> <h1>Back Button</h1> <awesome-divider></awesome-divider> <awesome-button onclick="location.href = location.href + '#'">Push a browsing history state (adding a #)</awesome-button> <div style="height: 3rem; width: 3rem;"> <awesome-back-button default-href="//bing.com"></awesome-back-button> </div> </div> <div> <h1>Backdrop</h1> <awesome-divider></awesome-divider> <div id="backdrop-container"></div> <template id="backdrop-template"> <awesome-backdrop onclick="dismissBackdrop()" style="background: hsl(0, 0%, 50%); opacity: 0.5;"></awesome-backdrop> </template> <awesome-button onclick="showBackdrop()">Show Backdrop (then click anywhere to dismiss)</awesome-button> <script>
           function showBackdrop() {
             const backdrop = document.querySelector('#backdrop-template').content.cloneNode(true);
             const container = document.querySelector('#backdrop-container').append(backdrop);
